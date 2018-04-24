@@ -1,0 +1,271 @@
+a{
+	color: #000;
+}
+a:hover{
+	text-decoration: none;
+	color: #000;
+}
+@media (min-width: 768px) {
+	#content{
+		padding-top: 0;
+	}
+}
+@media (min-width: 769px) {
+	#content{
+		padding-top: 25px;
+	}
+	#Nav>li{
+		/*width: 121px;*/
+		width: 123px;
+	}
+	.subnav>li{
+		width: 150px;
+	}
+}
+@media (min-width: 1200px) {
+	.content{
+		width: 1070px;
+	}
+}
+.banner{
+	background: url(../img/header_bj.jpg);
+	padding: 15px 0;
+}
+.banner-inner{
+	position: relative;
+}
+.banner-list{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.banner-list>li{
+	width: 95px;
+	text-align: center;
+}
+.banner-list>li:first-child{
+	border-right: 2px solid #fff;
+}
+.banner-list>li>a{
+	color: #fff;
+	font-size: 13px;
+}
+/*#example-navbar-collapse,.nav-top{
+	padding-left: 0;
+	padding-right: 0;
+}*/
+#Nav{
+	/*width: 100%;
+	padding: 0 14%;*/
+	position: relative;
+}
+#Nav>li{
+	text-align: center;
+}
+#Nav>li>a{
+	position: relative;
+}
+#Nav>li:hover .subnav{
+	height: 30px;
+}
+#Nav>li:hover .nav-slider{
+	width: 100%;
+	left: 0;
+}
+/*.subnav{
+	position: absolute;
+	z-index: 1;
+	background-color: rgba(255, 255, 255, .5);
+	xwidth: 1120px;
+	right: 0;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	transition: all .7s;
+}
+.subnav>li{
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}*/
+.nav-slider{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	background: #0065bb;
+	height: 3px;
+	transition: all .7s;
+}
+.carousel-img{
+	margin:0 auto;
+}
+.ppt-wrap{
+	padding: 0;
+	position: relative;
+}
+.ppt{
+	padding-top: 4%;
+}
+.ppt-title{
+	margin: 0;
+	padding: 5px 5px 0;
+	line-height: 25px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.ppt-page{
+	position: absolute;
+	right: 0;
+	bottom: 20px;
+}
+.ppt-page>li{
+	background-color: rgba(255, 255, 255, .5);
+	cursor: pointer;
+}
+.ppt-page>.active{
+	color: #fff;
+	background-color:rgba(0, 0, 0, .5);
+}
+#content{
+	background: #efefef;
+	padding-bottom: 25px;
+}
+.main-bg{
+	background: #fff;
+}
+.news-title{
+	padding: 0 15px;
+	line-height: 30px;
+	border-bottom: 2px solid #0065bb;
+	font-size: 18px;
+	font-weight: normal;
+}
+.more{
+	float: right;
+	line-height: 30px;
+	font-size: 13px;
+	color: #8b8b8b;
+}
+.news-list{
+	padding: 5px 0 0;
+}
+.news-list>li{
+	padding: 0 15px;
+	/*line-height: 30px;*/
+	width: 100%;
+	border-bottom: 1px solid #dedede;
+}
+.news-list>li>a{
+	display: inline-block;
+	line-height: 37px;
+	width: 80%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	transition: color .2s;
+}
+.news-list>li>span{
+	line-height: 37px;
+}
+.news-list>li>a:hover{
+	color:#0065bb;
+}
+#footer{
+	color: #eee;
+	background-color: #0063b8;
+}
+.footer-l{
+	border-left: 1px solid #357ad1;
+}
+.footer-r{
+	border-right: 1px solid #357ad1;
+}
+.email{
+	margin: 0 auto;
+}
+.footer-top{
+	padding-top: 15px;
+	border: 1px solid #357ad1;
+}
+.footer-logo{
+	border-left: 1px solid #357ad1;
+	border-right: 1px solid #357ad1;
+}
+.footer-list{
+	margin-bottom: 0;
+}
+.footer-list>li{
+	text-align: center;
+	line-height: 34px;
+	margin-left: 20px;
+	width: 150px;
+}
+.footer-list>li>a{
+	color: #eee;
+}
+.link{
+	padding-top: 15px;
+}
+.link-list>li{
+	cursor: pointer;
+	line-height: 30px;
+	width: 120px;
+}
+.link-list>li>a{
+	transition: all .6s;
+	color: #eee;
+}
+.link-list,.link-p{
+	font-size: 13px;
+	display: inline-block;
+}
+.link-p{
+	font-weight: bold;
+	padding-right: 20px;
+}
+.footer-bottom{
+	padding: 20px 0;
+	background-color: #065aa2;
+}
+.address{
+	color: #fff;
+	font-size: 13px;
+	margin: 0;
+	text-align: center;
+}
+.getup{
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+	display: none;
+	overflow: hidden;
+	width: 45px;
+	height: 55px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, .5);
+	cursor: pointer;
+}
+.getup:hover .markup{
+	top: 0;
+}
+.getup>span{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+}
+.markup{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	transition: top .6s;
+	width: 100%;
+	height: 100%;
+	background-color: #0071bc;
+}
