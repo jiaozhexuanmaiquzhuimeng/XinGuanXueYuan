@@ -1,4 +1,4 @@
-package chuangxinxuetang.db;
+package com.xg.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

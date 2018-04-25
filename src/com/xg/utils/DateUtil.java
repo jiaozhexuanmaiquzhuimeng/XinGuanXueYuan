@@ -1,10 +1,10 @@
-package chuangxinxuetang.utils;
+package com.xg.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
-	//日期转换为字符串
+	//鏃ユ湡杞崲涓哄瓧绗︿覆
 	public static String formatDate(Date date, String format) {
 		String result = "";
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -14,7 +14,7 @@ public class DateUtil {
 		return result;
 	}
 	
-	//字符串转换为日期
+	//瀛楃涓茶浆鎹负鏃ユ湡
 	public static Date formatString(String str, String format) throws Exception {
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		return sdf.parse(str);

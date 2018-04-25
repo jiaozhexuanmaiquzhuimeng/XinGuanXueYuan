@@ -1,4 +1,4 @@
-package chuangxinxuetang.utils;
+package com.xg.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

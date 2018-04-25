@@ -1,5 +1,4 @@
-package chuangxinxuetang.utils;
-
+package com.xg.utils;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.util.Date;

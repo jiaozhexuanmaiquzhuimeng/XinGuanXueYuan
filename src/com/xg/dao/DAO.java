@@ -1,4 +1,4 @@
-package chuangxinxuetang.dao;
+package com.xg.dao;
 
 import java.util.List;
 

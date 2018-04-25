@@ -1,4 +1,8 @@
-package chuangxinxuetang.daoImpl;
+package com.xg.daoImpl;
+
+import com.xg.dao.DAO;
+import com.xg.db.JDBCUtils;
+import com.xg.utils.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,11 +14,6 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
-
-import chuangxinxuetang.dao.DAO;
-import chuangxinxuetang.db.JDBCUtils;
-import chuangxinxuetang.utils.Utils;
-
 
 public class BaseDAO<T> implements DAO<T> {
 
