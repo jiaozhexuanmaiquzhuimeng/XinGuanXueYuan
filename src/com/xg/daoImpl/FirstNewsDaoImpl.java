@@ -12,7 +12,7 @@ public class FirstNewsDaoImpl extends BaseDAO<FirstNews> implements FirstNewsDao
 	@Override
 	public List<FirstNews> selectTitle() {
 		List<FirstNews> titles = new ArrayList<FirstNews>();
-		String sql = "SELECT id,title,date from td_firstnews";
+		String sql = "SELECT id,title,date from td_firstnews order by date desc";
 		
 		titles = queryForList(sql);
 		return titles;

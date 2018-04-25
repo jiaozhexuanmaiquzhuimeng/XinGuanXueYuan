@@ -93,14 +93,14 @@ public class UserServlet extends HttpServlet {
 		studentWorks = studentWorkService.selectStudentWork();
 		creatives = creativeService.selectCreativeWork();
 		
-		request.setAttribute("titles", titles);
-		request.setAttribute("notices", notices);
-		request.setAttribute("teachingWorks", teachingWorks);
-		request.setAttribute("scienceWorks", scienceWorks);
-		request.setAttribute("graduates", graduates);
-		request.setAttribute("partys", partys);
-		request.setAttribute("studentWorks", studentWorks);
-		request.setAttribute("creatives", creatives);
+		request.setAttribute("titles", titles.subList(0, 5));
+		request.setAttribute("notices", notices.subList(0, 5));
+		request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
+		request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
+		request.setAttribute("graduates", graduates.subList(0, 5));
+		request.setAttribute("partys", partys.subList(0, 5));
+		request.setAttribute("studentWorks", studentWorks.subList(0, 5));
+		request.setAttribute("creatives", creatives.subList(0, 5));
 		
 		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 	}

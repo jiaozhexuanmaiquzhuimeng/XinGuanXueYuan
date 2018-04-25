@@ -12,7 +12,7 @@ public class StudentWorkDaoImpl extends BaseDAO<StudentWork> implements StudentW
 	@Override
 	public List<StudentWork> selectStudentWork() {
 		List<StudentWork> studentWorks = new ArrayList<StudentWork>();
-		String sql = "SELECT id,title,date from td_studentwork";
+		String sql = "SELECT id,title,date from td_studentwork order by date desc";
 		
 		studentWorks = queryForList(sql);
 		return studentWorks;

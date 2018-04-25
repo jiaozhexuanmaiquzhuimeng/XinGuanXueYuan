@@ -11,7 +11,7 @@ public class TeachingWorkDaoImpl extends BaseDAO<TeachingWork> implements Teachi
 	@Override
 	public List<TeachingWork> selectTeachingWork() {
 		List<TeachingWork> teachingWorks = new ArrayList<TeachingWork>();
-		String sql = "SELECT id,title,date from td_teachingwork";
+		String sql = "SELECT id,title,date from td_teachingwork order by date desc";
 		
 		teachingWorks = queryForList(sql);
 		return teachingWorks;

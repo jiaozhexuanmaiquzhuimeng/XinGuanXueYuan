@@ -11,7 +11,7 @@ public class CreativeDaoImpl extends BaseDAO<Creative> implements CreativeDao {
 	@Override
 	public List<Creative> selectCreativeWork() {
 		List<Creative> creatives = new ArrayList<Creative>();
-		String sql = "SELECT id,title,date from td_graduate";
+		String sql = "SELECT id,title,date from td_graduate order by date desc";
 		
 		creatives = queryForList(sql);
 		return creatives;

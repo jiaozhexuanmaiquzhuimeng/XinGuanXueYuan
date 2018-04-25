@@ -11,7 +11,7 @@ public class GraduateDaoImpl extends BaseDAO<Graduate> implements GraduateDao {
 	@Override
 	public List<Graduate> selectGraduate() {
 		List<Graduate> graduates = new ArrayList<Graduate>();
-		String sql = "SELECT id,title,date from td_graduate";
+		String sql = "SELECT id,title,date from td_graduate order by date desc";
 		
 		graduates = queryForList(sql);
 		return graduates;

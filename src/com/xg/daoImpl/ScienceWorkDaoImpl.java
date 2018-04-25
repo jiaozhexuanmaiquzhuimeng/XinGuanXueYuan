@@ -12,7 +12,7 @@ public class ScienceWorkDaoImpl extends BaseDAO<ScienceWork> implements ScienceW
 	@Override
 	public List<ScienceWork> selectScienceWork() {
 		List<ScienceWork> scienceWork = new ArrayList<ScienceWork>();
-		String sql = "SELECT id,title,date from td_sciencework";
+		String sql = "SELECT id,title,date from td_sciencework order by date desc";
 		
 		scienceWork = queryForList(sql);
 		return scienceWork;
