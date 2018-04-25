@@ -1,5 +1,9 @@
 package com.xg.dao;
 
-public interface FirstNewsDao {
+import java.util.List;
 
+import com.xg.domain.FirstNews;
+
+public interface FirstNewsDao {
+	public List<FirstNews> selectTitle();
 }

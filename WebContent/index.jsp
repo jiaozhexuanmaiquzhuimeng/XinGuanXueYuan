@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect(request.getContextPath() + "/userServlet?method=indexPage");
+	response.sendRedirect(request.getContextPath() + "/userServlet?method=showTitle");
 %>
