@@ -41,12 +41,17 @@ public class UserServlet extends HttpServlet {
 
 		}
 	}
-	
+
 	//链接到首页
 	public void indexPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 	}
 
+	//主页显示标题
+	public void showTitle(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
 
 }
