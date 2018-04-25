@@ -1,78 +1,106 @@
-a{
+label {
+	font-weight: normal;
+}
+
+body, html {
+	height: 100%;
+}
+
+a {
 	color: #000;
 }
-a:hover{
+
+a:hover {
 	text-decoration: none;
 	color: #000;
 }
-@media (min-width: 768px) {
-	#content{
+
+@media ( min-width : 768px) {
+	#content {
 		padding-top: 0;
 	}
 }
-@media (min-width: 769px) {
-	#content{
+
+@media ( min-width : 769px) {
+	#content {
 		padding-top: 25px;
 	}
-	#Nav>li{
+	#Nav>li {
 		/*width: 121px;*/
 		width: 123px;
 	}
-	.subnav>li{
+	.subnav>li {
 		width: 150px;
 	}
 }
-@media (min-width: 1200px) {
-	.content{
+
+@media ( min-width : 1200px) {
+	.content {
 		width: 1070px;
 	}
 }
-.banner{
+
+.banner {
 	background: url(../img/header_bj.jpg);
 	padding: 15px 0;
 }
-.banner-inner{
+
+.banner-inner {
 	position: relative;
 }
-.banner-list{
+
+.banner-list {
 	position: absolute;
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
 }
-.banner-list>li{
+
+.banner-list>li {
 	width: 95px;
 	text-align: center;
 }
-.banner-list>li:first-child{
+
+.banner-list>li {
 	border-right: 2px solid #fff;
 }
-.banner-list>li>a{
+
+.banner-list>li:last-child {
+	border-right: none;
+}
+
+.banner-list>li>a {
 	color: #fff;
 	font-size: 13px;
 }
+
 /*#example-navbar-collapse,.nav-top{
 	padding-left: 0;
 	padding-right: 0;
 }*/
-#Nav{
+#Nav {
 	/*width: 100%;
 	padding: 0 14%;*/
 	position: relative;
 }
-#Nav>li{
+
+#Nav>li {
 	text-align: center;
 }
-#Nav>li>a{
+
+#Nav>li>a {
 	position: relative;
 }
-#Nav>li:hover .subnav{
+
+#Nav>li:hover .subnav {
 	height: 30px;
 }
-#Nav>li:hover .nav-slider{
+
+#Nav>li:hover .nav-slider {
 	width: 100%;
 	left: 0;
 }
+
 /*.subnav{
 	position: absolute;
 	z-index: 1;
@@ -89,7 +117,7 @@ a:hover{
 	text-align: center;
 	line-height: 30px;
 }*/
-.nav-slider{
+.nav-slider {
 	display: block;
 	position: absolute;
 	bottom: 0;
@@ -97,19 +125,23 @@ a:hover{
 	width: 0;
 	background: #0065bb;
 	height: 3px;
-	transition: all .7s;
+	transition: all 0.7s;
 }
-.carousel-img{
-	margin:0 auto;
+
+.carousel-img {
+	margin: 0 auto;
 }
-.ppt-wrap{
+
+.ppt-wrap {
 	padding: 0;
 	position: relative;
 }
-.ppt{
+
+.ppt {
 	padding-top: 4%;
 }
-.ppt-title{
+
+.ppt-title {
 	margin: 0;
 	padding: 5px 5px 0;
 	line-height: 25px;
@@ -117,127 +149,156 @@ a:hover{
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.ppt-page{
+
+.ppt-page {
 	position: absolute;
 	right: 0;
 	bottom: 20px;
 }
-.ppt-page>li{
-	background-color: rgba(255, 255, 255, .5);
+
+.ppt-page>li {
+	background-color: rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 }
-.ppt-page>.active{
+
+.ppt-page>.active {
 	color: #fff;
-	background-color:rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, 0.5);
 }
-#content{
+
+#content {
 	background: #efefef;
 	padding-bottom: 25px;
 }
-.main-bg{
+
+.main-bg {
 	background: #fff;
 }
-.news-title{
+
+.news-title {
 	padding: 0 15px;
 	line-height: 30px;
 	border-bottom: 2px solid #0065bb;
 	font-size: 18px;
 	font-weight: normal;
 }
-.more{
+
+.more {
 	float: right;
 	line-height: 30px;
 	font-size: 13px;
 	color: #8b8b8b;
 }
-.news-list{
+
+.news-list {
 	padding: 5px 0 0;
 }
-.news-list>li{
+
+.news-list>li {
 	padding: 0 15px;
 	/*line-height: 30px;*/
 	width: 100%;
 	border-bottom: 1px solid #dedede;
 }
-.news-list>li>a{
+
+.news-list>li>a {
 	display: inline-block;
 	line-height: 37px;
 	width: 80%;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	transition: color .2s;
+	transition: color 0.2s;
 }
-.news-list>li>span{
+
+.news-list>li>span {
 	line-height: 37px;
 }
-.news-list>li>a:hover{
-	color:#0065bb;
+
+.news-list>li>a:hover {
+	color: #0065bb;
 }
-#footer{
+
+#footer {
 	color: #eee;
 	background-color: #0063b8;
 }
-.footer-l{
+
+.footer-l {
 	border-left: 1px solid #357ad1;
 }
-.footer-r{
+
+.footer-r {
 	border-right: 1px solid #357ad1;
 }
-.email{
+
+.email {
 	margin: 0 auto;
 }
-.footer-top{
+
+.footer-top {
 	padding-top: 15px;
 	border: 1px solid #357ad1;
 }
-.footer-logo{
+
+.footer-logo {
 	border-left: 1px solid #357ad1;
 	border-right: 1px solid #357ad1;
 }
-.footer-list{
+
+.footer-list {
 	margin-bottom: 0;
 }
-.footer-list>li{
+
+.footer-list>li {
 	text-align: center;
 	line-height: 34px;
 	margin-left: 20px;
 	width: 150px;
 }
-.footer-list>li>a{
+
+.footer-list>li>a {
 	color: #eee;
 }
-.link{
+
+.link {
 	padding-top: 15px;
 }
-.link-list>li{
+
+.link-list>li {
 	cursor: pointer;
 	line-height: 30px;
 	width: 120px;
 }
-.link-list>li>a{
-	transition: all .6s;
+
+.link-list>li>a {
+	transition: all 0.6s;
 	color: #eee;
 }
-.link-list,.link-p{
+
+.link-list, .link-p {
 	font-size: 13px;
 	display: inline-block;
 }
-.link-p{
+
+.link-p {
 	font-weight: bold;
 	padding-right: 20px;
 }
-.footer-bottom{
+
+.footer-bottom {
 	padding: 20px 0;
 	background-color: #065aa2;
 }
-.address{
+
+.address {
 	color: #fff;
 	font-size: 13px;
 	margin: 0;
 	text-align: center;
 }
-.getup{
+
+.getup {
 	position: fixed;
 	right: 20px;
 	bottom: 10px;
@@ -246,26 +307,111 @@ a:hover{
 	width: 45px;
 	height: 55px;
 	border-radius: 5px;
-	background-color: rgba(255, 255, 255, .5);
+	background-color: rgba(255, 255, 255, 0.5);
 	cursor: pointer;
 }
-.getup:hover .markup{
+
+.getup:hover .markup {
 	top: 0;
 }
-.getup>span{
+
+.getup>span {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	z-index: 2;
 	transform: translate(-50%, -50%);
 }
-.markup{
+
+.markup {
 	position: absolute;
 	top: 100%;
 	left: 0;
 	z-index: 1;
-	transition: top .6s;
+	transition: top 0.6s;
 	width: 100%;
 	height: 100%;
 	background-color: #0071bc;
+}
+
+/* 
+	@login.html @register.html
+*/
+.templatemo-bg-gray {
+	background-color: #eee;
+}
+
+.templatemo-bg-gray h1 {
+	color: #357ad1;
+}
+
+.margin-bottom-15 {
+	margin-bottom: 15px;
+	font-weight: 300;
+	font-size: 36px;
+	line-height: normal;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.templatemo-login-form-1 {
+	max-width: 500px;
+}
+
+.margin-bottom-30 {
+	margin-bottom: 30px;
+}
+
+.templatemo-container {
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #dedede;
+	border-radius: 8px;
+	margin: 0 auto;
+	margin-bottom: 0px;
+	padding: 30px;
+}
+
+.fa-medium {
+	font-size: 20px;
+}
+
+.control-wrapper {
+	position: relative;
+	padding-left: 30px;
+}
+
+.control-wrapper label.fa-label {
+	position: absolute;
+	left: 4px;
+	top: 6px;
+}
+
+.form-horizontal .control-label {
+	margin-bottom: 10px;
+}
+
+.form-horizontal .control-label {
+	padding-top: 0;
+}
+
+/* 
+	@home.html
+*/
+.page-container {
+	height: 100%;
+}
+
+.sidebar-menu {
+	position: fixed;
+	float: left;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 230px;
+	-o-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+	-webkit-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+	-moz-box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+	box-shadow: 0px 0px 10px 0px rgb(58, 41, 31);
+	z-index: 999;
+	background-color: #052963;
 }
