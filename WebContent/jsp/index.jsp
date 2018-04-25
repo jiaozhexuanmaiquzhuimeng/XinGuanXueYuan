@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+=======
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+>>>>>>> 01109fae57f45631eec0fe2f3f05408f9448e040
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,6 +78,7 @@
 				<ul class="banner-list list-inline hidden-xs">
 					<li><a href="#">德州学院</a></li>
 					<li><a href="#">访问旧版</a></li>
+					<li><a href="#">管理员登录</a></li>
 				</ul>
 			</div>
 		</div>
