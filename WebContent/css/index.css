@@ -119,8 +119,10 @@ a:hover {
 }
 
 .ppt-wrap {
+	height:210px;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
 }
 .ppt-wrap:hover{
 	cursor: pointer;

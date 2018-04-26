@@ -9,28 +9,26 @@
 <title>德州学院信息管理学院</title>
 <!-- 标签的page属性值可以是相对路径URL或者绝对路径，但同时只能存在其中一种   -->
 <jsp:include page="/include/includeCss.jsp"></jsp:include>
-
-
 <script>
-var index = 0;
-var timer = null;
-function changeImg(){
-	var imgNode = $('.ppt-page').find('li');
-	if(index==imgNode.length){
-		index = 0;
+	var index = 0;
+	var timer = null;
+	function changeImg() {
+		var imgNode = $('.ppt-page').find('li');
+		if (index == imgNode.length) {
+			index = 0;
+		}
+		$(imgNode[index]).addClass('active');
+		$(imgNode[index]).siblings().removeClass('active');
+		var ppt = $('.ppt');
+		ppt.hide();
+		$(ppt[index]).show();
+
+		index++;
 	}
-	$(imgNode[index]).addClass('active');
-	$(imgNode[index]).siblings().removeClass('active');
-	var ppt = $('.ppt');
-	ppt.hide();
-	$(ppt[index]).show();
-	
-	index++;
-}
-	function autoPlay(){
-		timer = setInterval(function(){
+	function autoPlay() {
+		timer = setInterval(function() {
 			changeImg()
-		},1000);
+		}, 1000);
 	}
 
 	(function($, undefined) {
@@ -65,20 +63,18 @@ function changeImg(){
 		}
 	})(jQuery);
 
-	
-	
 	$(document).ready(function() {
 
 		autoPlay();
-		
+
 		var pptWrap = document.querySelector(".ppt-wrap");
-		pptWrap.onmouseenter = function () {
-            clearInterval(timer);
-        }
-		pptWrap.onmouseleave = function () {
-            autoPlay();    
-        }
-		 
+		pptWrap.onmouseenter = function() {
+			clearInterval(timer);
+		}
+		pptWrap.onmouseleave = function() {
+			autoPlay();
+		}
+
 		$('#Carousel').carousel({
 			interval : 3000,
 			pause : 'hover'
@@ -91,7 +87,6 @@ function changeImg(){
 			$('.ppt').hide();
 			$('.ppt').eq($(this).index()).show();
 		});
-		
 
 		$('.getup').getUp();
 
@@ -218,26 +213,13 @@ function changeImg(){
 					</h1>
 
 					<div class="col-lg-5 col-sm-5 col-md-5 col-xs-12 ppt-wrap">
-						<div class="ppt" style="display: block;">
-							<img src="<%=request.getContextPath()%>/img/1111.jpg"
-								class="img-responsive" alt="">
-							<p class="ppt-title">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</p>
-						</div>
-						<div class="ppt" style="display: none;">
-							<img src="<%=request.getContextPath()%>/img/222.jpg"
-								class="img-responsive" alt="">
-							<p class="ppt-title">222222222222</p>
-						</div>
-						<div class="ppt" style="display: none;">
-							<img src="<%=request.getContextPath()%>/img/333.jpg"
-								class="img-responsive" alt="">
-							<p class="ppt-title">3333333333333</p>
-						</div>
-						<div class="ppt" style="display: none;">
-							<img src="<%=request.getContextPath()%>/img/444.jpg"
-								class="img-responsive" alt="">
-							<p class="ppt-title">444444444444</p>
-						</div>
+						<c:forEach items="${images }" var="image">
+							<div class="ppt" style="display: block;">
+								<img src="<%=request.getContextPath()%>/img/${image.imgName}"
+									class="img-responsive" alt="" id="${image.id}">
+								<p class="ppt-title">${image.title }</p>
+							</div>
+						</c:forEach>
 						<ul class="ppt-page list-inline">
 							<li class="active">1</li>
 							<li>2</li>
@@ -247,26 +229,12 @@ function changeImg(){
 					</div>
 					<div class="col-lg-7 col-sm-7 col-md-7 col-xs-12">
 						<ul class="news-list list-inline">
-							<c:forEach items="${titles }" var="title">
-								<li><a href="#">${title.title }</a><span class="pull-right">${title.date }</span></li>
+							<c:forEach items="${firstNews }" var="firstNew">
+								<li><a href="#" id="${firstNew.id }">${firstNew.title }</a><span
+									class="pull-right">${firstNew.date }</span></li>
 							</c:forEach>
 						</ul>
-						<!-- <ul class="news-list list-inline">
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span
-								class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span
-								class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span
-								class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span
-								class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span
-								class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span class="pull-right">12/0</span></li>
-							<li><a href="#">物理电子学研究所胡又凡研究员-彭练矛教授课题组在超薄柔</a><span class="pull-right">12/0</span></li>
-						</ul> -->
 					</div>
-
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
@@ -274,7 +242,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${notices }" var="notice">
-							<li><a href="#">${notice.title }</a><span class="pull-right">${notice.date }</span></li>
+							<li><a href="#" id="${notice.id }">${notice.title }</a><span
+								class="pull-right">${notice.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -287,7 +256,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${teachingWorks }" var="teachingWork">
-							<li><a href="#">${teachingWork.title }</a><span class="pull-right">${teachingWork.date }</span></li>
+							<li><a href="#" id="${teachingWork.id }">${teachingWork.title }</a><span
+								class="pull-right">${teachingWork.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -297,7 +267,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${scienceWorks }" var="scienceWork">
-							<li><a href="#">${scienceWork.title }</a><span class="pull-right">${scienceWork.date }</span></li>
+							<li><a href="#" id="${scienceWork.id }">${scienceWork.title }</a><span
+								class="pull-right">${scienceWork.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -307,7 +278,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${graduates }" var="graduate">
-							<li><a href="#">${graduate.title }</a><span class="pull-right">${graduate.date }</span></li>
+							<li><a href="#" id="${graduate.id }">${graduate.title }</a><span
+								class="pull-right">${graduate.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -320,7 +292,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${partys }" var="party">
-							<li><a href="#">${party.title }</a><span class="pull-right">${party.date }</span></li>
+							<li><a href="#" id="${party.id }">${party.title }</a><span
+								class="pull-right">${party.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -330,7 +303,8 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${studentWorks }" var="studentWork">
-							<li><a href="#">${studentWork.title }</a><span class="pull-right">${studentWork.date }</span></li>
+							<li><a href="#" id="${studentWork.id }">${studentWork.title }</a><span
+								class="pull-right">${studentWork.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -340,22 +314,11 @@ function changeImg(){
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${creatives }" var="creative">
-							<li><a href="#">${creative.title }</a><span class="pull-right">${creative.date }</span></li>
+							<li><a href="#" id="${creative.id }">${creative.title }</a><span
+								class="pull-right">${creative.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
-				<!-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-					<h1 class="news-title">科技创新<a href="#" class="more">更多</a></h1>
-					<ul class="news-list list-inline">
-						<li><a href="#">物理电子学研究所胡又凡研究员-彭练</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-彭练</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-</a><span class="pull-right">12/0</span></li>
-						<li><a href="#">物理电子学研究所胡又凡研究员-</a><span class="pull-right">12/0</span></li>
-					</ul>
-				</div> -->
 			</div>
 		</div>
 	</div>

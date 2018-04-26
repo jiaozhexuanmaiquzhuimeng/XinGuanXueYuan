@@ -60,7 +60,7 @@ public class UserServlet extends HttpServlet {
 
 		}
 	}
-	
+
 	FirstNewsService firstNewsService = new FirstNewsService();
 	NoticeService noticeService = new NoticeService();
 	TeachingWorkService teachingWorkService = new TeachingWorkService();
@@ -69,13 +69,12 @@ public class UserServlet extends HttpServlet {
 	PartyService partyService = new PartyService();
 	StudentWorkService studentWorkService = new StudentWorkService();
 	CreativeService creativeService = new CreativeService();
-	
-	
+
 	//链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("进入。。。");
-		List<FirstNews> titles = new ArrayList<FirstNews>(); 
+		List<FirstNews> firstNews = new ArrayList<FirstNews>();
 		List<Notice> notices = new ArrayList<Notice>();
 		List<TeachingWork> teachingWorks = new ArrayList<TeachingWork>();
 		List<ScienceWork> scienceWorks = new ArrayList<ScienceWork>();
@@ -84,7 +83,9 @@ public class UserServlet extends HttpServlet {
 		List<StudentWork> studentWorks = new ArrayList<StudentWork>();
 		List<Creative> creatives = new ArrayList<Creative>();
 		
-		titles = firstNewsService.selectTitle();
+		List<FirstNews> images = new ArrayList<FirstNews>();
+
+		firstNews = firstNewsService.selectFirstNews();
 		notices = noticeService.selectNotice();
 		teachingWorks = teachingWorkService.selectTeachingWork();
 		scienceWorks = scienceWorkService.selectScienceWork();
@@ -93,7 +94,9 @@ public class UserServlet extends HttpServlet {
 		studentWorks = studentWorkService.selectStudentWork();
 		creatives = creativeService.selectCreativeWork();
 		
-		request.setAttribute("titles", titles.subList(0, 5));
+		images = firstNewsService.selectImage();
+
+		request.setAttribute("firstNews", firstNews.subList(0, 5));
 		request.setAttribute("notices", notices.subList(0, 5));
 		request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
 		request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
@@ -102,6 +105,8 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("studentWorks", studentWorks.subList(0, 5));
 		request.setAttribute("creatives", creatives.subList(0, 5));
 		
+		request.setAttribute("images", images.subList(0, 4));
+
 		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 	}
 

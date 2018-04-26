@@ -4,6 +4,15 @@ public class FirstNews {
 	private int id;
 	private String title;
 	private String date;
+	private String imgName;
+
+	public String getImgName() {
+		return imgName;
+	}
+
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
+	}
 
 	public int getId() {
 		return id;
