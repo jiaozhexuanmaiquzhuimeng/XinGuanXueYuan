@@ -9,7 +9,30 @@
 <title>德州学院信息管理学院</title>
 <!-- 标签的page属性值可以是相对路径URL或者绝对路径，但同时只能存在其中一种   -->
 <jsp:include page="/include/includeCss.jsp"></jsp:include>
+
+
 <script>
+var index = 0;
+var timer = null;
+function changeImg(){
+	var imgNode = $('.ppt-page').find('li');
+	if(index==imgNode.length){
+		index = 0;
+	}
+	$(imgNode[index]).addClass('active');
+	$(imgNode[index]).siblings().removeClass('active');
+	var ppt = $('.ppt');
+	ppt.hide();
+	$(ppt[index]).show();
+	
+	index++;
+}
+	function autoPlay(){
+		timer = setInterval(function(){
+			changeImg()
+		},1000);
+	}
+
 	(function($, undefined) {
 		$.fn.slide = function(options) {
 			var defaules = {
@@ -42,7 +65,20 @@
 		}
 	})(jQuery);
 
+	
+	
 	$(document).ready(function() {
+
+		autoPlay();
+		
+		var pptWrap = document.querySelector(".ppt-wrap");
+		pptWrap.onmouseenter = function () {
+            clearInterval(timer);
+        }
+		pptWrap.onmouseleave = function () {
+            autoPlay();    
+        }
+		 
 		$('#Carousel').carousel({
 			interval : 3000,
 			pause : 'hover'
@@ -55,6 +91,7 @@
 			$('.ppt').hide();
 			$('.ppt').eq($(this).index()).show();
 		});
+		
 
 		$('.getup').getUp();
 
