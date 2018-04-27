@@ -2,10 +2,10 @@
 <c3p0-config>
 	<named-config name="javawebapp">
 
-		<property name="user">zgz</property>
-		<property name="password">123456</property>
+		<property name="user">root</property>
+		<property name="password">admin</property>
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
-		<property name="jdbcUrl">jdbc:mysql://211.64.40.215:3306/xxgl</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost/xxgl</property>
 
 
 		<property name="acquireIncrement">5</property>

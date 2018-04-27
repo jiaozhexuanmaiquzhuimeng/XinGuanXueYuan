@@ -57,6 +57,10 @@ a:hover {
 	border-right: 2px solid #fff;
 }
 
+.banner-list>li:last-child {
+	border-left: 2px solid #fff;
+}
+
 .banner-list>li>a {
 	color: #fff;
 	font-size: 13px;

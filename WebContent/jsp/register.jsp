@@ -15,7 +15,7 @@
 	<h1 class="margin-bottom-15">新用户注册</h1>
 	<div class="container">
 		<div class="col-md-12">
-			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="#" method="post">
+			<form class="form-horizontal templatemo-create-account templatemo-container" role="form" action="<%=request.getContextPath()%>/userServlet?method=registerPageTwo" method="post">
 				<div class="form-inner">
 					<div class="form-group">
 						<div class="col-md-6">
@@ -43,7 +43,7 @@
 						</div>
 						<div class="col-md-6">
 							<label for="password" class="control-label">重复密码</label>
-							<input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="请再次输入密码">
+							<input type="password" class="form-control" id="password_confirm" name="passwordrepeat" placeholder="请再次输入密码">
 						</div>
 					</div>
 				

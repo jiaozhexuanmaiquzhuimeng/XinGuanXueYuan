@@ -103,6 +103,7 @@
 				<img src="<%=request.getContextPath()%>/img/logo4.png" alt="logo"
 					class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=loginPage">管理员登陆</a></li>
 					<li><a href="#">德州学院</a></li>
 					<li><a href="#">访问旧版</a></li>
 				</ul>

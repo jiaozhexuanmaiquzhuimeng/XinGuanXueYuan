@@ -5,11 +5,14 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sound.midi.MidiDevice.Info;
 
 import com.xg.domain.Creative;
 import com.xg.domain.FirstNews;
@@ -19,6 +22,7 @@ import com.xg.domain.Party;
 import com.xg.domain.ScienceWork;
 import com.xg.domain.StudentWork;
 import com.xg.domain.TeachingWork;
+import com.xg.domain.User;
 import com.xg.service.CreativeService;
 import com.xg.service.FirstNewsService;
 import com.xg.service.GraduateService;
@@ -27,6 +31,8 @@ import com.xg.service.PartyService;
 import com.xg.service.ScienceWorkService;
 import com.xg.service.StudentWorkService;
 import com.xg.service.TeachingWorkService;
+import com.xg.service.UserService;
+import com.xg.utils.CookieEncryptTool;
 
 /**
  * @author Guozhen_Zhao
@@ -70,10 +76,11 @@ public class UserServlet extends HttpServlet {
 	StudentWorkService studentWorkService = new StudentWorkService();
 	CreativeService creativeService = new CreativeService();
 
+	UserService userService = new UserService();
+
 	//链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("进入。。。");
 		List<FirstNews> firstNews = new ArrayList<FirstNews>();
 		List<Notice> notices = new ArrayList<Notice>();
 		List<TeachingWork> teachingWorks = new ArrayList<TeachingWork>();
@@ -82,7 +89,7 @@ public class UserServlet extends HttpServlet {
 		List<Party> partys = new ArrayList<Party>();
 		List<StudentWork> studentWorks = new ArrayList<StudentWork>();
 		List<Creative> creatives = new ArrayList<Creative>();
-		
+
 		List<FirstNews> images = new ArrayList<FirstNews>();
 
 		firstNews = firstNewsService.selectFirstNews();
@@ -93,7 +100,7 @@ public class UserServlet extends HttpServlet {
 		partys = partyService.selectParty();
 		studentWorks = studentWorkService.selectStudentWork();
 		creatives = creativeService.selectCreativeWork();
-		
+
 		images = firstNewsService.selectImage();
 
 		request.setAttribute("firstNews", firstNews.subList(0, 5));
@@ -104,10 +111,109 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("partys", partys.subList(0, 5));
 		request.setAttribute("studentWorks", studentWorks.subList(0, 5));
 		request.setAttribute("creatives", creatives.subList(0, 5));
-		
+
 		request.setAttribute("images", images.subList(0, 4));
 
 		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+	}
+
+	//转发到登陆页面
+	public void loginPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+	}
+
+	//登陆页实现
+	public void loginPageTwo(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String userName = request.getParameter("userName");
+		String passWord = request.getParameter("passWord");
+		String rememberMe = request.getParameter("rememberMe");
+
+		String message = "";
+
+		if (userName.equals("")) {
+			message = "用户名不能为空";
+		} else if (passWord.equals("")) {
+			message = "密码不能为空";
+		} else {
+			User user = userService.login(userName);
+			//System.out.println("1111");
+			if (user.getPassWord().equals(passWord)) {
+				//System.out.println("2222");
+				if ("true".equals(rememberMe)) {
+					Cookie c1 = new Cookie("userName", CookieEncryptTool.encodeBase64(userName));
+					Cookie c2 = new Cookie("passWord", CookieEncryptTool.encodeBase64(passWord));
+					c1.setMaxAge(365 * 24 * 3600);
+					c2.setMaxAge(365 * 24 * 3600);
+					response.addCookie(c1);
+					response.addCookie(c2);
+				} else {
+					Cookie[] cookies = request.getCookies();
+					if (cookies != null) {
+						for (Cookie cookie : cookies) {
+							cookie.setMaxAge(0);
+							response.addCookie(cookie);
+						}
+					}
+				}
+				request.getRequestDispatcher("jsp/home.jsp").forward(request, response);
+				return;
+			} else {
+				message = "用户名或密码错误";
+			}
+		}
+
+		request.setAttribute("message", message);
+		request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+
+	}
+
+	//转发到注册页面
+	public void registerPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
+	}
+
+	//注册页实现
+	public void registerPageTwo(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String name = request.getParameter("name");
+		String userName = request.getParameter("username");
+		String email = request.getParameter("email");
+		String passWord = request.getParameter("password");
+		String passwordRepeat = request.getParameter("passwordrepeat");
+		
+		String message = "";
+		
+		if(userName.equals("")){
+			message = "用户名为空";
+		}else if (passWord.equals("") && passwordRepeat.equals("")) {
+			message = "密码不为空";
+		}else if (!passWord.equals(passwordRepeat)) {
+			message = "两次密码不一致";
+		}else {
+			User user = new User();
+			user.setName(name);
+			user.setUserName(userName);
+			user.setEmail(email);
+			user.setPassWord(passWord);
+			Long info = userService.selectCountByUserName(user);
+			if (info == 0) {
+				userService.register(user);
+				
+			}else {
+				message = "用户名已存在";
+			}
+		}
+		
+		if(message.equals("")){
+			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+			return;
+		}else {
+			request.setAttribute("message", message);
+			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
+		}
 	}
 
 }
