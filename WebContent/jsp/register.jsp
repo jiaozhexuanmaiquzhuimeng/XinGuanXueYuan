@@ -53,6 +53,7 @@
 							<input type="submit" value="注册" class="btn btn-primary">
 						</div>
 					</div>
+					
 				</div>
 			</form>
 		</div>

@@ -103,7 +103,7 @@
         <div class="container main-bg">
 
             <!-- 文章标题 -->
-            <p>
+            
                 <h4 class="article-title">
                 	${firstNews.title }
                 	${notice.title }
