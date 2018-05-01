@@ -87,7 +87,7 @@
             </div>
             <jsp:include page="/include/dropDownList.jsp"></jsp:include>
     </div>
-
+</div>
     <!--主体-->
     <div id="content" class="container-fluid">
 
