@@ -18,4 +18,12 @@ public class ScienceWorkDaoImpl extends BaseDAO<ScienceWork> implements ScienceW
 		return scienceWork;
 	}
 
+	@Override
+	public ScienceWork selectScienceWorkById(int id) {
+		ScienceWork scienceWork = new ScienceWork();
+		String sql = "select title,date,content,author from td_sciencework where id = ?";
+		scienceWork = query(sql, id);
+		return scienceWork;
+	}
+
 }

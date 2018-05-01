@@ -18,4 +18,12 @@ public class StudentWorkDaoImpl extends BaseDAO<StudentWork> implements StudentW
 		return studentWorks;
 	}
 
+	@Override
+	public StudentWork selectStudentWorkById(int id) {
+		StudentWork studentWork = new StudentWork();
+		String sql = "select title,date,content,author from td_studentwork where id = ?";
+		studentWork = query(sql, id);
+		return studentWork;
+	}
+
 }

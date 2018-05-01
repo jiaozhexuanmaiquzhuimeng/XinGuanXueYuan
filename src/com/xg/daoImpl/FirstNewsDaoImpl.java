@@ -26,4 +26,12 @@ public class FirstNewsDaoImpl extends BaseDAO<FirstNews> implements FirstNewsDao
 		return images;
 	}
 
+	@Override
+	public FirstNews selectFirstNewsById(int id) {
+		String sql = "select title,date,imgname,content,author from td_firstnews where id = ?";
+		
+		FirstNews firstNews = query(sql, id);
+		return firstNews;
+	}
+
 }

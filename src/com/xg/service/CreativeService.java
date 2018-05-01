@@ -16,4 +16,10 @@ public class CreativeService {
 		return creatives;
 	}
 
+	public Creative selectCreativeById(int id) {
+		Creative creative = new Creative();
+		creative = creativeDao.selectCreativeById(id);
+		return creative;
+	}
+
 }

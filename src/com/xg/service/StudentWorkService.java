@@ -17,4 +17,10 @@ public class StudentWorkService {
 		return studentWorks;
 	}
 
+	public StudentWork selectStudentWorkById(int id) {
+		StudentWork studentWork = new StudentWork();
+		studentWork = studentWorkDao.selectStudentWorkById(id); 
+		return studentWork;
+	}
+
 }

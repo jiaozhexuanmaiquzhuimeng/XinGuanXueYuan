@@ -103,7 +103,8 @@
 				<img src="<%=request.getContextPath()%>/img/logo4.png" alt="logo"
 					class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=loginPage">管理员登陆</a></li>
+					<li><a
+						href="<%=request.getContextPath()%>/userServlet?method=loginPage">管理员登陆</a></li>
 					<li><a href="#">德州学院</a></li>
 					<li><a href="#">访问旧版</a></li>
 				</ul>
@@ -125,39 +126,55 @@
 
 						<ul class="dropdown-menu">
 							<li><a href="#">学院简介</a></li>
-							<li><a href="#">领导班子</a></li>
-							<li><a href="#">机构设置</a></li>
+							<li><a href="#">组织机构</a></li>
 							<li><a href="#">师资队伍</a></li>
-							<li><a href="#">历任领导</a></li>
 						</ul></li>
 					<li><a href="#">教务教学 <span class="nav-slider"></span><b
 							class="caret"></b>
 					</a>
 
 						<ul class="dropdown-menu">
-							<li><a href="#">科学研究</a></li>
-							<li><a href="#">师资队伍</a></li>
-							<li><a href="#">历任领导</a></li>
-							<li><a href="#">学院简介</a></li>
-							<li><a href="#">领导班子</a></li>
-							<li><a href="#">招生就业</a></li>
-							<li><a href="#">机构设置</a></li>
+							<li><a href="#">专业建设</a></li>
+							<li><a href="#">教学工作</a></li>
+							<li><a href="#">考研工作</a></li>
 						</ul></li>
-					<li><a href="#">科学研究 <span class="nav-slider"></span>
-					</a></li>
-					<li><a href="#">招生就业<span class="nav-slider"></span></a></li>
-					<li><a href="#">党群建设<span class="nav-slider"></span></a></li>
-					<li><a href="#">学生工作<span class="nav-slider"></span></a></li>
-					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">规章制度<span
+					<li><a href="#">招生就业<span class="nav-slider"></span><b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">招生工作</a></li>
+							<li><a href="#">教学工作</a></li>
+						</ul></li>
+					<li><a href="#">科研工作 <span class="nav-slider"></span><b
+							class="caret"></b>
+					</a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#">科研管理</a></li>
+							<li><a href="#">重点实验室</a></li>
+							<li><a href="#">学术组织</a></li>
+							<li><a href="#">学术交流</a></li>
+							<li><a href="#">国际办学</a></li>
+							<li><a href="#">社会服务</a></li>
+						</ul></li>
+					<li><a href="#">学生管理 <span class="nav-slider"></span><b
+							class="caret"></b>
+					</a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#">学生工作</a></li>
+							<li><a href="#">团总支</a></li>
+							<li><a href="#">实习实训</a></li>
+							<li><a href="#">电商基地</a></li>
+						</ul></li>
+					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown">实验教学<span
 							class="nav-slider"></span><b class="caret"></b></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="#">学院简介</a></li>
-							<li><a href="#">领导班子</a></li>
-							<li><a href="#">机构设置</a></li>
-							<li><a href="#">师资队伍</a></li>
-							<li><a href="#">历任领导</a></li>
+							<li><a href="#">示范中心</a></li>
+							<li><a href="#">固定资产</a></li>
+							<li><a href="#">网络资源</a></li>
 						</ul></li>
+					<li><a href="#">人才引进<span class="nav-slider"></span></a></li>
 					<li><a href="#">校友风采<span class="nav-slider"></span></a></li>
 				</ul>
 			</div>
@@ -231,7 +248,9 @@
 					<div class="col-lg-7 col-sm-7 col-md-7 col-xs-12">
 						<ul class="news-list list-inline">
 							<c:forEach items="${firstNews }" var="firstNew">
-								<li><a href="#" id="${firstNew.id }">${firstNew.title }</a><span
+								<li><a
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${firstNew.id }"
+									id="${firstNew.id }">${firstNew.title }</a><span
 									class="pull-right">${firstNew.date }</span></li>
 							</c:forEach>
 						</ul>
@@ -243,8 +262,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${notices }" var="notice">
-							<li><a href="#" id="${notice.id }">${notice.title }</a><span
-								class="pull-right">${notice.date }</span></li>
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentTwoPage&id=${notice.id }"
+								id="${notice.id }">${notice.title }</a><span class="pull-right">${notice.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -257,7 +277,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${teachingWorks }" var="teachingWork">
-							<li><a href="#" id="${teachingWork.id }">${teachingWork.title }</a><span
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentThreePage&id=${teachingWork.id }"
+								id="${teachingWork.id }">${teachingWork.title }</a><span
 								class="pull-right">${teachingWork.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -268,7 +290,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${scienceWorks }" var="scienceWork">
-							<li><a href="#" id="${scienceWork.id }">${scienceWork.title }</a><span
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentFourPage&id=${scienceWork.id }"
+								id="${scienceWork.id }">${scienceWork.title }</a><span
 								class="pull-right">${scienceWork.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -279,7 +303,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${graduates }" var="graduate">
-							<li><a href="#" id="${graduate.id }">${graduate.title }</a><span
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentFivePage&id=${graduate.id }"
+								id="${graduate.id }">${graduate.title }</a><span
 								class="pull-right">${graduate.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -293,8 +319,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${partys }" var="party">
-							<li><a href="#" id="${party.id }">${party.title }</a><span
-								class="pull-right">${party.date }</span></li>
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentSixPage&id=${party.id }"
+								id="${party.id }">${party.title }</a><span class="pull-right">${party.date }</span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -304,7 +331,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${studentWorks }" var="studentWork">
-							<li><a href="#" id="${studentWork.id }">${studentWork.title }</a><span
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentSevenPage&id=${studentWork.id }"
+								id="${studentWork.id }">${studentWork.title }</a><span
 								class="pull-right">${studentWork.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -315,7 +344,9 @@
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${creatives }" var="creative">
-							<li><a href="#" id="${creative.id }">${creative.title }</a><span
+							<li><a
+								href="<%=request.getContextPath()%>/userServlet?method=contentEightPage&id=${creative.id }"
+								id="${creative.id }">${creative.title }</a><span
 								class="pull-right">${creative.date }</span></li>
 						</c:forEach>
 					</ul>

@@ -17,4 +17,10 @@ public class GraduateService {
 		return graduates;
 	}
 
+	public Graduate selectGraduateById(int id) {
+		Graduate graduate = new Graduate();
+		graduate = graduateDao.selectGraduateById(id); 
+		return graduate;
+	}
+
 }

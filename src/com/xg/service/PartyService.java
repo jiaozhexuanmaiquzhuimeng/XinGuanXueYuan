@@ -17,4 +17,10 @@ public class PartyService {
 		return partys;
 	}
 
+	public Party selectGraduateById(int id) {
+		Party party = new Party();
+		party = partyDao.selectGraduateById(id);
+		return party;
+	}
+
 }

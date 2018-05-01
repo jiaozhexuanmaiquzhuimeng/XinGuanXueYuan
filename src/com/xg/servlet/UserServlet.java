@@ -183,16 +183,16 @@ public class UserServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String passWord = request.getParameter("password");
 		String passwordRepeat = request.getParameter("passwordrepeat");
-		
+
 		String message = "";
-		
-		if(userName.equals("")){
+
+		if (userName.equals("")) {
 			message = "用户名为空";
-		}else if (passWord.equals("") && passwordRepeat.equals("")) {
+		} else if (passWord.equals("") && passwordRepeat.equals("")) {
 			message = "密码不为空";
-		}else if (!passWord.equals(passwordRepeat)) {
+		} else if (!passWord.equals(passwordRepeat)) {
 			message = "两次密码不一致";
-		}else {
+		} else {
 			User user = new User();
 			user.setName(name);
 			user.setUserName(userName);
@@ -201,19 +201,123 @@ public class UserServlet extends HttpServlet {
 			Long info = userService.selectCountByUserName(user);
 			if (info == 0) {
 				userService.register(user);
-				
-			}else {
+
+			} else {
 				message = "用户名已存在";
 			}
 		}
-		
-		if(message.equals("")){
+
+		if (message.equals("")) {
 			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
 			return;
-		}else {
+		} else {
 			request.setAttribute("message", message);
 			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
 		}
+	}
+
+	//转发到最新动态详情页面
+	public void contentPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		FirstNews firstNews = new FirstNews();
+		firstNews = firstNewsService.selectFirstNewsById(Integer.parseInt(id));
+
+		request.setAttribute("firstNews", firstNews);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到通知公告详情页面
+	public void contentTwoPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		Notice notice = new Notice();
+		notice = noticeService.selectNoticeById(Integer.parseInt(id));
+
+		request.setAttribute("notice", notice);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到教学工作详情页面
+	public void contentThreePage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		TeachingWork teachingWork = new TeachingWork();
+		teachingWork = teachingWorkService.selectTeachingWorkById(Integer.parseInt(id));
+
+		request.setAttribute("teachingWork", teachingWork);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到教学工作详情页面
+	public void contentFourPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		ScienceWork scienceWork = new ScienceWork();
+		scienceWork = scienceWorkService.selectScienceWorkById(Integer.parseInt(id));
+
+		request.setAttribute("scienceWork", scienceWork);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到考研专栏详情页面
+	public void contentFivePage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		Graduate graduate = new Graduate();
+		graduate = graduateService.selectGraduateById(Integer.parseInt(id));
+
+		request.setAttribute("graduate", graduate);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到党群工作详情页面
+	public void contentSixPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		Party party = new Party();
+		party = partyService.selectGraduateById(Integer.parseInt(id));
+
+		request.setAttribute("party", party);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到学生工作详情页面
+	public void contentSevenPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+
+		StudentWork studentWork = new StudentWork();
+		studentWork = studentWorkService.selectStudentWorkById(Integer.parseInt(id));
+
+		request.setAttribute("studentWork", studentWork);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到学生创新详情页面
+	public void contentEightPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		
+		Creative creative = new Creative();
+		creative = creativeService.selectCreativeById(Integer.parseInt(id));
+
+		request.setAttribute("creative", creative);
+
+		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
 	}
 
 }

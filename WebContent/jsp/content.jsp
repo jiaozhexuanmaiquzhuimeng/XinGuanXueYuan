@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -212,7 +213,7 @@
         <div class="container" style="padding: 0 0;">
 
             <p>
-                <a href="" class="back-index">&lt; 返回首页</a>
+                <a href="<%=request.getContextPath()%>/userServlet?method=showTitle" class="back-index">&lt; 返回首页</a>
             </p>
         </div>
 
@@ -221,7 +222,16 @@
 
             <!-- 文章标题 -->
             <p>
-                <h4 class="article-title">我校杰出校友、山东英才学院院长夏季亭应邀来校交流座谈 </h4>
+                <h4 class="article-title">
+                	${firstNews.title }
+                	${notice.title }
+                	${teachingWork.title }
+                	${scienceWork.title }
+                	${graduate.title }
+                	${party.title }
+                	${studentWork.title }
+                	${creative.title }
+                </h4>
             </p>
 
             <!-- 文章其它信息 -->
@@ -229,9 +239,26 @@
                 <span>[</span>
 
                 <abbr>作者:
-                    <span class="author">这里放作者</span> | 时间:
-                    <span class="time-year">这里放年份</span>
-                    <span class="time-clock">这里放具体时间</span>
+                    <span class="author">
+                    	${firstNews.author }
+                    	${notice.author }
+                    	${teachingWork.author }
+                    	${scienceWork.author }
+                    	${graduate.author }
+                    	${party.author }
+                    	${studentWork.author }
+                    	${creative.author }
+                    </span> | 时间:
+                    <span class="time-clock">
+                    	${firstNews.date }
+                    	${notice.date }
+                    	${teachingWork.date }
+                    	${scienceWork.date }
+                    	${graduate.date }
+                    	${party.date }
+                    	${studentWork.date }
+                    	${creative.date }
+                    </span>
                 </abbr>
 
                 <span>]</span>
@@ -241,10 +268,14 @@
             <div class="panel">
                 <div class="panel-body">
                     <section class="article-content">
-                        4月26日下午，德州学院杰出校友、历史与社会管理学院客座教授、山东英才学院院长夏季亭应邀来校交流座谈.
-                        
-                        　历史学院负责人介绍了本院专业设置、师资力量、学科建设、学生培养等情况。夏季亭校友介绍了英才学院创办历史与发展现状，以及内涵建设、特色专业创办、国家实验室建设的经验，并表示自己作为客座教授，将履职尽责，积极促进学生专业成长。双方共同表达了进一步加强交流合作、共同发展的良好意愿。
-                        　　历史学院全体教师参加了交流活动。 　　夏季亭，1987年调到德州师专（德州学院前身）历史系，一直工作到1993年。期间曾被授予优秀教师、科技拨尖人才等荣誉称号，深得师生员工好评。1998年，夏季亭创办山东英才学院，现学校已发展成为全国在校生规模最大的民办高校，连续6年位居《中国民办大学排行榜》前三名。现为山东省人大代表、山东省教科文卫委员会副主任委员，享受国务院政府特殊津贴。被中共中央、国务院评为“全国先进工作者”，荣获“黄炎培杰出校长奖”、中国高等教育学会“学生喜爱的大学校长”，以及山东省“富民兴鲁劳动奖章”、“山东创业十杰”、“山东省优秀中国特色社会主义建设者”、“职业教育领军人物”等称号。
+                        ${firstNews.content }
+                        ${notice.content }
+                        ${teachingWork.content }
+                        ${scienceWork.content }
+                        ${graduate.content }
+                        ${party.content }
+                        ${studentWork.content }
+                        ${creative.content }
                     </section>
                 </div>
             </div>

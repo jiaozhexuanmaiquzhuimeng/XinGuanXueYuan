@@ -16,5 +16,11 @@ public class NoticeService {
 		notices = noticeDao.selectNotice();
 		return notices;
 	}
+
+	public Notice selectNoticeById(int id) {
+		Notice notice = new Notice();
+		notice = noticeDao.selectNoticeById(id);
+		return notice;
+	}
 	
 }

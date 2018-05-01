@@ -17,4 +17,12 @@ public class GraduateDaoImpl extends BaseDAO<Graduate> implements GraduateDao {
 		return graduates;
 	}
 
+	@Override
+	public Graduate selectGraduateById(int id) {
+		Graduate graduate = new Graduate();
+		String sql = "select title,date,content,author from td_graduate where id = ?";
+		graduate = query(sql, id);
+		return graduate;
+	}
+
 }

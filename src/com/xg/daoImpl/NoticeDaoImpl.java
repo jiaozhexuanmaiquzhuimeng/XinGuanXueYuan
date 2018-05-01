@@ -17,4 +17,12 @@ public class NoticeDaoImpl extends BaseDAO<Notice> implements NoticeDao {
 		return notices;
 	}
 
+	@Override
+	public Notice selectNoticeById(int id) {
+		String sql = "select title,date,content,author from td_notice where id = ?";
+		Notice notice = new Notice();
+		notice = query(sql, id);
+		return notice;
+	}
+
 }

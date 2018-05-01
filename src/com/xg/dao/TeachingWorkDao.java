@@ -6,4 +6,6 @@ import com.xg.domain.TeachingWork;
 
 public interface TeachingWorkDao {
 	public List<TeachingWork> selectTeachingWork();
+
+	public TeachingWork selectTeachingWorkById(int id);
 }

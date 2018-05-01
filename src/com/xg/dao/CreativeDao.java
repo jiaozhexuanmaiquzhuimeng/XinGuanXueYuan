@@ -6,4 +6,6 @@ import com.xg.domain.Creative;
 
 public interface CreativeDao {
 	public List<Creative> selectCreativeWork();
+
+	public Creative selectCreativeById(int id);
 }

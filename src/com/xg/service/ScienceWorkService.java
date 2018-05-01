@@ -19,4 +19,10 @@ public class ScienceWorkService {
 		return scienceWorks;
 	}
 
+	public ScienceWork selectScienceWorkById(int id) {
+		ScienceWork scienceWork = new ScienceWork();
+		scienceWork = scienceWorkDao.selectScienceWorkById(id);
+		return scienceWork;
+	}
+
 }

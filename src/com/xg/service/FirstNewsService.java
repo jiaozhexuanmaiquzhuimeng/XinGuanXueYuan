@@ -21,5 +21,11 @@ public class FirstNewsService {
 		images = firstNewsDao.selectImage();
 		return images;
 	}
+
+	public FirstNews selectFirstNewsById(int id) {
+		FirstNews firstNews = new FirstNews();
+		firstNews = firstNewsDao.selectFirstNewsById(id); 
+		return firstNews;
+	}
 	
 }

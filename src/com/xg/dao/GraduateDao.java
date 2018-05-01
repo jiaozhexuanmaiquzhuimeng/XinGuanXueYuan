@@ -8,4 +8,6 @@ import com.xg.domain.Graduate;
 public interface GraduateDao {
 	
 	public List<Graduate> selectGraduate();
+
+	public Graduate selectGraduateById(int id);
 }

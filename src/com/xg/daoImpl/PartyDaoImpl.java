@@ -17,4 +17,12 @@ public class PartyDaoImpl extends BaseDAO<Party> implements PartyDao {
 		return partys;
 	}
 
+	@Override
+	public Party selectGraduateById(int id) {
+		Party party = new Party();
+		String sql = "select title,date,content,author from td_party where id = ?";
+		party = query(sql, id);
+		return party;
+	}
+
 }

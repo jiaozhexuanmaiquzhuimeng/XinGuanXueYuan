@@ -7,4 +7,6 @@ import com.xg.domain.Party;
 public interface PartyDao {
 	
 	public List<Party> selectParty();
+
+	public Party selectGraduateById(int id);
 }

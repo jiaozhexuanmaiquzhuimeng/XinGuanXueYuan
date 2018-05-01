@@ -7,4 +7,7 @@ import com.xg.domain.Notice;
 public interface NoticeDao {
 	
 	public List<Notice> selectNotice();
+
+	public Notice selectNoticeById(int id);
+	
 }

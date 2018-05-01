@@ -17,4 +17,10 @@ public class TeachingWorkService {
 		return teachingWorks;
 	}
 
+	public TeachingWork selectTeachingWorkById(int id) {
+		TeachingWork teachingWork = new TeachingWork();
+		teachingWork = teachingWorkDao.selectTeachingWorkById(id);
+		return teachingWork;
+	}
+
 }

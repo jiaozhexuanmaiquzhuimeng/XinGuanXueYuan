@@ -8,4 +8,6 @@ public interface FirstNewsDao {
 	public List<FirstNews> selectFirstNews();
 
 	public List<FirstNews> selectImage();
+
+	public FirstNews selectFirstNewsById(int id);
 }
