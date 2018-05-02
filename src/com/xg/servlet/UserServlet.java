@@ -158,13 +158,13 @@ public class UserServlet extends HttpServlet {
 			request.setAttribute("images", images.subList(0, 5));
 		}
 		
-		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 	}
 
 	//转发到登陆页面
 	public void loginPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 
 	//登陆页实现
@@ -201,7 +201,7 @@ public class UserServlet extends HttpServlet {
 						}
 					}
 				}
-				request.getRequestDispatcher("jsp/home.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(request, response);
 				return;
 			} else {
 				message = "用户名或密码错误";
@@ -209,14 +209,14 @@ public class UserServlet extends HttpServlet {
 		}
 
 		request.setAttribute("message", message);
-		request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 
 	}
 
 	//转发到注册页面
 	public void registerPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
 	}
 
 	//注册页实现
@@ -252,11 +252,11 @@ public class UserServlet extends HttpServlet {
 		}
 
 		if (message.equals("")) {
-			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 			return;
 		} else {
 			request.setAttribute("message", message);
-			request.getRequestDispatcher("jsp/register.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
 		}
 	}
 
@@ -270,7 +270,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("firstNews", firstNews);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到通知公告详情页面
@@ -283,7 +283,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("notice", notice);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到教学工作详情页面
@@ -296,7 +296,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("teachingWork", teachingWork);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到教学工作详情页面
@@ -309,7 +309,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("scienceWork", scienceWork);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到考研专栏详情页面
@@ -322,7 +322,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("graduate", graduate);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到党群工作详情页面
@@ -335,7 +335,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("party", party);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到学生工作详情页面
@@ -348,7 +348,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("studentWork", studentWork);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 	//转发到学生创新详情页面
@@ -361,7 +361,7 @@ public class UserServlet extends HttpServlet {
 
 		request.setAttribute("creative", creative);
 
-		request.getRequestDispatcher("jsp/content.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}
 
 }

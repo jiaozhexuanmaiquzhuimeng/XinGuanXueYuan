@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>德州学院信息管理学院</title>
 <!-- 标签的page属性值可以是相对路径URL或者绝对路径，但同时只能存在其中一种   -->
-<jsp:include page="/include/includeCss.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/include/includeCss.jsp"></jsp:include>
 <script>
 	var index = 0;
 	var timer = null;
@@ -110,7 +110,7 @@
 				</ul>
 			</div>
 		</div>
-		<jsp:include page="/include/dropDownList.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/include/dropDownList.jsp"></jsp:include>
 	</div>
 	<!--轮播图-->
 	<div id="Carousel" class="carousel">
@@ -287,6 +287,6 @@
 		</div>
 	</div>
 	<!--底部-->
-	<jsp:include page="/include/foot.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/include/foot.jsp"></jsp:include>
 </body>
 </html>

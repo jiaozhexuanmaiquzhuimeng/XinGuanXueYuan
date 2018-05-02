@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>德州学院信息管理学院</title>
-   <jsp:include page="/include/includeCss.jsp"></jsp:include>
+   <jsp:include page="/WEB-INF/include/includeCss.jsp"></jsp:include>
     <script>
         ;
         (function ($, undefined) {
@@ -85,7 +85,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <jsp:include page="/include/dropDownList.jsp"></jsp:include>
+            <jsp:include page="/WEB-INF/include/dropDownList.jsp"></jsp:include>
     </div>
 </div>
     <!--主体-->
@@ -103,7 +103,7 @@
         <div class="container main-bg">
 
             <!-- 文章标题 -->
-            
+            <p>
                 <h4 class="article-title">
                 	${firstNews.title }
                 	${notice.title }
@@ -169,7 +169,7 @@
 
 
     <!--底部-->
-    <jsp:include page="/include/foot.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/include/foot.jsp"></jsp:include>
 </body>
 
 </html>

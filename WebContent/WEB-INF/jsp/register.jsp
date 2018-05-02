@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>信管网站信息管理系统</title>
-	<jsp:include page="/include/includeCss.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/include/includeCss.jsp"></jsp:include>
 </head>
 
 <body class="templatemo-bg-gray">
