@@ -7,6 +7,16 @@ a:hover {
 	color: #000;
 }
 
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+i.glyphicon {
+	margin: 0 15px;
+}
+
 @media ( min-width : 768px) {
 	#content {
 		padding-top: 0;
@@ -341,4 +351,70 @@ a:hover {
 
 p.article-info {
 	text-align: center;
+}
+
+.back-index {
+	color: blue;
+}
+
+/*
+	list @list.jsp
+*/
+.menu-head {
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 50px;
+	background-color: #0063b8;
+	color: #fff;
+	line-height: 50px;
+	text-align: center;
+}
+
+.menu-head {
+	border-bottom: #efefef 1px solid;
+}
+
+.menu-head i.glyphicon {
+	top: 2px;
+}
+
+.way-nav ol.breadcrumb li.active {
+	color: #0063b8;
+	font-weight: bold;
+}
+
+.menu-content ul li {
+	border-bottom: #efefef solid 1px;
+	background-color: #fff;
+}
+
+.menu-content ul li.active {
+	border-right: #0063b8 solid 5px;
+	background: #ccc;
+}
+
+.menu-content ul li:hover {
+	cursor: pointer;
+	border-right: #0063b8 solid 5px;
+	background: #ccc;
+}
+
+.menu-content ul li a {
+	position: relative;
+	display: block;
+	line-height: 50px;
+	padding-left: 25px;
+}
+
+.menu-content ul li a i {
+	color: #0063b8;
+	margin-left: 70px;
+}
+
+.right-list {
+	background-color: #fff;
+	padding: 0 20px;
+}
+ul.list-item li {
+	background: url("../img/li_bg01.png");
 }
