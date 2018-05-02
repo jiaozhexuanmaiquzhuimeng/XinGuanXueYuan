@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.MidiDevice.Info;
 
+import com.xg.domain.CollegeIntroduction;
 import com.xg.domain.Creative;
 import com.xg.domain.FirstNews;
 import com.xg.domain.Graduate;
@@ -23,6 +24,7 @@ import com.xg.domain.ScienceWork;
 import com.xg.domain.StudentWork;
 import com.xg.domain.TeachingWork;
 import com.xg.domain.User;
+import com.xg.service.CollegeIntroductionService;
 import com.xg.service.CreativeService;
 import com.xg.service.FirstNewsService;
 import com.xg.service.GraduateService;
@@ -77,6 +79,8 @@ public class UserServlet extends HttpServlet {
 	CreativeService creativeService = new CreativeService();
 
 	UserService userService = new UserService();
+	
+	CollegeIntroductionService collegeIntroductionService = new CollegeIntroductionService();
 
 	//链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
@@ -91,7 +95,7 @@ public class UserServlet extends HttpServlet {
 		List<Creative> creatives = new ArrayList<Creative>();
 
 		List<FirstNews> images = new ArrayList<FirstNews>();
-		
+
 		firstNews = firstNewsService.selectFirstNews();
 		notices = noticeService.selectNotice();
 		teachingWorks = teachingWorkService.selectTeachingWork();
@@ -102,62 +106,62 @@ public class UserServlet extends HttpServlet {
 		creatives = creativeService.selectCreativeWork();
 
 		images = firstNewsService.selectImage();
-		
+
 		//判断从数据库中的数据是否超过5条
-		if(firstNews.size() < 5 ){
+		if (firstNews.size() < 5) {
 			request.setAttribute("firstNews", firstNews);
-		}else {
+		} else {
 			request.setAttribute("firstNews", firstNews.subList(0, 5));
 		}
-		
-		if(notices.size() < 5 ){
+
+		if (notices.size() < 5) {
 			request.setAttribute("notices", notices);
-		}else {
+		} else {
 			request.setAttribute("notices", notices.subList(0, 5));
 		}
-		
-		if(teachingWorks.size() < 5 ){
+
+		if (teachingWorks.size() < 5) {
 			request.setAttribute("teachingWorks", teachingWorks);
-		}else {
+		} else {
 			request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
 		}
-		
-		if(scienceWorks.size() < 5 ){
+
+		if (scienceWorks.size() < 5) {
 			request.setAttribute("scienceWorks", scienceWorks);
-		}else {
+		} else {
 			request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
 		}
-		
-		if(graduates.size() < 5 ){
+
+		if (graduates.size() < 5) {
 			request.setAttribute("graduates", graduates);
-		}else {
+		} else {
 			request.setAttribute("graduates", graduates.subList(0, 5));
 		}
-		
-		if(partys.size() < 5 ){
+
+		if (partys.size() < 5) {
 			request.setAttribute("partys", partys);
-		}else {
+		} else {
 			request.setAttribute("partys", partys.subList(0, 5));
 		}
-		
-		if(studentWorks.size() < 5 ){
+
+		if (studentWorks.size() < 5) {
 			request.setAttribute("studentWorks", studentWorks);
-		}else {
+		} else {
 			request.setAttribute("studentWorks", studentWorks.subList(0, 5));
 		}
-		
-		if(creatives.size() < 5 ){
+
+		if (creatives.size() < 5) {
 			request.setAttribute("creatives", creatives);
-		}else {
+		} else {
 			request.setAttribute("creatives", creatives.subList(0, 5));
 		}
-		
-		if(images.size() < 5 ){
+
+		if (images.size() < 5) {
 			request.setAttribute("images", images);
-		}else {
+		} else {
 			request.setAttribute("images", images.subList(0, 5));
 		}
-		
+
 		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 	}
 
@@ -355,11 +359,24 @@ public class UserServlet extends HttpServlet {
 	public void contentEightPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
-		
+
 		Creative creative = new Creative();
 		creative = creativeService.selectCreativeById(Integer.parseInt(id));
 
 		request.setAttribute("creative", creative);
+
+		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
+	}
+
+	//转发到学生创新详情页面
+	public void contentNinePage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		
+		CollegeIntroduction collegeIntroduction = new CollegeIntroduction();
+		collegeIntroduction = collegeIntroductionService.selectCollegeIntroductionById(Integer.parseInt(id));
+
+		request.setAttribute("collegeIntroduction", collegeIntroduction);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}

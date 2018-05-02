@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.MidiDevice.Info;
 
+import com.xg.domain.CollegeIntroduction;
 import com.xg.domain.Creative;
 import com.xg.domain.FirstNews;
 import com.xg.domain.Graduate;
@@ -23,6 +24,7 @@ import com.xg.domain.ScienceWork;
 import com.xg.domain.StudentWork;
 import com.xg.domain.TeachingWork;
 import com.xg.domain.User;
+import com.xg.service.CollegeIntroductionService;
 import com.xg.service.CreativeService;
 import com.xg.service.FirstNewsService;
 import com.xg.service.GraduateService;
@@ -66,11 +68,18 @@ public class SchoolProfileServlet extends HttpServlet {
 
 		}
 	}
-
+	
+	CollegeIntroductionService collegeIntroductionService = new CollegeIntroductionService(); 
+	
 	//单击学院概况下拉列表转发到学院概况下拉列表子页面
 	public void SchoolProfilePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
+		
+		List<CollegeIntroduction> collegeIntroductions = new ArrayList<CollegeIntroduction>();
+		
+		collegeIntroductions = collegeIntroductionService.selectTitleAndDateByTable(table);
+		request.setAttribute("collegeIntroductions", collegeIntroductions);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/list.jsp").forward(request, response);
 	}

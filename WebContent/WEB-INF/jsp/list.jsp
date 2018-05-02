@@ -116,14 +116,9 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
-							<li><a href="">关于申报2018年度 “北京大学研究生学术交流基金”的通知</a></li>
+							<c:forEach items="${collegeIntroductions }" var="collegeIntroduction">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentNinePage&id=${collegeIntroduction.id }">${collegeIntroduction.title } <span class="time">${collegeIntroduction.date }</span>  </a></li>
+							</c:forEach>
 						</ul>
 
 					</div>

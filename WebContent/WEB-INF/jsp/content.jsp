@@ -113,6 +113,7 @@
                 	${party.title }
                 	${studentWork.title }
                 	${creative.title }
+                	${collegeIntroduction.title }
                 </h4>
             </p>
 
@@ -130,6 +131,7 @@
                     	${party.author }
                     	${studentWork.author }
                     	${creative.author }
+                    	${collegeIntroduction.author }
                     </span> | 时间:
                     <span class="time-clock">
                     	${firstNews.date }
@@ -140,6 +142,7 @@
                     	${party.date }
                     	${studentWork.date }
                     	${creative.date }
+                    	${collegeIntroduction.date }
                     </span>
                 </abbr>
 
@@ -158,6 +161,7 @@
                         ${party.content }
                         ${studentWork.content }
                         ${creative.content }
+                        ${collegeIntroduction.content }
                     </section>
                 </div>
             </div>
