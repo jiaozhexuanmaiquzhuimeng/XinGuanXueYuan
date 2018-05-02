@@ -91,7 +91,7 @@ public class UserServlet extends HttpServlet {
 		List<Creative> creatives = new ArrayList<Creative>();
 
 		List<FirstNews> images = new ArrayList<FirstNews>();
-
+		
 		firstNews = firstNewsService.selectFirstNews();
 		notices = noticeService.selectNotice();
 		teachingWorks = teachingWorkService.selectTeachingWork();
@@ -102,18 +102,62 @@ public class UserServlet extends HttpServlet {
 		creatives = creativeService.selectCreativeWork();
 
 		images = firstNewsService.selectImage();
-
-		request.setAttribute("firstNews", firstNews.subList(0, 5));
-		request.setAttribute("notices", notices.subList(0, 5));
-		request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
-		request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
-		request.setAttribute("graduates", graduates.subList(0, 5));
-		request.setAttribute("partys", partys.subList(0, 5));
-		request.setAttribute("studentWorks", studentWorks.subList(0, 5));
-		request.setAttribute("creatives", creatives.subList(0, 5));
-
-		request.setAttribute("images", images.subList(0, 4));
-
+		
+		//判断从数据库中的数据是否超过5条
+		if(firstNews.size() < 5 ){
+			request.setAttribute("firstNews", firstNews);
+		}else {
+			request.setAttribute("firstNews", firstNews.subList(0, 5));
+		}
+		
+		if(notices.size() < 5 ){
+			request.setAttribute("notices", notices);
+		}else {
+			request.setAttribute("notices", notices.subList(0, 5));
+		}
+		
+		if(teachingWorks.size() < 5 ){
+			request.setAttribute("teachingWorks", teachingWorks);
+		}else {
+			request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
+		}
+		
+		if(scienceWorks.size() < 5 ){
+			request.setAttribute("scienceWorks", scienceWorks);
+		}else {
+			request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
+		}
+		
+		if(graduates.size() < 5 ){
+			request.setAttribute("graduates", graduates);
+		}else {
+			request.setAttribute("graduates", graduates.subList(0, 5));
+		}
+		
+		if(partys.size() < 5 ){
+			request.setAttribute("partys", partys);
+		}else {
+			request.setAttribute("partys", partys.subList(0, 5));
+		}
+		
+		if(studentWorks.size() < 5 ){
+			request.setAttribute("studentWorks", studentWorks);
+		}else {
+			request.setAttribute("studentWorks", studentWorks.subList(0, 5));
+		}
+		
+		if(creatives.size() < 5 ){
+			request.setAttribute("creatives", creatives);
+		}else {
+			request.setAttribute("creatives", creatives.subList(0, 5));
+		}
+		
+		if(images.size() < 5 ){
+			request.setAttribute("images", images);
+		}else {
+			request.setAttribute("images", images.subList(0, 5));
+		}
+		
 		request.getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 	}
 
