@@ -15,7 +15,7 @@
 							class="nav-slider"></span><b class="caret"></b></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="<%=request.getContextPath()%>/schoolProfileServlet?method=SchoolProfilePage&table=td_college_introduction&title='学院简介'">学院简介</a></li>
+							<li><a href="<%=request.getContextPath()%>/schoolProfileServlet?method=SchoolProfilePage&table=td_college_introduction&title=introduction">学院简介</a></li>
 							<li><a href="#">组织机构</a></li>
 							<li><a href="#">师资队伍</a></li>
 						</ul></li>

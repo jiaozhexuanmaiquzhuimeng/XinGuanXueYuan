@@ -37,20 +37,7 @@
         })(jQuery);
 
         $(document).ready(function () {
-            $('#Carousel').carousel({
-                interval: 3000,
-                pause: 'hover'
-            });
-
-
-            $('.ppt-page').find('li').on('mouseover', function (event) {
-                event.preventDefault();
-                $('.ppt-page').find('li').removeClass('active');
-                $(this).addClass('active');
-                $('.ppt').hide();
-                $('.ppt').eq($(this).index()).show();
-            });
-
+        	
             $('.getup').getUp();
 
             $('#Nav').slide();
@@ -98,7 +85,7 @@
 					<div class="menu-content">
 
 						<ul>
-							<li><a href="">学院简介<i
+							<li data-name="introduction"><a href="">学院简介<i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li><a href="">组织机构<i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
