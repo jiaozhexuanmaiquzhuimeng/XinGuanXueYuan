@@ -81,7 +81,7 @@ public class SchoolProfileServlet extends HttpServlet {
 		collegeIntroductions = collegeIntroductionService.selectTitleAndDateByTable(table);
 		request.setAttribute("collegeIntroductions", collegeIntroductions);
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/list.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/College/list.jsp").forward(request, response);
 	}
 
 }
