@@ -123,12 +123,13 @@ a:hover {
 }
 
 .ppt-wrap {
-	height:230px;
+	height: 230px;
 	padding: 0;
 	position: relative;
 	overflow: hidden;
 }
-.ppt-wrap:hover{
+
+.ppt-wrap:hover {
 	cursor: pointer;
 }
 
@@ -327,4 +328,17 @@ a:hover {
 	width: 100%;
 	height: 100%;
 	background-color: #0071bc;
+}
+
+/*
+	content @content.jsp
+*/
+.article-title {
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.6em;
+}
+
+p.article-info {
+	text-align: center;
 }
