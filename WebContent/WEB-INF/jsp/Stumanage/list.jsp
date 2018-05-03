@@ -103,8 +103,17 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${collegeIntroductions }" var="collegeIntroduction">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentNinePage&id=${collegeIntroduction.id }">${collegeIntroduction.title } <span class="time">${collegeIntroduction.date }</span>  </a></li>
+							<c:forEach items="${td_stumanage_stuwork }" var="stuwork">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=td_stumanage_stuwork">${stuwork.title } <span class="time">${stuwork.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_stumanage_league }" var="league">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${league.id }&table=td_stumanage_league">${league.title } <span class="time">${league.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_stumanage_practice }" var="practice">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${practice.id }&table=td_stumanage_practice">${practice.title } <span class="time">${practice.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_stumanage_electricity }" var="electricity">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${electricity.id }&table=td_stumanage_electricity">${electricity.title } <span class="time">${electricity.date }</span>  </a></li>
 							</c:forEach>
 						</ul>
 

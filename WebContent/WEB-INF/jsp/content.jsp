@@ -95,7 +95,7 @@
         <div class="container" style="padding: 0 0;">
 
             <p>
-                <a href="<%=request.getContextPath()%>/userServlet?method=showTitle" class="back-index">&lt; 返回首页</a>
+                <a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork" class="back-index">&lt; 返回首页</a>
             </p>
         </div>
 
@@ -105,15 +105,45 @@
             <!-- 文章标题 -->
             <p>
                 <h4 class="article-title">
-                	${firstNews.title }
-                	${notice.title }
-                	${teachingWork.title }
-                	${scienceWork.title }
-                	${graduate.title }
-                	${party.title }
-                	${studentWork.title }
-                	${creative.title }
-                	${collegeIntroduction.title }
+                	${td_firstnews.title }
+                	${td_notice.title }
+                	${td_teachingwork.title }
+                	${td_sciencework.title }
+                	${td_graduate.title }
+                	${td_party.title }
+                	${td_studentwork.title }
+                	${td_creative.title }
+                	
+                	${td_college_introduction.title }
+                	${td_college_organization.title }
+                	${td_college_teacherStroop.title }
+                	
+                	${td_education_major.title }
+                	${td_education_teach.title }
+                	${td_education_stugraduate.title }
+                	
+                	${td_Rmstu_admissions.title }
+                	${td_Rmstu_employment.title }
+                	
+                	${td_science_management.title }
+                	${td_science_keylaboratory.title }
+                	${td_science_organization.title }
+                	${td_science_communication.title }
+                	${td_science_international.title }
+                	${td_science_service.title }
+                	
+                	${td_stumanage_stuwork.title }
+                	${td_stumanage_league.title }
+                	${td_stumanage_practice.title }
+                	${td_stumanage_electricity.title }
+                	
+                	${td_test_center.title }
+                	${td_test_money.title }
+                	${td_test_resources.title }
+                	
+                	${td_talent_talent.title }
+                	
+                	${td_classmate_classmate.title }
                 </h4>
             </p>
 
@@ -123,26 +153,86 @@
 
                 <abbr>作者:
                     <span class="author">
-                    	${firstNews.author }
-                    	${notice.author }
-                    	${teachingWork.author }
-                    	${scienceWork.author }
-                    	${graduate.author }
-                    	${party.author }
-                    	${studentWork.author }
-                    	${creative.author }
-                    	${collegeIntroduction.author }
+                    	${td_firstnews.author }
+                    	${td_notice.author }
+                    	${td_teachingwork.author }
+                    	${td_sciencework.author }
+                    	${td_graduate.author }
+                    	${td_party.author }
+                    	${td_studentwork.author }
+                    	${td_creative.author }
+                    	
+                    	${td_college_introduction.author }
+                    	${td_college_organization.author }
+                    	${td_college_teacherStroop.author }
+                    	
+                    	${td_education_major.author }
+                    	${td_education_teach.author }
+                    	${td_education_stugraduate.author }
+                    	
+                    	${td_Rmstu_admissions.author }
+                    	${td_Rmstu_employment.author }
+                    	
+                    	${td_science_management.author }
+                    	${td_science_keylaboratory.author }
+                    	${td_science_organization.author }
+                    	${td_science_communication.author }
+                    	${td_science_international.author }
+                    	${td_science_service.author }
+                    	
+                    	${td_stumanage_stuwork.author }
+                    	${td_stumanage_league.author }
+                    	${td_stumanage_practice.author }
+                    	${td_stumanage_electricity.author }
+                    	
+                    	${td_test_center.author }
+                    	${td_test_money.author }
+                    	${td_test_resources.author }
+                    	
+                    	${td_talent_talent.author }
+                    	
+                    	${td_classmate_classmate.author }
                     </span> | 时间:
                     <span class="time-clock">
-                    	${firstNews.date }
-                    	${notice.date }
-                    	${teachingWork.date }
-                    	${scienceWork.date }
-                    	${graduate.date }
-                    	${party.date }
-                    	${studentWork.date }
-                    	${creative.date }
-                    	${collegeIntroduction.date }
+                    	${td_firstnews.date }
+                    	${td_notice.date }
+                    	${td_teachingwork.date }
+                    	${td_sciencework.date }
+                    	${td_graduate.date }
+                    	${td_party.date }
+                    	${td_studentwork.date }
+                    	${td_creative.date }
+                    	
+                    	${td_college_introduction.date }
+                    	${td_college_organization.date }
+                    	${td_college_teacherStroop.date }
+                    	
+                    	${td_education_major.date }
+                    	${td_education_teach.date }
+                    	${td_education_stugraduate.date }
+                    	
+                    	${td_Rmstu_admissions.date }
+                    	${td_Rmstu_employment.date }
+                    	
+                    	${td_science_management.date }
+                    	${td_science_keylaboratory.date }
+                    	${td_science_organization.date }
+                    	${td_science_communication.date }
+                    	${td_science_international.date }
+                    	${td_science_service.date }
+                    	
+                    	${td_stumanage_stuwork.date }
+                    	${td_stumanage_league.date }
+                    	${td_stumanage_practice.date }
+                    	${td_stumanage_electricity.date }
+                    	
+                    	${td_test_center.date }
+                    	${td_test_money.date }
+                    	${td_test_resources.date }
+                    	
+                    	${td_talent_talent.date }
+                    	
+                    	${td_classmate_classmate.date }
                     </span>
                 </abbr>
 
@@ -153,15 +243,45 @@
             <div class="panel">
                 <div class="panel-body">
                     <section class="article-content">
-                        ${firstNews.content }
-                        ${notice.content }
-                        ${teachingWork.content }
-                        ${scienceWork.content }
-                        ${graduate.content }
-                        ${party.content }
-                        ${studentWork.content }
-                        ${creative.content }
-                        ${collegeIntroduction.content }
+                        ${td_firstnews.content }
+                        ${td_notice.content }
+                        ${td_teachingwork.content }
+                        ${td_sciencework.content }
+                        ${td_graduate.content }
+                        ${td_party.content }
+                        ${td_studentwork.content }
+                        ${td_creative.content }
+                        
+                        ${td_college_introduction.content }
+                        ${td_college_organization.content }
+                        ${td_college_teacherStroop.content }
+                        
+                        ${td_education_major.content }
+                        ${td_education_teach.content }
+                        ${td_education_stugraduate.content }
+                        
+                        ${td_Rmstu_admissions.content }
+                        ${td_Rmstu_employment.content }
+                        
+                        ${td_science_management.content }
+                        ${td_science_keylaboratory.content }
+                        ${td_science_organization.content }
+                        ${td_science_communication.content }
+                        ${td_science_international.content }
+                        ${td_science_service.content }
+                        
+                        ${td_stumanage_stuwork.content }
+                        ${td_stumanage_league.content }
+                        ${td_stumanage_practice.content }
+                        ${td_stumanage_electricity.content }
+                        
+                        ${td_test_center.content }
+                        ${td_test_money.content }
+                        ${td_test_resources.content }
+                        
+                        ${td_talent_talent.content }
+                        
+                        ${td_classmate_classmate.content }
                     </section>
                 </div>
             </div>

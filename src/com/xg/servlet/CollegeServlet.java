@@ -5,44 +5,21 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sound.midi.MidiDevice.Info;
 
-import com.xg.domain.CollegeIntroduction;
-import com.xg.domain.Creative;
-import com.xg.domain.FirstNews;
-import com.xg.domain.Graduate;
-import com.xg.domain.Notice;
-import com.xg.domain.Party;
-import com.xg.domain.ScienceWork;
-import com.xg.domain.StudentWork;
-import com.xg.domain.TeachingWork;
-import com.xg.domain.User;
-import com.xg.service.CollegeIntroductionService;
-import com.xg.service.CreativeService;
-import com.xg.service.FirstNewsService;
-import com.xg.service.GraduateService;
-import com.xg.service.NoticeService;
-import com.xg.service.PartyService;
-import com.xg.service.ScienceWorkService;
-import com.xg.service.StudentWorkService;
-import com.xg.service.TeachingWorkService;
-import com.xg.service.UserService;
-import com.xg.utils.CookieEncryptTool;
-
+import com.xg.domain.Tool;
+import com.xg.service.ToolService;
 /**
  * @author Guozhen_Zhao
  * 创建时间：2018年3月17日  下午2:22:45
  * 备注：
  */
-@WebServlet("/schoolProfileServlet")
-public class SchoolProfileServlet extends HttpServlet {
+@WebServlet("/collegeServlet")
+public class CollegeServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -69,17 +46,17 @@ public class SchoolProfileServlet extends HttpServlet {
 		}
 	}
 	
-	CollegeIntroductionService collegeIntroductionService = new CollegeIntroductionService(); 
+	ToolService toolService = new ToolService();
 	
 	//单击学院概况下拉列表转发到学院概况下拉列表子页面
 	public void SchoolProfilePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
 		
-		List<CollegeIntroduction> collegeIntroductions = new ArrayList<CollegeIntroduction>();
+		List<Tool> tools = new ArrayList<Tool>();
 		
-		collegeIntroductions = collegeIntroductionService.selectTitleAndDateByTable(table);
-		request.setAttribute("collegeIntroductions", collegeIntroductions);
+		tools = toolService.selectToolByTable(table);
+		request.setAttribute(table, tools);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/College/list.jsp").forward(request, response);
 	}

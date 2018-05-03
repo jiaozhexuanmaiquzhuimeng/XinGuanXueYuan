@@ -103,8 +103,23 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${collegeIntroductions }" var="collegeIntroduction">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentNinePage&id=${collegeIntroduction.id }">${collegeIntroduction.title } <span class="time">${collegeIntroduction.date }</span>  </a></li>
+							<c:forEach items="${td_science_management }" var="management">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${management.id }&table=td_science_management">${management.title } <span class="time">${management.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_science_keylaboratory }" var="keylaboratory">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${keylaboratory.id }&table=td_science_keylaboratory">${keylaboratory.title } <span class="time">${keylaboratory.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_science_organization }" var="organization">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${organization.id }&table=td_science_organization">${organization.title } <span class="time">${organization.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_science_communication }" var="communication">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${communication.id }&table=td_science_communication">${communication.title } <span class="time">${communication.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_science_international }" var="international">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${international.id }&table=td_science_international">${international.title } <span class="time">${international.date }</span>  </a></li>
+							</c:forEach>
+							<c:forEach items="${td_science_service }" var="service">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${service.id }&table=td_science_service">${service.title } <span class="time">${service.date }</span>  </a></li>
 							</c:forEach>
 						</ul>
 

@@ -1,12 +1,19 @@
 package com.xg.domain;
 
-public class CollegeIntroduction {
+public class Tool {
 	private int id;
 	private String title;
-
 	private String date;
 	private String author;
 	private String content;
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
 	public String getContent() {
 		return content;
@@ -40,15 +47,7 @@ public class CollegeIntroduction {
 		this.date = date;
 	}
 
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
-	public CollegeIntroduction() {
+	public Tool() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

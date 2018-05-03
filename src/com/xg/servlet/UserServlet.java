@@ -14,25 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.MidiDevice.Info;
 
-import com.xg.domain.CollegeIntroduction;
-import com.xg.domain.Creative;
-import com.xg.domain.FirstNews;
-import com.xg.domain.Graduate;
-import com.xg.domain.Notice;
-import com.xg.domain.Party;
-import com.xg.domain.ScienceWork;
-import com.xg.domain.StudentWork;
-import com.xg.domain.TeachingWork;
+import com.xg.domain.Image;
+import com.xg.domain.Tool;
 import com.xg.domain.User;
-import com.xg.service.CollegeIntroductionService;
-import com.xg.service.CreativeService;
-import com.xg.service.FirstNewsService;
-import com.xg.service.GraduateService;
-import com.xg.service.NoticeService;
-import com.xg.service.PartyService;
-import com.xg.service.ScienceWorkService;
-import com.xg.service.StudentWorkService;
-import com.xg.service.TeachingWorkService;
+import com.xg.service.ImageService;
+import com.xg.service.ToolService;
 import com.xg.service.UserService;
 import com.xg.utils.CookieEncryptTool;
 
@@ -69,93 +55,51 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
-	FirstNewsService firstNewsService = new FirstNewsService();
-	NoticeService noticeService = new NoticeService();
-	TeachingWorkService teachingWorkService = new TeachingWorkService();
-	ScienceWorkService scienceWorkService = new ScienceWorkService();
-	GraduateService graduateService = new GraduateService();
-	PartyService partyService = new PartyService();
-	StudentWorkService studentWorkService = new StudentWorkService();
-	CreativeService creativeService = new CreativeService();
+	ImageService imageService = new ImageService();
+	ToolService toolService = new ToolService();
 
 	UserService userService = new UserService();
-	
-	CollegeIntroductionService collegeIntroductionService = new CollegeIntroductionService();
+
 
 	//链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		List<FirstNews> firstNews = new ArrayList<FirstNews>();
-		List<Notice> notices = new ArrayList<Notice>();
-		List<TeachingWork> teachingWorks = new ArrayList<TeachingWork>();
-		List<ScienceWork> scienceWorks = new ArrayList<ScienceWork>();
-		List<Graduate> graduates = new ArrayList<Graduate>();
-		List<Party> partys = new ArrayList<Party>();
-		List<StudentWork> studentWorks = new ArrayList<StudentWork>();
-		List<Creative> creatives = new ArrayList<Creative>();
 
-		List<FirstNews> images = new ArrayList<FirstNews>();
+		String firstnews = request.getParameter("firstnews");
+		String creative = request.getParameter("creative");
+		String graduate = request.getParameter("graduate");
+		String party = request.getParameter("party");
+		String sciencework = request.getParameter("sciencework");
+		String studentwork = request.getParameter("studentwork");
+		String notice = request.getParameter("notice");
+		String teachingwork = request.getParameter("teachingwork");
 
-		firstNews = firstNewsService.selectFirstNews();
-		notices = noticeService.selectNotice();
-		teachingWorks = teachingWorkService.selectTeachingWork();
-		scienceWorks = scienceWorkService.selectScienceWork();
-		graduates = graduateService.selectGraduate();
-		partys = partyService.selectParty();
-		studentWorks = studentWorkService.selectStudentWork();
-		creatives = creativeService.selectCreativeWork();
+		List<String> tables = new ArrayList<String>();
+		tables.add(teachingwork);
+		tables.add(notice);
+		tables.add(firstnews);
+		tables.add(creative);
+		tables.add(graduate);
+		tables.add(party);
+		tables.add(sciencework);
+		tables.add(studentwork);
 
-		images = firstNewsService.selectImage();
+		for (String table : tables) {
+			List<Tool> tools = new ArrayList<Tool>();
+			tools = toolService.selectToolByTable(table);
 
-		//判断从数据库中的数据是否超过5条
-		if (firstNews.size() < 5) {
-			request.setAttribute("firstNews", firstNews);
-		} else {
-			request.setAttribute("firstNews", firstNews.subList(0, 5));
+			//判断从数据库中的数据是否超过5条
+			if (tools.size() < 5) {
+				request.setAttribute(table, tools);
+			} else {
+				request.setAttribute(table, tools.subList(0, 5));
+			}
 		}
 
-		if (notices.size() < 5) {
-			request.setAttribute("notices", notices);
-		} else {
-			request.setAttribute("notices", notices.subList(0, 5));
-		}
+		List<Image> images = new ArrayList<Image>();
 
-		if (teachingWorks.size() < 5) {
-			request.setAttribute("teachingWorks", teachingWorks);
-		} else {
-			request.setAttribute("teachingWorks", teachingWorks.subList(0, 5));
-		}
-
-		if (scienceWorks.size() < 5) {
-			request.setAttribute("scienceWorks", scienceWorks);
-		} else {
-			request.setAttribute("scienceWorks", scienceWorks.subList(0, 5));
-		}
-
-		if (graduates.size() < 5) {
-			request.setAttribute("graduates", graduates);
-		} else {
-			request.setAttribute("graduates", graduates.subList(0, 5));
-		}
-
-		if (partys.size() < 5) {
-			request.setAttribute("partys", partys);
-		} else {
-			request.setAttribute("partys", partys.subList(0, 5));
-		}
-
-		if (studentWorks.size() < 5) {
-			request.setAttribute("studentWorks", studentWorks);
-		} else {
-			request.setAttribute("studentWorks", studentWorks.subList(0, 5));
-		}
-
-		if (creatives.size() < 5) {
-			request.setAttribute("creatives", creatives);
-		} else {
-			request.setAttribute("creatives", creatives.subList(0, 5));
-		}
-
+		images = imageService.selectImage();
+		
 		if (images.size() < 5) {
 			request.setAttribute("images", images);
 		} else {
@@ -264,119 +208,16 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
-	//转发到最新动态详情页面
+	//转发到各页面的详情页
 	public void contentPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
+		String table = request.getParameter("table");
 
-		FirstNews firstNews = new FirstNews();
-		firstNews = firstNewsService.selectFirstNewsById(Integer.parseInt(id));
+		Tool tool = new Tool();
+		tool = toolService.selectToolByIdAndTable(Integer.parseInt(id), table);
 
-		request.setAttribute("firstNews", firstNews);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到通知公告详情页面
-	public void contentTwoPage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		Notice notice = new Notice();
-		notice = noticeService.selectNoticeById(Integer.parseInt(id));
-
-		request.setAttribute("notice", notice);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到教学工作详情页面
-	public void contentThreePage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		TeachingWork teachingWork = new TeachingWork();
-		teachingWork = teachingWorkService.selectTeachingWorkById(Integer.parseInt(id));
-
-		request.setAttribute("teachingWork", teachingWork);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到教学工作详情页面
-	public void contentFourPage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		ScienceWork scienceWork = new ScienceWork();
-		scienceWork = scienceWorkService.selectScienceWorkById(Integer.parseInt(id));
-
-		request.setAttribute("scienceWork", scienceWork);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到考研专栏详情页面
-	public void contentFivePage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		Graduate graduate = new Graduate();
-		graduate = graduateService.selectGraduateById(Integer.parseInt(id));
-
-		request.setAttribute("graduate", graduate);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到党群工作详情页面
-	public void contentSixPage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		Party party = new Party();
-		party = partyService.selectGraduateById(Integer.parseInt(id));
-
-		request.setAttribute("party", party);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到学生工作详情页面
-	public void contentSevenPage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		StudentWork studentWork = new StudentWork();
-		studentWork = studentWorkService.selectStudentWorkById(Integer.parseInt(id));
-
-		request.setAttribute("studentWork", studentWork);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到学生创新详情页面
-	public void contentEightPage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-
-		Creative creative = new Creative();
-		creative = creativeService.selectCreativeById(Integer.parseInt(id));
-
-		request.setAttribute("creative", creative);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
-	}
-
-	//转发到学生创新详情页面
-	public void contentNinePage(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String id = request.getParameter("id");
-		
-		CollegeIntroduction collegeIntroduction = new CollegeIntroduction();
-		collegeIntroduction = collegeIntroductionService.selectCollegeIntroductionById(Integer.parseInt(id));
-
-		request.setAttribute("collegeIntroduction", collegeIntroduction);
+		request.setAttribute(table, tool);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
 	}

@@ -105,8 +105,8 @@
 				<ul class="banner-list list-inline hidden-xs">
 					<li><a
 						href="<%=request.getContextPath()%>/userServlet?method=loginPage">管理员登陆</a></li>
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn/">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -179,9 +179,9 @@
 					</div>
 					<div class="col-lg-7 col-sm-7 col-md-7 col-xs-12">
 						<ul class="news-list list-inline">
-							<c:forEach items="${firstNews }" var="firstNew">
+							<c:forEach items="${td_firstnews }" var="firstNew">
 								<li><a
-									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${firstNew.id }"
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${firstNew.id }&table=td_firstnews"
 									id="${firstNew.id }">${firstNew.title }</a><span
 									class="pull-right">${firstNew.date }</span></li>
 							</c:forEach>
@@ -193,9 +193,9 @@
 						通知公告<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${notices }" var="notice">
+						<c:forEach items="${td_notice }" var="notice">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentTwoPage&id=${notice.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${notice.id }&table=td_notice"
 								id="${notice.id }">${notice.title }</a><span class="pull-right">${notice.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -208,9 +208,9 @@
 						教学工作<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${teachingWorks }" var="teachingWork">
+						<c:forEach items="${td_teachingwork }" var="teachingWork">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentThreePage&id=${teachingWork.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${teachingWork.id }&table=td_teachingwork"
 								id="${teachingWork.id }">${teachingWork.title }</a><span
 								class="pull-right">${teachingWork.date }</span></li>
 						</c:forEach>
@@ -221,9 +221,9 @@
 						科研工作<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${scienceWorks }" var="scienceWork">
+						<c:forEach items="${td_sciencework }" var="scienceWork">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentFourPage&id=${scienceWork.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${scienceWork.id }&table=td_sciencework"
 								id="${scienceWork.id }">${scienceWork.title }</a><span
 								class="pull-right">${scienceWork.date }</span></li>
 						</c:forEach>
@@ -234,9 +234,9 @@
 						考研专栏<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${graduates }" var="graduate">
+						<c:forEach items="${td_graduate }" var="graduate">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentFivePage&id=${graduate.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${graduate.id }&table=td_graduate"
 								id="${graduate.id }">${graduate.title }</a><span
 								class="pull-right">${graduate.date }</span></li>
 						</c:forEach>
@@ -250,9 +250,9 @@
 						党群工作<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${partys }" var="party">
+						<c:forEach items="${td_party }" var="party">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentSixPage&id=${party.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${party.id }&table=td_party"
 								id="${party.id }">${party.title }</a><span class="pull-right">${party.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -262,9 +262,9 @@
 						学生工作<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${studentWorks }" var="studentWork">
+						<c:forEach items="${td_studentwork }" var="studentWork">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentSevenPage&id=${studentWork.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${studentWork.id }&table=td_studentwork"
 								id="${studentWork.id }">${studentWork.title }</a><span
 								class="pull-right">${studentWork.date }</span></li>
 						</c:forEach>
@@ -275,9 +275,9 @@
 						科技创新<a href="#" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${creatives }" var="creative">
+						<c:forEach items="${td_creative }" var="creative">
 							<li><a
-								href="<%=request.getContextPath()%>/userServlet?method=contentEightPage&id=${creative.id }"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${creative.id }&table=td_creative"
 								id="${creative.id }">${creative.title }</a><span
 								class="pull-right">${creative.date }</span></li>
 						</c:forEach>

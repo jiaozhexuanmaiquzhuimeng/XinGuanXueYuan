@@ -103,8 +103,8 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${collegeIntroductions }" var="collegeIntroduction">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentNinePage&id=${collegeIntroduction.id }">${collegeIntroduction.title } <span class="time">${collegeIntroduction.date }</span>  </a></li>
+							<c:forEach items="${td_talent_talent }" var="talent">
+								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${talent.id }&table=td_talent_talent">${talent.title } <span class="time">${talent.date }</span>  </a></li>
 							</c:forEach>
 						</ul>
 
