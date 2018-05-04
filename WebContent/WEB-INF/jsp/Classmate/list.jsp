@@ -67,7 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li><a
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
 					<li class="active">校友风采</li>
 				</ol>
 			</div>
@@ -82,10 +83,9 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_classmate_classmate }" var="classmate">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${classmate.id }&table=td_classmate_classmate">${classmate.title }</a>
-									<span class="time">${classmate.date }</span>
-								</li>
+								<li><a
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${classmate.id }&table=td_classmate_classmate">${classmate.title }</a>
+									<span class="time">${classmate.date }</span></li>
 							</c:forEach>
 						</ul>
 
