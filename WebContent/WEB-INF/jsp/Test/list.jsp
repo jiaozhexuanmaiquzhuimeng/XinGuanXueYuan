@@ -67,8 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
 			</div>
@@ -79,17 +79,17 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
+						<span><i class="glyphicon glyphicon-home"></i><span class="title">实验教学</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
+							<li data-name="center"><a href=""><span>示范中心</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
+							<li data-name="money"><a href=""><span>固定资产</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
+							<li data-name="resources"><a href=""><span>网络资源</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -104,13 +104,22 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_test_center }" var="center">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${center.id }&table=td_test_center">${center.title } <span class="time">${center.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${center.id }&table=td_test_center">${center.title }</a>
+									<span class="time">${center.date }</span>
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_test_money }" var="money">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${money.id }&table=td_test_money">${money.title } <span class="time">${money.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${money.id }&table=td_test_money">${money.title }   </a>
+									<span class="time">${money.date }</span>
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_test_resources }" var="resources">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${resources.id }&table=td_test_resources">${resources.title } <span class="time">${resources.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${resources.id }&table=td_test_resources">${resources.title }  </a>
+									<span class="time">${resources.date }</span> 
+								</li>
 							</c:forEach>
 						</ul>
 

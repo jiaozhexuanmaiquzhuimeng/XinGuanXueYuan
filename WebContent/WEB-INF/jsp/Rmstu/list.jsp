@@ -67,8 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
 			</div>
@@ -79,17 +79,15 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
+						<span><i class="glyphicon glyphicon-home"></i><span class="title">招生就业</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
+							<li data-name="admissions"><a href=""><span>招生工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
-									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
+							<li data-name="employment"><a href=""><span>教学工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -104,10 +102,16 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_Rmstu_admissions }" var="admissions">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${admissions.id }&table=td_Rmstu_admissions">${admissions.title } <span class="time">${admissions.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${admissions.id }&table=td_Rmstu_admissions">${admissions.title }   </a>
+									<span class="time">${admissions.date }</span>
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_Rmstu_employment }" var="employment">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${employment.id }&table=td_Rmstu_employment">${employment.title } <span class="time">${employment.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${employment.id }&table=td_Rmstu_employment">${employment.title }   </a>
+									<span class="time">${employment.date }</span>
+								</li>
 							</c:forEach>
 						</ul>
 

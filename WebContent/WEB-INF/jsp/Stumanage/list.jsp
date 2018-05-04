@@ -67,8 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
 			</div>
@@ -79,17 +79,19 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
+						<span><i class="glyphicon glyphicon-home"></i><span class="title">学生管理</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
+							<li data-name="stuwork"><a href=""><span>学生工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
+							<li data-name="league"><a href=""><span>团总支</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
+							<li data-name="practice"><a href=""><span>实习实训</span><i
+									class="glyphicon glyphicon-chevron-right"></i></a></li>
+							<li data-name="electricity"><a href=""><span>电商基地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -104,16 +106,28 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_stumanage_stuwork }" var="stuwork">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=td_stumanage_stuwork">${stuwork.title } <span class="time">${stuwork.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=td_stumanage_stuwork">${stuwork.title } </a>
+									<span class="time">${stuwork.date }</span>  
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_stumanage_league }" var="league">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${league.id }&table=td_stumanage_league">${league.title } <span class="time">${league.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${league.id }&table=td_stumanage_league">${league.title } </a>
+									<span class="time">${league.date }</span>  
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_stumanage_practice }" var="practice">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${practice.id }&table=td_stumanage_practice">${practice.title } <span class="time">${practice.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${practice.id }&table=td_stumanage_practice">${practice.title } </a>
+									<span class="time">${practice.date }</span>  
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_stumanage_electricity }" var="electricity">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${electricity.id }&table=td_stumanage_electricity">${electricity.title } <span class="time">${electricity.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${electricity.id }&table=td_stumanage_electricity">${electricity.title } </a>
+									<span class="time">${electricity.date }</span>  
+								</li>
 							</c:forEach>
 						</ul>
 

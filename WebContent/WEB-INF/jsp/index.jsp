@@ -28,7 +28,7 @@
 	function autoPlay() {
 		timer = setInterval(function() {
 			changeImg()
-		}, 1000);
+		}, 2000);
 	}
 
 	(function($, undefined) {

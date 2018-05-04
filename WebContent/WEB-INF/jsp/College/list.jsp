@@ -67,9 +67,9 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
-					<li class="active">学院简介</li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active-second"><a href="#"></a></li>
+					<li class="active"></li>
 				</ol>
 			</div>
 
@@ -79,17 +79,17 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
+						<span><i class="glyphicon glyphicon-home"></i><span class="title">学院概况</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
+							<li data-name="introduction"><a href=""><span>学院简介</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
+							<li data-name="organization"><a href=""><span>组织机构</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
+							<li data-name="teacherStroop"><a href=""><span>师资队伍</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -104,13 +104,23 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_college_introduction }" var="collegeIntroduction">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${collegeIntroduction.id }&table=td_college_introduction">${collegeIntroduction.title } <span class="time">${collegeIntroduction.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${collegeIntroduction.id }&table=td_college_introduction">${collegeIntroduction.title }</a>
+									<span class="time">${collegeIntroduction.date }</span>
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_college_organization }" var="college_organization">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${college_organization.id }&table=td_college_organization">${college_organization.title } <span class="time">${college_organization.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${college_organization.id }&table=td_college_organization">${college_organization.title } </a>
+									<span class="time">${college_organization.date }</span>  
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_college_teacherStroop }" var="college_teacherStroop">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${college_teacherStroop.id }&table=td_college_teacherStroop">${college_teacherStroop.title } <span class="time">${college_teacherStroop.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${college_teacherStroop.id }&table=td_college_teacherStroop">${college_teacherStroop.title }</a>
+									<span class="time">${college_teacherStroop.date }</span>
+								</li>
+								
 							</c:forEach>
 						</ul>
 

@@ -67,8 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
 			</div>
@@ -79,17 +79,17 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
+						<span><i class="glyphicon glyphicon-home"></i><span class="title">教务教学</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
+							<li data-name="major"><a href=""><span>专业建设</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
+							<li data-name="teach"><a href=""><span>教学工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
+							<li data-name="stugraduate"><a href=""><span>考研工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -104,13 +104,22 @@
 
 						<ul class="list-item">
 							<c:forEach items="${td_education_major }" var="major">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${major.id }&table=td_education_major">${major.title } <span class="time">${major.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${major.id }&table=td_education_major">${major.title } </a>
+									<span class="time">${major.date }</span>  
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_education_teach }" var="teach">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${teach.id }&table=td_education_teach">${teach.title } <span class="time">${teach.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${teach.id }&table=td_education_teach">${teach.title }  </a>
+									<span class="time">${teach.date }</span> 
+								</li>
 							</c:forEach>
 							<c:forEach items="${td_education_stugraduate }" var="stugraduate">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stugraduate.id }&table=td_education_stugraduate">${stugraduate.title } <span class="time">${stugraduate.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stugraduate.id }&table=td_education_stugraduate">${stugraduate.title }  </a>
+									<span class="time">${stugraduate.date }</span> 
+								</li>
 							</c:forEach>
 						</ul>
 

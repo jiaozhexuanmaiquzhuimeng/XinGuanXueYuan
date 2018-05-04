@@ -67,44 +67,25 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="#">首页</a></li>
-					<li><a href="#">学院概况</a></li>
-					<li class="active">学院简介</li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li class="active">人才引进</li>
 				</ol>
 			</div>
 
 
 
 			<div class="row">
-				<div class="col-md-3 left-menu">
 
-					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i>学院概况</span>
-					</div>
-
-					<div class="menu-content">
-
-						<ul>
-							<li data-name="introduction"><a href="">学院简介<i
-									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">组织机构<i
-									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li><a href="">师资队伍<i
-									class="glyphicon glyphicon-chevron-right"></i></a></li>
-						</ul>
-
-					</div>
-
-
-				</div>
-
-				<div class="col-md-9">
+				<div class="col-md-12">
 
 					<div class="right-list">
 
 						<ul class="list-item">
 							<c:forEach items="${td_talent_talent }" var="talent">
-								<li><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${talent.id }&table=td_talent_talent">${talent.title } <span class="time">${talent.date }</span>  </a></li>
+								<li>
+									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${talent.id }&table=td_talent_talent">${talent.title } </a>
+									<span class="time">${talent.date }</span>  
+								</li>
 							</c:forEach>
 						</ul>
 
