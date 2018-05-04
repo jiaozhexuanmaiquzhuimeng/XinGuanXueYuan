@@ -48,13 +48,11 @@
 						$(this).find(options.element1).on(
 								options.type1,
 								function(event) {
-									event.preventDefault();
 									$(this).find(options.element2).stop().show(
 											options.speed);
 								}).on(
 								options.type2,
 								function(event) {
-									event.preventDefault();
 									$(this).find(options.element2).stop().hide(
 											options.speed);
 								});

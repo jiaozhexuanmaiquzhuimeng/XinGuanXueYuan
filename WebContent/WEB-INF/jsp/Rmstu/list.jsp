@@ -53,8 +53,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,9 +85,9 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="admissions"><a href=""><span>招生工作</span><i
+							<li data-name="admissions"><a href="<%=request.getContextPath()%>/rmstuServlet?method=RmstuPage&table=td_Rmstu_admissions&title=admissions"><span>招生工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="employment"><a href=""><span>教学工作</span><i
+							<li data-name="employment"><a href="<%=request.getContextPath()%>/rmstuServlet?method=RmstuPage&table=td_Rmstu_employment&title=employment"><span>教学工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 

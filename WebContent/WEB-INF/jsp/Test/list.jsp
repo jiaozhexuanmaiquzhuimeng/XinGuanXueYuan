@@ -53,8 +53,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,11 +85,11 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="center"><a href=""><span>示范中心</span><i
+							<li data-name="center"><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center"><span>示范中心</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="money"><a href=""><span>固定资产</span><i
+							<li data-name="money"><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money"><span>固定资产</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="resources"><a href=""><span>网络资源</span><i
+							<li data-name="resources"><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources"><span>网络资源</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 

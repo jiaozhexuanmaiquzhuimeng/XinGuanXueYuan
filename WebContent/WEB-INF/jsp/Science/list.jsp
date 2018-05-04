@@ -53,8 +53,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,17 +85,17 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="management"><a href=""><span>科研管理</span><i
+							<li data-name="management"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management"><span>科研管理</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="keylaboratory"><a href=""><span>重点实验室</span><i
+							<li data-name="keylaboratory"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_keylaboratory&title=keylaboratory"><span>重点实验室</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="organization"><a href=""><span>学术组织</span><i
+							<li data-name="organization"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization"><span>学术组织</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="communication"><a href=""><span>学术交流</span><i
+							<li data-name="communication"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_communication&title=communication"><span>学术交流</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="international"><a href=""><span>国际办学</span><i
+							<li data-name="international"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_international&title=international"><span>国际办学</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="service"><a href=""><span>社会服务</span><i
+							<li data-name="service"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_service&title=service"><span>社会服务</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 

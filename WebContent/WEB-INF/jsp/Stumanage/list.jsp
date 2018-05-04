@@ -53,8 +53,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,13 +85,13 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="stuwork"><a href=""><span>学生工作</span><i
+							<li data-name="stuwork"><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_stuwork&title=stuwork"><span>学生工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="league"><a href=""><span>团总支</span><i
+							<li data-name="league"><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_league&title=league"><span>团总支</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="practice"><a href=""><span>实习实训</span><i
+							<li data-name="practice"><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_practice&title=practice"><span>实习实训</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="electricity"><a href=""><span>电商基地</span><i
+							<li data-name="electricity"><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_electricity&title=electricity"><span>电商基地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 

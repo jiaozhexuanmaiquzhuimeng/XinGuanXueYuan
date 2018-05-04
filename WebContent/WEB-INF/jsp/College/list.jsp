@@ -25,10 +25,8 @@
 
                 $(this).each(function (index, el) {
                     $(this).find(options.element1).on(options.type1, function (event) {
-                        event.preventDefault();
                         $(this).find(options.element2).stop().show(options.speed);
                     }).on(options.type2, function (event) {
-                        event.preventDefault();
                         $(this).find(options.element2).stop().hide(options.speed);
                     });
                 });
@@ -53,8 +51,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,11 +83,11 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="introduction"><a href=""><span>学院简介</span><i
+							<li data-name="introduction"><a href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&table=td_college_introduction&title=introduction"><span>学院简介</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="organization"><a href=""><span>组织机构</span><i
+							<li data-name="organization"><a href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&table=td_college_organization&title=organization"><span>组织机构</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="teacherStroop"><a href=""><span>师资队伍</span><i
+							<li data-name="teacherStroop"><a href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&table=td_college_teacherStroop&title=teacherStroop"><span>师资队伍</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 

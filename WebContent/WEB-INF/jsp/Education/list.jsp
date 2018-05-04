@@ -53,8 +53,8 @@
 			<div class="container banner-inner">
 				<img src="img/logo4.png" alt="logo" class="img-responsive">
 				<ul class="banner-list list-inline hidden-xs">
-					<li><a href="#">德州学院</a></li>
-					<li><a href="#">访问旧版</a></li>
+					<li><a href="http://www.dzu.edu.cn/">德州学院</a></li>
+					<li><a href="http://jsjx.dzu.edu.cn">访问旧版</a></li>
 				</ul>
 			</div>
 		</div>
@@ -85,11 +85,11 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="major"><a href=""><span>专业建设</span><i
+							<li data-name="major"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_major&title=major"><span>专业建设</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="teach"><a href=""><span>教学工作</span><i
+							<li data-name="teach"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_teach&title=teach"><span>教学工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="stugraduate"><a href=""><span>考研工作</span><i
+							<li data-name="stugraduate"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_stugraduate&title=stugraduate"><span>考研工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
