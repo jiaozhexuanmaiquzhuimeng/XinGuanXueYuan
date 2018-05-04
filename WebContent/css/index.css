@@ -462,3 +462,6 @@ ul.list-item li span.time {
 	float: right;
 	line-height: 50px;
 }
+.page-nav{
+	float: right;
+}
