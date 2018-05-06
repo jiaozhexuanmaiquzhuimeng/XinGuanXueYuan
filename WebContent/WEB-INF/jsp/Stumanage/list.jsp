@@ -120,7 +120,7 @@
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="stuwork">
 								<li><a
-									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=${table }">${stuwork.title }
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=${table }&title=${title }">${stuwork.title }
 								</a> <span class="time">${stuwork.date }</span></li>
 							</c:forEach>
 						</ul>
@@ -132,7 +132,7 @@
 							<ul class="pagination pagination-sm">
 								<c:if test="${pageInfo.hasPrev }">
 									<li><a
-										href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${pageInfo.prevPage }&table=${table }"
+										href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
 										aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
 								</c:if>
 
@@ -143,11 +143,11 @@
 										<c:forEach begin="1" end="10" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -158,11 +158,11 @@
 											end="${pageInfo.pageNo+4 }" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -173,11 +173,11 @@
 											end="${totalPageNumber }" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -187,18 +187,18 @@
 									<c:forEach begin="1" end="${totalPageNumber }" var="n">
 										<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 									</c:forEach>
 								</c:if>
 
 								<c:if test="${pageInfo.hasNext }">
 									<li><a
-										href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${pageInfo.nextPage }&table=${table }"
+										href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&pageNo=${pageInfo.nextPage }&table=${table }&title=${title }"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
 								</c:if>

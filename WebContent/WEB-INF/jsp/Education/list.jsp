@@ -129,7 +129,7 @@
 							<ul class="pagination pagination-sm">
 								<c:if test="${pageInfo.hasPrev }">
 									<li><a
-										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.prevPage }&table=${table }"
+										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
 										aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
 								</c:if>
 
@@ -140,11 +140,11 @@
 										<c:forEach begin="1" end="10" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -155,11 +155,11 @@
 											end="${pageInfo.pageNo+4 }" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -170,11 +170,11 @@
 											end="${totalPageNumber }" var="n">
 											<c:if test="${pageInfo.pageNo == n }">
 												<li class="active"><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 											<c:if test="${pageInfo.pageNo != n }">
 												<li><a
-													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+													href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 											</c:if>
 										</c:forEach>
 									</c:if>
@@ -184,18 +184,18 @@
 									<c:forEach begin="1" end="${totalPageNumber }" var="n">
 										<c:if test="${pageInfo.pageNo == n }">
 											<li class="active"><a
-												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 										</c:if>
 										<c:if test="${pageInfo.pageNo != n }">
 											<li><a
-												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 										</c:if>
 									</c:forEach>
 								</c:if>
 
 								<c:if test="${pageInfo.hasNext }">
 									<li><a
-										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.nextPage }&table=${table }"
+										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.nextPage }&table=${table }&title=${title }"
 										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 									</a></li>
 								</c:if>

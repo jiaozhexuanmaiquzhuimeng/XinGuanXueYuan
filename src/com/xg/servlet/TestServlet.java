@@ -55,6 +55,7 @@ public class TestServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
 		String pageNo = request.getParameter("pageNo");
+		String title = request.getParameter("title");
 		if (pageNo.equals("")) {
 			pageNo = "1";
 		}
@@ -66,6 +67,7 @@ public class TestServlet extends HttpServlet {
 		request.setAttribute("pageInfo", page);
 		request.setAttribute("table", table);
 		request.setAttribute("totalPageNumber", totalPageNumber);
+		request.setAttribute("title", title);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/Test/list.jsp").forward(request, response);
 	}
