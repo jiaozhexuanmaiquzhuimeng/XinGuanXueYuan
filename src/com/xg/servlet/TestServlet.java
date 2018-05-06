@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
+import com.xg.utils.Page;
 
 /**
  * @author Guozhen_Zhao
@@ -53,11 +54,18 @@ public class TestServlet extends HttpServlet {
 	public void TestPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
+		String pageNo = request.getParameter("pageNo");
+		if (pageNo.equals("")) {
+			pageNo = "1";
+		}
 
-		List<Tool> tools = new ArrayList<Tool>();
+		Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
+		page = toolService.getPage(Integer.parseInt(pageNo), table);
+		int totalPageNumber = page.getTotalPageNumber();
 
-		tools = toolService.selectToolByTable(table);
-		request.setAttribute(table, tools);
+		request.setAttribute("pageInfo", page);
+		request.setAttribute("table", table);
+		request.setAttribute("totalPageNumber", totalPageNumber);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/Test/list.jsp").forward(request, response);
 	}

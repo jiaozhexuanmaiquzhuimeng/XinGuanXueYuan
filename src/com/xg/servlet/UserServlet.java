@@ -5,14 +5,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jws.soap.SOAPBinding.Use;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sound.midi.MidiDevice.Info;
 
 import com.xg.domain.Image;
 import com.xg.domain.Tool;
@@ -60,7 +58,6 @@ public class UserServlet extends HttpServlet {
 
 	UserService userService = new UserService();
 
-
 	//链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -99,7 +96,7 @@ public class UserServlet extends HttpServlet {
 		List<Image> images = new ArrayList<Image>();
 
 		images = imageService.selectImage();
-		
+
 		if (images.size() < 5) {
 			request.setAttribute("images", images);
 		} else {

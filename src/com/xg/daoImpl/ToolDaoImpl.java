@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.xg.dao.ToolDao;
 import com.xg.domain.Tool;
+import com.xg.utils.Page;
 
 public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 
@@ -25,4 +26,31 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 		return notices;
 	}
 
+	@Override
+	public long getTotalToolNumber(String table) {
+		String sql = "select count(id) from " + table;
+		return getSingleVal(sql);
+	}
+
+	@Override
+	public Page<Tool> getPage(int pageNo, String table) {
+		Page<Tool> page = new Page<>(pageNo);
+		
+		page.setTotalItemNumber(getTotalToolNumber(table));
+		//获得当前页的书
+		page.setList(getPageList(table, pageNo, page.getPageSize()));
+		
+		return page;
+	}
+
+	@Override
+	public List<Tool> getPageList(String table, int pageNo, int pageSize) {
+		String sql = "SELECT * from " + table + " order by date desc limit ?,?";
+		List<Tool> tools = new ArrayList<Tool>();
+		
+		tools = queryForList(sql, (pageNo-1)*pageSize, pageSize);
+		return tools;
+	}
+
+	
 }

@@ -67,7 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li><a
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
@@ -79,23 +80,30 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i><span class="title">科研工作</span></span>
+						<span><i class="glyphicon glyphicon-home"></i><span
+							class="title">科研工作</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="management"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management"><span>科研管理</span><i
+							<li data-name="management"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management&pageNo=1"><span>科研管理</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="keylaboratory"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_keylaboratory&title=keylaboratory"><span>重点实验室</span><i
+							<li data-name="keylaboratory"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_keylaboratory&title=keylaboratory&pageNo=1"><span>重点实验室</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="organization"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization"><span>学术组织</span><i
+							<li data-name="organization"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization&pageNo=1"><span>学术组织</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="communication"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_communication&title=communication"><span>学术交流</span><i
+							<li data-name="communication"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_communication&title=communication&pageNo=1"><span>学术交流</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="international"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_international&title=international"><span>国际办学</span><i
+							<li data-name="international"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_international&title=international&pageNo=1"><span>国际办学</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="service"><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_service&title=service"><span>社会服务</span><i
+							<li data-name="service"><a
+								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_service&title=service&pageNo=1"><span>社会服务</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -109,43 +117,68 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${td_science_management }" var="management">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${management.id }&table=td_science_management">${management.title } </a>
-									<span class="time">${management.date }</span>  
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_science_keylaboratory }" var="keylaboratory">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${keylaboratory.id }&table=td_science_keylaboratory">${keylaboratory.title } </a>
-									<span class="time">${keylaboratory.date }</span>  
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_science_organization }" var="organization">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${organization.id }&table=td_science_organization">${organization.title } </a>
-								  	<span class="time">${organization.date }</span>
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_science_communication }" var="communication">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${communication.id }&table=td_science_communication">${communication.title } </a>\
-									<span class="time">${communication.date }</span>  
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_science_international }" var="international">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${international.id }&table=td_science_international">${international.title }   </a>
-									<span class="time">${international.date }</span>
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_science_service }" var="service">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${service.id }&table=td_science_service">${service.title }   </a>
-									<span class="time">${service.date }</span>
-								</li>
+							<c:forEach items="${pageInfo.list }" var="management">
+								<li><a
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${management.id }&table=${table }">${management.title }
+								</a> <span class="time">${management.date }</span></li>
 							</c:forEach>
 						</ul>
+
+					</div>
+					<div class="page-nav">
+
+						<nav aria-label="...">
+							<ul class="pagination pagination-sm">
+								<c:if test="${pageInfo.hasPrev }">
+									<li><a
+										href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${pageInfo.prevPage }&table=${table }"
+										aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+								</c:if>
+
+								<!-- 1-10页代码显示 -->
+								<c:if test="${totalPageNumber>10 }">
+									<!-- 如果当前页面大于等于1 && 小于等于 6 -->
+									<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
+										<c:forEach begin="1" end="10" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+									<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
+									<c:if
+										test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
+										<c:forEach begin="${pageInfo.pageNo-5 }"
+											end="${pageInfo.pageNo+4 }" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+									<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
+									<c:if
+										test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
+										<c:forEach begin="${totalPageNumber-9 }"
+											end="${totalPageNumber }" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+								</c:if>
+								<!-- 如果总页数小于10页) -->
+								<c:if test="${totalPageNumber<10 }">
+									<c:forEach begin="1" end="${totalPageNumber }" var="n">
+										<li><a
+											href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${n}&table=${table }">${n}</a></li>
+									</c:forEach>
+								</c:if>
+
+								<c:if test="${pageInfo.hasNext }">
+									<li><a
+										href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${pageInfo.nextPage }&table=${table }"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</c:if>
+							</ul>
+						</nav>
 
 					</div>
 

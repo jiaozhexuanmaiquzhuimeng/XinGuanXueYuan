@@ -82,14 +82,70 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${td_classmate_classmate }" var="classmate">
+							<c:forEach items="${pageInfo.list }" var="classmate">
 								<li><a
-									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${classmate.id }&table=td_classmate_classmate">${classmate.title }</a>
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${classmate.id }&table=${table }">${classmate.title }</a>
 									<span class="time">${classmate.date }</span></li>
 							</c:forEach>
 						</ul>
 
 					</div>
+
+				</div>
+				<div class="page-nav">
+
+					<nav aria-label="...">
+						<ul class="pagination pagination-sm">
+							<c:if test="${pageInfo.hasPrev }">
+								<li><a
+									href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${pageInfo.prevPage }&table=${table }"
+									aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+							</c:if>
+
+							<!-- 1-10页代码显示 -->
+							<c:if test="${totalPageNumber>10 }">
+								<!-- 如果当前页面大于等于1 && 小于等于 6 -->
+								<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
+									<c:forEach begin="1" end="10" var="n">
+										<li><a
+											href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${n}&table=${table }">${n}</a></li>
+									</c:forEach>
+								</c:if>
+								<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
+								<c:if
+									test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
+									<c:forEach begin="${pageInfo.pageNo-5 }"
+										end="${pageInfo.pageNo+4 }" var="n">
+										<li><a
+											href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${n}&table=${table }">${n}</a></li>
+									</c:forEach>
+								</c:if>
+								<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
+								<c:if
+									test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
+									<c:forEach begin="${totalPageNumber-9 }"
+										end="${totalPageNumber }" var="n">
+										<li><a
+											href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${n}&table=${table }">${n}</a></li>
+									</c:forEach>
+								</c:if>
+							</c:if>
+							<!-- 如果总页数小于10页) -->
+							<c:if test="${totalPageNumber<10 }">
+								<c:forEach begin="1" end="${totalPageNumber }" var="n">
+									<li><a
+										href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${n}&table=${table }">${n}</a></li>
+								</c:forEach>
+							</c:if>
+
+							<c:if test="${pageInfo.hasNext }">
+								<li><a
+									href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&pageNo=${pageInfo.nextPage }&table=${table }"
+									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+								</a></li>
+							</c:if>
+						</ul>
+					</nav>
 
 				</div>
 

@@ -67,7 +67,8 @@
 
 			<div class="way-nav">
 				<ol class="breadcrumb">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+					<li><a
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
@@ -79,17 +80,21 @@
 				<div class="col-md-3 left-menu">
 
 					<div class="menu-head">
-						<span><i class="glyphicon glyphicon-home"></i><span class="title">教务教学</span></span>
+						<span><i class="glyphicon glyphicon-home"></i><span
+							class="title">教务教学</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="major"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_major&title=major"><span>专业建设</span><i
+							<li data-name="major"><a
+								href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_major&title=major&pageNo=1"><span>专业建设</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="teach"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_teach&title=teach"><span>教学工作</span><i
+							<li data-name="teach"><a
+								href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_teach&title=teach&pageNo=1"><span>教学工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="stugraduate"><a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_stugraduate&title=stugraduate"><span>考研工作</span><i
+							<li data-name="stugraduate"><a
+								href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_stugraduate&title=stugraduate&pageNo=1"><span>考研工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -103,25 +108,68 @@
 					<div class="right-list">
 
 						<ul class="list-item">
-							<c:forEach items="${td_education_major }" var="major">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${major.id }&table=td_education_major">${major.title } </a>
-									<span class="time">${major.date }</span>  
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_education_teach }" var="teach">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${teach.id }&table=td_education_teach">${teach.title }  </a>
-									<span class="time">${teach.date }</span> 
-								</li>
-							</c:forEach>
-							<c:forEach items="${td_education_stugraduate }" var="stugraduate">
-								<li>
-									<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stugraduate.id }&table=td_education_stugraduate">${stugraduate.title }  </a>
-									<span class="time">${stugraduate.date }</span> 
-								</li>
+							<c:forEach items="${pageInfo.list}" var="major">
+								<li><a
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${major.id }&table=${table}">${major.title }
+								</a> <span class="time">${major.date }</span></li>
 							</c:forEach>
 						</ul>
+
+					</div>
+					<div class="page-nav">
+
+						<nav aria-label="...">
+							<ul class="pagination pagination-sm">
+								<c:if test="${pageInfo.hasPrev }">
+									<li><a
+										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.prevPage }&table=${table }"
+										aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+								</c:if>
+
+								<!-- 1-10页代码显示 -->
+								<c:if test="${totalPageNumber>10 }">
+									<!-- 如果当前页面大于等于1 && 小于等于 6 -->
+									<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
+										<c:forEach begin="1" end="10" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+									<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
+									<c:if
+										test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
+										<c:forEach begin="${pageInfo.pageNo-5 }"
+											end="${pageInfo.pageNo+4 }" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+									<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
+									<c:if
+										test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
+										<c:forEach begin="${totalPageNumber-9 }"
+											end="${totalPageNumber }" var="n">
+											<li><a
+												href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+										</c:forEach>
+									</c:if>
+								</c:if>
+								<!-- 如果总页数小于10页) -->
+								<c:if test="${totalPageNumber<10 }">
+									<c:forEach begin="1" end="${totalPageNumber }" var="n">
+										<li><a
+											href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${n}&table=${table }">${n}</a></li>
+									</c:forEach>
+								</c:if>
+
+								<c:if test="${pageInfo.hasNext }">
+									<li><a
+										href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&pageNo=${pageInfo.nextPage }&table=${table }"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</c:if>
+							</ul>
+						</nav>
 
 					</div>
 

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
+import com.xg.utils.Page;
+
 /**
  * @author Guozhen_Zhao
  * 创建时间：2018年3月17日  下午2:22:45
@@ -45,20 +47,28 @@ public class CollegeServlet extends HttpServlet {
 
 		}
 	}
-	
+
 	ToolService toolService = new ToolService();
-	
+
 	//单击学院概况下拉列表转发到学院概况下拉列表子页面
 	public void SchoolProfilePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
+		String pageNo = request.getParameter("pageNo");
+		if("".equals(pageNo)){
+			pageNo = "1";
+		}
+
+		Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
 		
-		List<Tool> tools = new ArrayList<Tool>();
+		page = toolService.getPage(Integer.parseInt(pageNo), table);
+		int totalPageNumber = page.getTotalPageNumber();
 		
-		tools = toolService.selectToolByTable(table);
-		request.setAttribute(table, tools);
+		request.setAttribute("pageInfo", page);
+		request.setAttribute("table", table);
+		request.setAttribute("totalPageNumber", totalPageNumber);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/College/list.jsp").forward(request, response);
 	}
-
+	
 }

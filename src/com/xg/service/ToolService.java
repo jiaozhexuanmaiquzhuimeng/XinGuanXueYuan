@@ -6,21 +6,26 @@ import java.util.List;
 import com.xg.dao.ToolDao;
 import com.xg.daoImpl.ToolDaoImpl;
 import com.xg.domain.Tool;
+import com.xg.utils.Page;
 
 public class ToolService {
 	
-	ToolDao noticeDao = new ToolDaoImpl();
+	ToolDao toolDao = new ToolDaoImpl();
 	
 	public Tool selectToolByIdAndTable(int id, String table) {
 		Tool notice = new Tool();
-		notice = noticeDao.selectToolByIdAndTable(id, table);
+		notice = toolDao.selectToolByIdAndTable(id, table);
 		return notice;
 	}
 
 	public List<Tool> selectToolByTable(String table) {
 		List<Tool> notices = new ArrayList<Tool>();
-		notices = noticeDao.selectToolByIdAndTable(table); 
+		notices = toolDao.selectToolByIdAndTable(table); 
 		return notices;
+	}
+
+	public Page<Tool> getPage(int pageNo, String table) {
+		return toolDao.getPage(pageNo, table);
 	}
 	
 }

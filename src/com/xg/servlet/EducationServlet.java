@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
+import com.xg.utils.Page;
+
+import javafx.collections.ObservableIntegerArray;
 
 /**
  * @author Guozhen_Zhao
@@ -53,11 +56,16 @@ public class EducationServlet extends HttpServlet {
 	public void EducationTeachingPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
+		String pageNo = request.getParameter("pageNo");
+		if ("".equals(pageNo)) {
+			pageNo = "1";
+		}
+		Page<Tool> page = toolService.getPage(Integer.parseInt(pageNo), table);
+		int totalPageNumber = page.getTotalPageNumber();
 		
-		List<Tool> tools = new ArrayList<Tool>();
-		
-		tools = toolService.selectToolByTable(table);
-		request.setAttribute(table, tools);
+		request.setAttribute("pageInfo", page);
+		request.setAttribute("table", table);
+		request.setAttribute("totalPageNumber", totalPageNumber);
 		
 		request.getRequestDispatcher("/WEB-INF/jsp/Education/list.jsp").forward(request, response);
 	}

@@ -6,6 +6,15 @@ public class Tool {
 	private String date;
 	private String author;
 	private String content;
+	private int pageNo;
+
+	public int getPageNo() {
+		return pageNo;
+	}
+
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
 
 	public String getAuthor() {
 		return author;
