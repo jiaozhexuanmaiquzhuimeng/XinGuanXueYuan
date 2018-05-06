@@ -4,13 +4,18 @@
 
 $(function(){
 	var href = window.location.href;
+	console.log(href);
 	var index = href.indexOf('title');
 	var targetStr = href.slice(index);
-	var splitStr = targetStr.split('=');
+	console.log(targetStr);
+	var splitStr = targetStr.split('&');
+	console.log(splitStr);
+	var subStr = splitStr[0].substr(6)
+	console.log(subStr);
 	var activeSecond = $('ol.breadcrumb li.active-second');
 	
 	$('.left-menu .menu-content ul li').each(function(){
-		if($(this).attr('data-name') === splitStr[1]){
+		if($(this).attr('data-name') === subStr){
 			$(this).addClass('active');
 		}
 		if($(this).hasClass('active')){

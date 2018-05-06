@@ -343,10 +343,18 @@ i.glyphicon {
 /*
 	content @content.jsp
 */
+.pagination{
+	margin-top: 10px;
+	margin-bottom: 0;
+}
 .article-title {
 	text-align: center;
 	font-weight: 500;
 	font-size: 1.6em;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 p.article-info {
@@ -447,7 +455,7 @@ ul.list-item li:hover {
 }
 
 ul.list-item li a {
-	text-decoration:none;
+	text-decoration: none;
 	float: left;
 	max-width: 80%;
 	overflow: hidden;
@@ -462,6 +470,7 @@ ul.list-item li span.time {
 	float: right;
 	line-height: 50px;
 }
-.page-nav{
+
+.page-nav {
 	float: right;
 }
