@@ -218,6 +218,12 @@
 
 	<!--底部-->
 	<jsp:include page="/WEB-INF/include/foot.jsp"></jsp:include>
+	<script type="text/javascript">
+			
+			 var t = document.documentElement.scrollTop || document.body.scrollTop;
+			 window.scrollTo(0,136);
+			
+	</script>
 </body>
 
 </html>

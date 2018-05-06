@@ -121,7 +121,7 @@
 
 				<div class="col-md-9">
 
-					<div class="right-list">
+					<div class="right-list clearfix">
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="management">
@@ -130,9 +130,7 @@
 								</a> <span class="time">${management.date }</span></li>
 							</c:forEach>
 						</ul>
-
-					</div>
-					<div class="page-nav">
+						<div class="page-nav">
 
 						<nav aria-label="...">
 							<ul class="pagination pagination-sm">
@@ -212,7 +210,11 @@
 						</nav>
 
 					</div>
-
+						
+						
+						
+					</div>
+					
 				</div>
 
 			</div>
@@ -227,6 +229,12 @@
 
 	<!--底部-->
 	<jsp:include page="/WEB-INF/include/foot.jsp"></jsp:include>
+	<script type="text/javascript">
+			
+			 var t = document.documentElement.scrollTop || document.body.scrollTop;
+			 window.scrollTo(0,136);
+			
+	</script>
 </body>
 
 </html>
