@@ -13,7 +13,7 @@ public class Page<T> {
 	private List<T> list;
 
 	// 每页显示记录的条数	固定
-	private int pageSize = 10;
+	private int pageSize = 3;
 
 	// 总的记录条数	查询
 	private long totalItemNumber;

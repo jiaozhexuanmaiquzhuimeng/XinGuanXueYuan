@@ -135,8 +135,14 @@
 										<!-- 如果当前页面大于等于1 && 小于等于 6 -->
 										<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
 											<c:forEach begin="1" end="10" var="n">
-												<li><a
-													href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												<c:if test="${pageInfo.pageNo == n }">
+													<li class="active"><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
+												<c:if test="${pageInfo.pageNo != n }">
+													<li><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
 											</c:forEach>
 										</c:if>
 										<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
@@ -144,8 +150,14 @@
 											test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
 											<c:forEach begin="${pageInfo.pageNo-5 }"
 												end="${pageInfo.pageNo+4 }" var="n">
-												<li><a
-													href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												<c:if test="${pageInfo.pageNo == n }">
+													<li class="active"><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
+												<c:if test="${pageInfo.pageNo != n }">
+													<li><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
 											</c:forEach>
 										</c:if>
 										<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
@@ -153,16 +165,28 @@
 											test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
 											<c:forEach begin="${totalPageNumber-9 }"
 												end="${totalPageNumber }" var="n">
-												<li><a
-													href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												<c:if test="${pageInfo.pageNo == n }">
+													<li class="active"><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
+												<c:if test="${pageInfo.pageNo != n }">
+													<li><a
+														href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+												</c:if>
 											</c:forEach>
 										</c:if>
 									</c:if>
 									<!-- 如果总页数小于10页) -->
 									<c:if test="${totalPageNumber<10 }">
 										<c:forEach begin="1" end="${totalPageNumber }" var="n">
-											<li><a
-												href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+											<c:if test="${pageInfo.pageNo == n }">
+												<li class="active"><a
+													href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+											</c:if>
+											<c:if test="${pageInfo.pageNo != n }">
+												<li><a
+													href="<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&pageNo=${n}&table=${table }">${n}</a></li>
+											</c:if>
 										</c:forEach>
 									</c:if>
 
