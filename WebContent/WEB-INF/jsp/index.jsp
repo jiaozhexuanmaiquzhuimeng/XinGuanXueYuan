@@ -157,7 +157,7 @@
 			<div class="row">
 				<div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
 					<h1 class="news-title">
-						最新动态<a href="#" class="more">更多</a>
+						最新动态<a href="<%=request.getContextPath()%>/firstNewsServlet?method=FirstNewsPage&table=td_firstnews&pageNo=1" class="more">更多</a>
 					</h1>
 
 					<div class="col-lg-5 col-sm-5 col-md-5 col-xs-12 ppt-wrap">
@@ -188,7 +188,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						通知公告<a href="#" class="more">更多</a>
+						通知公告<a href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&table=td_notice&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_notice }" var="notice">
@@ -203,7 +203,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						教学工作<a href="<%=request.getContextPath()%>/rmstuServlet?method=RmstuPage&table=td_Rmstu_employment&title=employment" class="more">更多</a>
+						教学工作<a href="<%=request.getContextPath()%>/rmstuServlet?method=RmstuPage&table=td_Rmstu_employment&title=employment&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_teachingwork }" var="teachingWork">
@@ -216,7 +216,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						科研工作<a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management" class="more">更多</a>
+						科研工作<a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_sciencework }" var="scienceWork">
@@ -229,7 +229,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						考研专栏<a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_stugraduate&title=stugraduate" class="more">更多</a>
+						考研专栏<a href="<%=request.getContextPath()%>/educationServlet?method=EducationTeachingPage&table=td_education_stugraduate&title=stugraduate&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_graduate }" var="graduate">
@@ -245,7 +245,7 @@
 			<div class="row">
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						党群工作<a href="#" class="more">更多</a>
+						党群工作<a href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&table=td_party&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_party }" var="party">
@@ -257,7 +257,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						学生工作<a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_stuwork&title=stuwork" class="more">更多</a>
+						学生工作<a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_stuwork&title=stuwork&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_studentwork }" var="studentWork">
@@ -270,7 +270,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						科技创新<a href="#" class="more">更多</a>
+						科技创新<a href="<%=request.getContextPath()%>/creativeServlet?method=CreativePage&table=td_creative&pageNo=1" class="more">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_creative }" var="creative">
