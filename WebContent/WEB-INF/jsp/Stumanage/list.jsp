@@ -10,6 +10,13 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>更多</title>
 <jsp:include page="/WEB-INF/include/includeCss.jsp"></jsp:include>
+<style type="text/css">
+	.article-content img{
+	display: block;
+	width: 500px !important;
+	height: 500px !important;
+}
+</style>
 <script>
 	(function($, undefined) {
 		$.fn.slide = function(options) {
@@ -75,7 +82,7 @@
 			<div class="way-nav">
 				<ol class="breadcrumb">
 					<li><a
-						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
@@ -98,13 +105,13 @@
 								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_stuwork&title=stuwork&pageNo=1"><span>学生工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="league"><a
-								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_league&title=league&pageNo=1"><span>团总支</span><i
+								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_league&title=league&pageNo=1"><span>社团活动</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="practice"><a
-								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_practice&title=practice&pageNo=1"><span>实习实训</span><i
+								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_practice&title=practice&pageNo=1"><span>心理健康</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="electricity"><a
-								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_electricity&title=electricity&pageNo=1"><span>电商基地</span><i
+								href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_electricity&title=electricity&pageNo=1"><span>资助工作</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -119,7 +126,7 @@
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="stuwork">
-								<li><a
+								<li><a title="${stuwork.title }"
 									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${stuwork.id }&table=${table }&title=${title }">${stuwork.title }
 								</a> <span class="time">${stuwork.date }</span></li>
 							</c:forEach>

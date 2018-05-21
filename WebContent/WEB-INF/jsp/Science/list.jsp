@@ -75,7 +75,7 @@
 			<div class="way-nav">
 				<ol class="breadcrumb">
 					<li><a
-						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active">学院简介</li>
 				</ol>
@@ -100,9 +100,9 @@
 							<li data-name="keylaboratory"><a
 								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_keylaboratory&title=keylaboratory&pageNo=1"><span>重点实验室</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="organization"><a
-								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization&pageNo=1"><span>学术组织</span><i
-									class="glyphicon glyphicon-chevron-right"></i></a></li>
+<!-- 							<li data-name="organization"><a -->
+<%-- 								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization&pageNo=1"><span>学术组织</span><i --%>
+<!-- 									class="glyphicon glyphicon-chevron-right"></i></a></li> -->
 							<li data-name="communication"><a
 								href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_communication&title=communication&pageNo=1"><span>学术交流</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
@@ -135,7 +135,7 @@
 						<nav aria-label="...">
 							<ul class="pagination pagination-sm">
 								<c:if test="${pageInfo.hasPrev }">
-									<li><a
+									<li><a title="${title }"
 										href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
 										aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
 								</c:if>

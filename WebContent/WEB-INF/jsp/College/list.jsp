@@ -73,7 +73,7 @@
 			<div class="way-nav">
 				<ol class="breadcrumb">
 					<li><a
-						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active"></li>
 				</ol>
@@ -114,7 +114,7 @@
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="collegeIntroduction">
-								<li><a
+								<li><a title="${collegeIntroduction.title }"
 									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${collegeIntroduction.id }&table=${table }">${collegeIntroduction.title }</a>
 									<span class="time">${collegeIntroduction.date }</span></li>
 							</c:forEach>

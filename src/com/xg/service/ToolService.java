@@ -27,5 +27,9 @@ public class ToolService {
 	public Page<Tool> getPage(int pageNo, String table) {
 		return toolDao.getPage(pageNo, table);
 	}
+
+	public void add(Tool tool, String tableName) {
+		toolDao.add(tool,tableName);
+	}
 	
 }

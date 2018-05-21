@@ -21,9 +21,7 @@ import com.xg.service.UserService;
 import com.xg.utils.CookieEncryptTool;
 
 /**
- * @author Guozhen_Zhao
- * 创建时间：2018年3月17日  下午2:22:45
- * 备注：
+ * @author Guozhen_Zhao 创建时间：2018年3月17日 下午2:22:45 备注：
  */
 @WebServlet("/userServlet")
 public class UserServlet extends HttpServlet {
@@ -42,7 +40,7 @@ public class UserServlet extends HttpServlet {
 		try {
 			Method method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class,
 					HttpServletResponse.class);
-			//获取私有成员变量
+			// 获取私有成员变量
 			method.setAccessible(true);
 			method.invoke(this, request, response);
 		} catch (Exception e) {
@@ -58,7 +56,7 @@ public class UserServlet extends HttpServlet {
 
 	UserService userService = new UserService();
 
-	//链接到首页并主页显示标题
+	// 链接到首页并主页显示标题
 	public void showTitle(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -82,10 +80,14 @@ public class UserServlet extends HttpServlet {
 		tables.add(studentwork);
 
 		for (String table : tables) {
-			List<Tool> tools = new ArrayList<Tool>();
+			List<Tool> tools = null;
 			tools = toolService.selectToolByTable(table);
 
-			//判断从数据库中的数据是否超过5条
+			if (tools == null) {
+				tools = new ArrayList<Tool>();
+			}
+
+			// 判断从数据库中的数据是否超过5条
 			if (tools.size() < 5) {
 				request.setAttribute(table, tools);
 			} else {
@@ -93,9 +95,13 @@ public class UserServlet extends HttpServlet {
 			}
 		}
 
-		List<Image> images = new ArrayList<Image>();
+		List<Image> images = null;
 
 		images = imageService.selectImage();
+
+		if (images == null) {
+			images = new ArrayList<Image>();
+		}
 
 		if (images.size() < 5) {
 			request.setAttribute("images", images);
@@ -106,13 +112,19 @@ public class UserServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
 	}
 
-	//转发到登陆页面
+	// 转发到登陆页面
 	public void loginPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 	}
+	
+	//转发到信箱页面
+	public void emailPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/jsp/mail.jsp").forward(request, response);
+	}
 
-	//登陆页实现
+	// 登陆页实现
 	public void loginPageTwo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String userName = request.getParameter("userName");
@@ -127,9 +139,9 @@ public class UserServlet extends HttpServlet {
 			message = "密码不能为空";
 		} else {
 			User user = userService.login(userName);
-			//System.out.println("1111");
+			// System.out.println("1111");
 			if (user.getPassWord().equals(passWord)) {
-				//System.out.println("2222");
+				// System.out.println("2222");
 				if ("true".equals(rememberMe)) {
 					Cookie c1 = new Cookie("userName", CookieEncryptTool.encodeBase64(userName));
 					Cookie c2 = new Cookie("passWord", CookieEncryptTool.encodeBase64(passWord));
@@ -158,13 +170,13 @@ public class UserServlet extends HttpServlet {
 
 	}
 
-	//转发到注册页面
+	// 转发到注册页面
 	public void registerPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
 	}
 
-	//注册页实现
+	// 注册页实现
 	public void registerPageTwo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String name = request.getParameter("name");
@@ -205,11 +217,18 @@ public class UserServlet extends HttpServlet {
 		}
 	}
 
-	//转发到各页面的详情页
+	// 转发到各页面的详情页
 	public void contentPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
+
+		// if(id.equals("")) {
+		// id = request.getParameter("");
+		// }
+		// if(table.equals("")) {
+		// table = request.getParameter("");
+		// }
 
 		Tool tool = new Tool();
 		tool = toolService.selectToolByIdAndTable(Integer.parseInt(id), table);
@@ -217,6 +236,17 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute(table, tool);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/content.jsp").forward(request, response);
+	}
+
+	// 转发到添加内容页面
+	public void addContent(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/jsp/add.jsp").forward(request, response);
+	}
+	
+	//转发到书记信箱
+	public void mailPage(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+		response.sendRedirect("/WEB-INF/jsp/mail.jsp");
 	}
 
 }

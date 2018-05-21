@@ -42,6 +42,12 @@ i.glyphicon {
 	}
 }
 
+.article-content * {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Î¢ÈíÑÅºÚ",
+		sans-serif !important;
+	font-size: 16px !important;
+}
+
 .banner {
 	background: url(../img/header_bj.jpg);
 	padding: 15px 0;
@@ -145,6 +151,12 @@ i.glyphicon {
 
 .ppt {
 	padding-top: 4%;
+	width: 100%;
+}
+
+.ppt img {
+	min-width: 100%;
+	height: 190px;
 }
 
 .ppt-title {
@@ -252,9 +264,9 @@ i.glyphicon {
 	border-right: 1px solid #357ad1;
 }
 
-.footer-list {
-	margin-bottom: 0;
-}
+/* .footer-list { */
+/* 	padding-top: 30px; */
+/* } */
 
 .footer-list>li {
 	text-align: center;
@@ -343,10 +355,11 @@ i.glyphicon {
 /*
 	content @content.jsp
 */
-.pagination{
+.pagination {
 	margin-top: 10px;
 	margin-bottom: 0;
 }
+
 .article-title {
 	text-align: center;
 	font-weight: 500;

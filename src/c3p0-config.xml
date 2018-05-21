@@ -3,9 +3,9 @@
 	<named-config name="javawebapp">
 
 		<property name="user">root</property>
-		<property name="password">admin</property>
+		<property name="password">admin@123</property>
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
-		<property name="jdbcUrl">jdbc:mysql://localhost/xxgl</property>
+		<property name="jdbcUrl">jdbc:mysql://211.64.47.145:3306/xxgl</property>
 
 
 		<property name="acquireIncrement">5</property>

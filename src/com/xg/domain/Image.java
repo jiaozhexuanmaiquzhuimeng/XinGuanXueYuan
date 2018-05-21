@@ -8,6 +8,15 @@ public class Image {
 	private String imgTable;
 	private String imgContent;
 	private String title;
+	private int imgId;
+
+	public int getImgId() {
+		return imgId;
+	}
+
+	public void setImgId(int imgId) {
+		this.imgId = imgId;
+	}
 
 	public String getTitle() {
 		return title;

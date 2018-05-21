@@ -68,9 +68,9 @@
 			<div class="way-nav">
 				<ol class="breadcrumb">
 					<li><a
-						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_graduate&party=td_party&sciencework=td_sciencework&studentwork=td_studentwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_teachingwork">首页</a></li>
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
-					<li class="active">学院简介</li>
+					<li class="active"></li>
 				</ol>
 			</div>
 
@@ -81,20 +81,20 @@
 
 					<div class="menu-head">
 						<span><i class="glyphicon glyphicon-home"></i><span
-							class="title">实验教学</span></span>
+							class="title">党群建设</span></span>
 					</div>
 
 					<div class="menu-content">
 
 						<ul>
 							<li data-name="center"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1"><span>示范中心</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1"><span>党团动态</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="money"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money&pageNo=1"><span>固定资产</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money&pageNo=1"><span>工会之家</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="resources"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources&pageNo=1"><span>网络资源</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources&pageNo=1"><span>学习园地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
@@ -109,7 +109,7 @@
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="center">
-								<li><a
+								<li><a title="${center.title }"
 									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${center.id }&table=${table }">${center.title }</a>
 									<span class="time">${center.date }</span></li>
 							</c:forEach>
