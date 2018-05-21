@@ -10,7 +10,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="example-navbar-collapse">
 				<ul class="nav navbar-nav" id="Nav">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">学院首页<span class="nav-slider"></span></a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&Group=td_Group_dynamics&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">学院首页<span class="nav-slider"></span></a></li>
 					<li><a href="" class="dropdown-toggle" data-toggle="dropdown" onclick="window.location.href='<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&table=td_college_introduction&title=introduction&pageNo=1'">学院概况<span
 							class="nav-slider"></span><b class="caret"></b></a>
 
