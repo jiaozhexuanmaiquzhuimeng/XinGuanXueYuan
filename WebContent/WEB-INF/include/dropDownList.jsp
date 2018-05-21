@@ -55,13 +55,13 @@
 							<li><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_practice&title=practice&pageNo=1" target="_blank">心理健康</a></li>
 							<li><a href="<%=request.getContextPath()%>/stumanageServlet?method=StumanagePage&table=td_stumanage_electricity&title=electricity&pageNo=1" target="_blank">资助工作</a></li>
 						</ul></li>
-					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="window.location.href='<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1'" target="_blank">党群建设<span
+					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="window.location.href='<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_dynamics&title=dynamics&pageNo=1'" target="_blank">党群建设<span
 							class="nav-slider"></span><b class="caret"></b></a>
 
 						<ul class="dropdown-menu">
-							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1" target="_blank">党团动态</a></li>
-							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money&pageNo=1" target="_blank">工会之家</a></li>
-							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources&pageNo=1" target="_blank">学习园地</a></li>
+							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_dynamics&title=center&pageNo=1" target="_blank">党团动态</a></li>
+							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_home&title=money&pageNo=1" target="_blank">工会之家</a></li>
+							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=resources&pageNo=1" target="_blank">学习园地</a></li>
 						</ul></li>
 					<li><a href="<%=request.getContextPath()%>/talentServlet?method=TalentPage&table=td_talent_talent&title=talent&pageNo=1">人才引进<span class="nav-slider"></span></a></li>
 					<li><a href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&table=td_classmate_classmate&title=classmate&pageNo=1">校友风采<span class="nav-slider"></span></a></li>

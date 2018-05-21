@@ -244,12 +244,12 @@
 			<div class="row">
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						党群工作<a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1" class="more" target="_blank">更多</a>
+						党群工作<a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_dynamics&title=dynamics&pageNo=1" class="more" target="_blank">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
-						<c:forEach items="${td_test_center }" var="party">
+						<c:forEach items="${td_Group_dynamics }" var="party">
 							<li><a title="${party.title }"
-								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${party.id }&table=td_test_center"
+								href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${party.id }&table=td_Group_dynamics"
 								id="${party.id }" target="_blank">${party.title }</a><span class="pull-right">${party.date }</span></li>
 						</c:forEach>
 					</ul>
@@ -269,7 +269,7 @@
 				</div>
 				<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 					<h1 class="news-title">
-						科技创新<a href="<%=request.getContextPath()%>/creativeServlet?method=CreativePage&table=td_creative&title=keylaboratory&pageNo=1" class="more" target="_blank">更多</a>
+						科技创新<a href="<%=request.getContextPath()%>/creativeServlet?method=CreativePage&table=td_creative&title=creative&pageNo=1" class="more" target="_blank">更多</a>
 					</h1>
 					<ul class="news-list list-inline">
 						<c:forEach items="${td_creative }" var="creative">

@@ -63,7 +63,7 @@ public class UserServlet extends HttpServlet {
 		String firstnews = request.getParameter("firstnews");
 		String creative = request.getParameter("creative");
 		String graduate = request.getParameter("graduate");
-		String party = request.getParameter("party");
+		String Group = request.getParameter("Group");
 		String sciencework = request.getParameter("sciencework");
 		String studentwork = request.getParameter("studentwork");
 		String notice = request.getParameter("notice");
@@ -75,7 +75,7 @@ public class UserServlet extends HttpServlet {
 		tables.add(firstnews);
 		tables.add(creative);
 		tables.add(graduate);
-		tables.add(party);
+		tables.add(Group);
 		tables.add(sciencework);
 		tables.add(studentwork);
 

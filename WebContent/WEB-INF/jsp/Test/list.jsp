@@ -68,7 +68,7 @@
 			<div class="way-nav">
 				<ol class="breadcrumb">
 					<li><a
-						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
+						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&Group=td_Group_dynamics&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
 					<li class="active-second"><a href="#"></a></li>
 					<li class="active"></li>
 				</ol>
@@ -88,13 +88,13 @@
 
 						<ul>
 							<li data-name="center"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_center&title=center&pageNo=1"><span>党团动态</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=center&pageNo=1"><span>党团动态</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="money"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money&pageNo=1"><span>工会之家</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_home&title=money&pageNo=1"><span>工会之家</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="resources"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources&pageNo=1"><span>学习园地</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=resources&pageNo=1"><span>学习园地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
