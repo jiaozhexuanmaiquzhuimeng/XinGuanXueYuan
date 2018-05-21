@@ -95,7 +95,7 @@
         <div class="container" style="padding: 0 0;">
 
             <p>
-                <a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach" class="back-index">&lt; 返回首页</a>
+                <a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&Group=td_Group_dynamics&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach" class="back-index">&lt; 返回首页</a>
             </p>
         </div>
 
@@ -137,9 +137,9 @@
                 	${td_stumanage_practice.title }
                 	${td_stumanage_electricity.title }
                 	
-                	${td_test_center.title }
-                	${td_test_money.title }
-                	${td_test_resources.title }
+                	${td_Group_dynamics.title }
+                	${td_Group_home.title }
+                	${td_Group_study.title }
                 	
                 	${td_talent_talent.title }
                 	
@@ -185,9 +185,9 @@
                     	${td_stumanage_practice.author }
                     	${td_stumanage_electricity.author }
                     	
-                    	${td_test_center.author }
-                    	${td_test_money.author }
-                    	${td_test_resources.author }
+                    	${td_Group_dynamics.author }
+                    	${td_Group_home.author }
+                    	${td_Group_study.author }
                     	
                     	${td_talent_talent.author }
                     	
@@ -226,9 +226,9 @@
                     	${td_stumanage_practice.date }
                     	${td_stumanage_electricity.date }
                     	
-                    	${td_test_center.date }
-                    	${td_test_money.date }
-                    	${td_test_resources.date }
+                    	${td_Group_dynamics.date }
+                    	${td_Group_home.date }
+                    	${td_Group_study.date }
                     	
                     	${td_talent_talent.date }
                     	
@@ -275,9 +275,9 @@
                         ${td_stumanage_practice.content }
                         ${td_stumanage_electricity.content }
                         
-                        ${td_test_center.content }
-                        ${td_test_money.content }
-                        ${td_test_resources.content }
+                        ${td_Group_dynamics.content }
+                        ${td_Group_home.content }
+                        ${td_Group_study.content }
                         
                         ${td_talent_talent.content }
                         
