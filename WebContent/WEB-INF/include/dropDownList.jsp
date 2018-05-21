@@ -10,7 +10,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="example-navbar-collapse">
 				<ul class="nav navbar-nav" id="Nav">
-					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach" target="blank">学院首页<span class="nav-slider"></span></a></li>
+					<li><a href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_test_center&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">学院首页<span class="nav-slider"></span></a></li>
 					<li><a href="" class="dropdown-toggle" data-toggle="dropdown" onclick="window.location.href='<%=request.getContextPath()%>/collegeServlet?method=SchoolProfilePage&table=td_college_introduction&title=introduction&pageNo=1'">学院概况<span
 							class="nav-slider"></span><b class="caret"></b></a>
 
@@ -41,7 +41,6 @@
 						<ul class="dropdown-menu">
 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_management&title=management&pageNo=1" target="_blank">科研管理</a></li>
 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_keylaboratory&title=keylaboratory&pageNo=1" target="_blank">重点实验室</a></li>
-<%-- 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_organization&title=organization&pageNo=1" target="_blank">学术组织</a></li> --%>
 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_communication&title=communication&pageNo=1" target="_blank">学术交流</a></li>
 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_international&title=international&pageNo=1" target="_blank">国际办学</a></li>
 							<li><a href="<%=request.getContextPath()%>/scienceServlet?method=SciencePage&table=td_science_service&title=service&pageNo=1" target="_blank">社会服务</a></li>
@@ -64,8 +63,8 @@
 							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_money&title=money&pageNo=1" target="_blank">工会之家</a></li>
 							<li><a href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_test_resources&title=resources&pageNo=1" target="_blank">学习园地</a></li>
 						</ul></li>
-					<li><a href="<%=request.getContextPath()%>/talentServlet?method=TalentPage&table=td_talent_talent&title=talent&pageNo=1" target="blank">人才引进<span class="nav-slider"></span></a></li>
-					<li><a href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&table=td_classmate_classmate&title=classmate&pageNo=1" target="blank">校友风采<span class="nav-slider"></span></a></li>
+					<li><a href="<%=request.getContextPath()%>/talentServlet?method=TalentPage&table=td_talent_talent&title=talent&pageNo=1">人才引进<span class="nav-slider"></span></a></li>
+					<li><a href="<%=request.getContextPath()%>/classmateServlet?method=ClassmatePage&table=td_classmate_classmate&title=classmate&pageNo=1">校友风采<span class="nav-slider"></span></a></li>
 				</ul>
 			</div>
 		</div>

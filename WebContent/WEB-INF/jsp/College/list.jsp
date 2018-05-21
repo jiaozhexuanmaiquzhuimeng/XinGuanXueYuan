@@ -114,7 +114,7 @@
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="collegeIntroduction">
-								<li><a title="${collegeIntroduction.title }"
+								<li><a title="${collegeIntroduction.title }" target="_blank"
 									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${collegeIntroduction.id }&table=${table }">${collegeIntroduction.title }</a>
 									<span class="time">${collegeIntroduction.date }</span></li>
 							</c:forEach>

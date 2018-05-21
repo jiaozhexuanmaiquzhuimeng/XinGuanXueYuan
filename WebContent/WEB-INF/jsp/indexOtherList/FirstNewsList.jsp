@@ -90,7 +90,7 @@
 
 						<ul class="list-item">
 							<c:forEach items="${pageInfo.list }" var="firstNews">
-								<li><a title="${firstNews.title }"
+								<li><a title="${firstNews.title }" target="_blank"
 									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${firstNews.id }&table=${table }">${firstNews.title }</a>
 									<span class="time">${firstNews.date }</span></li>
 							</c:forEach>

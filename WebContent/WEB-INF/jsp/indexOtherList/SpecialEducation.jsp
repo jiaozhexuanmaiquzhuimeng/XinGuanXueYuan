@@ -76,7 +76,7 @@
 				<ol class="breadcrumb">
 					<li><a
 						href="<%=request.getContextPath()%>/userServlet?method=showTitle&creative=td_creative&graduate=td_education_stugraduate&party=td_party&sciencework=td_science_management&studentwork=td_stumanage_stuwork&firstnews=td_firstnews&notice=td_notice&teachingwork=td_education_teach">首页</a></li>
-					<li class="active">党群工作</li>
+					<li class="active">专题教育</li>
 				</ol>
 			</div>
 
@@ -89,10 +89,10 @@
 					<div class="right-list clearfix">
 
 						<ul class="list-item">
-							<c:forEach items="${pageInfo.list }" var="party">
-								<li><a title="${party.title }" target="_blank"
-									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${party.id }&table=${table }">${party.title }</a>
-									<span class="time">${party.date }</span></li>
+							<c:forEach items="${pageInfo.list }" var="notice">
+								<li><a title="${notice.title }" target="_blank"
+									href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${notice.id }&table=${table }">${notice.title }</a>
+									<span class="time">${notice.date }</span></li>
 							</c:forEach>
 						</ul>
 							
@@ -102,7 +102,7 @@
 						<ul class="pagination pagination-sm">
 							<c:if test="${pageInfo.hasPrev }">
 								<li><a
-									href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${pageInfo.prevPage }&table=${table }"
+									href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${pageInfo.prevPage }&table=${table }"
 									aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
 							</c:if>
 
@@ -113,11 +113,11 @@
 									<c:forEach begin="1" end="10" var="n">
 										<c:if test="${pageInfo.pageNo == n }">
 											<li class="active"><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 										<c:if test="${pageInfo.pageNo != n }">
 											<li><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 									</c:forEach>
 								</c:if>
@@ -128,11 +128,11 @@
 										end="${pageInfo.pageNo+4 }" var="n">
 										<c:if test="${pageInfo.pageNo == n }">
 											<li class="active"><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 										<c:if test="${pageInfo.pageNo != n }">
 											<li><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 									</c:forEach>
 								</c:if>
@@ -143,11 +143,11 @@
 										end="${totalPageNumber }" var="n">
 										<c:if test="${pageInfo.pageNo == n }">
 											<li class="active"><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 										<c:if test="${pageInfo.pageNo != n }">
 											<li><a
-												href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+												href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 										</c:if>
 									</c:forEach>
 								</c:if>
@@ -157,18 +157,18 @@
 								<c:forEach begin="1" end="${totalPageNumber }" var="n">
 									<c:if test="${pageInfo.pageNo == n }">
 										<li class="active"><a
-											href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+											href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 									</c:if>
 									<c:if test="${pageInfo.pageNo != n }">
 										<li><a
-											href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${n}&table=${table }">${n}</a></li>
+											href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${n}&table=${table }">${n}</a></li>
 									</c:if>
 								</c:forEach>
 							</c:if>
 
 							<c:if test="${pageInfo.hasNext }">
 								<li><a
-									href="<%=request.getContextPath()%>/partyServlet?method=PartyPage&pageNo=${pageInfo.nextPage }&table=${table }"
+									href="<%=request.getContextPath()%>/noticeServlet?method=NoticePage&pageNo=${pageInfo.nextPage }&table=${table }"
 									aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 								</a></li>
 							</c:if>
