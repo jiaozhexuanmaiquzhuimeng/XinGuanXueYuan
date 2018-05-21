@@ -88,13 +88,13 @@
 
 						<ul>
 							<li data-name="center"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=center&pageNo=1"><span>党团动态</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=study&pageNo=1"><span>党团动态</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="money"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_home&title=money&pageNo=1"><span>工会之家</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_home&title=home&pageNo=1"><span>工会之家</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 							<li data-name="resources"><a
-								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=resources&pageNo=1"><span>学习园地</span><i
+								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=study&pageNo=1"><span>学习园地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
 
