@@ -144,6 +144,14 @@
                 	${td_talent_talent.title }
                 	
                 	${td_classmate_classmate.title }
+                	
+                	${td_SpecialEducation.title }
+                	
+                	${td_ExperimentCenter.title }
+                	
+                	${td_Rules.title }
+                	
+                	${td_WorkingProcess.title }
                 </h4>
             </p>
 
@@ -192,6 +200,14 @@
                     	${td_talent_talent.author }
                     	
                     	${td_classmate_classmate.author }
+                    	
+                    	${td_SpecialEducation.author }
+                    	
+                    	${td_ExperimentCenter.author }
+                    	
+                    	${td_Rules.author }
+                    	
+                    	${td_WorkingProcess.author }
                     </span> | 时间:
                     <span class="time-clock">
                     	${td_firstnews.date }
@@ -233,6 +249,14 @@
                     	${td_talent_talent.date }
                     	
                     	${td_classmate_classmate.date }
+                    	
+                    	${td_SpecialEducation.date }
+                    	
+                    	${td_ExperimentCenter.date }
+                    	
+                    	${td_Rules.date }
+                    	
+                    	${td_WorkingProcess.date }
                     </span>
                 </abbr>
 
@@ -282,6 +306,14 @@
                         ${td_talent_talent.content }
                         
                         ${td_classmate_classmate.content }
+                        
+                        ${td_SpecialEducation.content }
+                        
+                        ${td_ExperimentCenter.content }
+                        
+                        ${td_Rules.content }
+                        
+                        ${td_WorkingProcess.content }
                     </section>
                 </div>
             </div>

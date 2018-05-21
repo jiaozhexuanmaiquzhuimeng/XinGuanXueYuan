@@ -6,12 +6,12 @@
 				<div class="row">
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 footer-l">
 						<ul class="list-inline footer-list">
-							<li><a href="http://www.chinanews.com/gn/z/shijiuda/" target="_blank">专题教育</a></li>
+							<li><a href="<%=request.getContextPath()%>/specialEducationServlet?method=SpecialEducationPage&table=td_SpecialEducation&title=SpecialEducation&pageNo=1" target="_blank">专题教育</a></li>
 							<li><a href="http://211.64.32.78/xsglxt" target="_blank"> 学生管理系统</a></li>
 							<li><a href="http://211.64.32.196" target="_blank">教务系统</a></li>
-							<li><a href="http://jsjx.dzu.edu.cn/syzx.htm" target="_blank">实验中心</a></li>
-							<li><a href="http://jsjx.dzu.edu.cn/syzx.htm" target="_blank">规章制度</a></li>
-							<li><a href="http://jsjx.dzu.edu.cn/syzx.htm" target="_blank">工作流程</a></li>
+							<li><a href="<%=request.getContextPath()%>/experimentCenterServlet?method=ExperimentCenterPage&table=td_ExperimentCenter&title=ExperimentCenter&pageNo=1" target="_blank">实验中心</a></li>
+							<li><a href="<%=request.getContextPath()%>/rulesServlet?method=RulesPage&table=td_Rules&title=Rules&pageNo=1" target="_blank">规章制度</a></li>
+							<li><a href="<%=request.getContextPath()%>/workingProcessServlet?method=WorkingProcessPage&table=td_WorkingProcess&title=WorkingProcess&pageNo=1" target="_blank">工作流程</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 footer-logo">
