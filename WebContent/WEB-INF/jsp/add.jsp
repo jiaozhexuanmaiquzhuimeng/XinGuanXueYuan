@@ -15,7 +15,7 @@
 <script type="text/javascript">
  <%
 	  pageContext.setAttribute("APP_PATH", request.getContextPath());
-    %>
+ %>
 $(function(){
 	
 	var editor = KindEditor.create('textarea[name="content"]', {
@@ -65,7 +65,13 @@ function save(ele) {
 	})
 	
 }
+
 </script>
+<style>
+	select[name="section"]{
+		margin-bottom: 15px;
+	}
+</style>
 </head>
 <body>
 	<!--头部-->
@@ -87,146 +93,184 @@ function save(ele) {
 	<!--主体-->
 	<div id="content" class="container-fluid">
 		<div class="container content main-bg">
-		<div class="form-group">
-				<label for="" class="col-sm-2 control-label">版块</label>
-				<div class="col-sm-12">
-					
-					<div class="col-md-3">
-						最新动态
+			<p style="color: red;">提示:使用IE浏览器,可直接将word文档中的图片和文字直接粘贴到内容区域,非IE浏览器,请将word中的图片和文字分开上传.</p>			
+			
+			<div class="form-group clearfix">
+					<label for="" class="col-sm-2 control-label">版块</label>
+					<div class="col-sm-12">
+						
+						<div class="col-md-3">
+							最新动态
+							<select name="section">
+								<option style="display: none;">选择版块</option>
+								<option value="td_firstnews">最新动态</option>
+							</select>
+						</div>
+						
+						<div class="col-md-3">
+							科技创新
+							<select name="section">
+								<option style="display: none;">选择版块</option>
+								<option value="td_creative">科技创新</option>
+							</select>
+						</div>
+						
+						<div class="col-md-3">
+							学校概况
+							<select name="section">
+								<option style="display: none;">选择版块</option>
+								<option value="td_college_introduction ">学院简介</option>
+								<option value="td_college_organization ">组织机构</option>
+								<option value="td_college_teacherStroop ">师资队伍</option>
+							</select>
+						</div>
+						
+						<div class="col-md-3">
+							教务教学
+							<select name="section">
+								<option style="display: none;">选择版块</option>
+								<option value="td_education_major ">专业建设</option>
+								<option value="td_education_teach">教学工作</option>
+								<option value="td_education_stugraduate">考研工作</option>
+							</select>
+						</div>
+						
+						<div class="col-md-3">
+							招生就业
+							<select name="section">
+								<option style="display: none;">选择版块</option>
+								<option value="td_Rmstu_admissions ">招生工作</option>
+								<option value="td_Rmstu_employment">就业工作</option>
+							</select>
+						</div>
+						
+						<div class="col-md-3">
+							科研工作
 						<select name="section">
 							<option style="display: none;">选择版块</option>
-							<option value="td_firstnews">最新动态</option>
+							<option value="td_science_management">科研管理</option>
+							<option value="td_science_keylaboratory">重点实验室</option>
+							<option value="td_science_organization">学术组织</option>
+							<option value="td_science_communication">学术交流</option>
+							<option value="td_science_international">国际办学</option>
+							<option value="td_science_service">社会服务</option>
 						</select>
-					</div>
-					
-					<div class="col-md-3">
-						科技创新
+						</div>
+						
+						<div class="col-md-3">
+						
+							学生管理
 						<select name="section">
 							<option style="display: none;">选择版块</option>
-							<option value="td_creative">科技创新</option>
+							<option value="td_stumanage_stuwork">学生工作</option>
+							<option value="td_stumanage_league">社团活动</option>
+							<option value="td_stumanage_practice">心理健康</option>
+							<option value="td_stumanage_electricity">资助工作</option>
 						</select>
-					</div>
-					
-					<div class="col-md-3">
-						学校概况
+						
+						</div>
+						
+						<div class="col-md-3">
+						
+							党群建设
 						<select name="section">
 							<option style="display: none;">选择版块</option>
-							<option value="td_college_introduction ">学院简介</option>
-							<option value="td_college_organization ">组织机构</option>
-							<option value="td_college_teacherStroop ">师资队伍</option>
+							<option value="td_group_dynamics">党团动态</option>
+							<option value="td_group_home">工会之家</option>
+							<option value="td_group_study">学习园地</option>
 						</select>
-					</div>
-					
-					<div class="col-md-3">
-						教务教学
+						</div>
+						
+						<div class="col-md-3">
+						
+							人才引进
 						<select name="section">
 							<option style="display: none;">选择版块</option>
-							<option value="td_education_major ">专业建设</option>
-							<option value="td_education_teach">教学工作</option>
-							<option value="td_education_stugraduate">考研工作</option>
+							<option value="td_talent_talent">人才引进</option>
 						</select>
-					</div>
-					
-					<div class="col-md-3">
-						招生就业
+						</div>
+						
+						<div class="col-md-3">
+						
+							校友风采
 						<select name="section">
 							<option style="display: none;">选择版块</option>
-							<option value="td_Rmstu_admissions ">招生工作</option>
-							<option value="td_Rmstu_employment">就业工作</option>
+							<option value="td_classmate_classmate">校友风采</option>
 						</select>
+						</div>
+						
+						<div class="col-md-3">
+						
+							通知公告
+						<select name="section">
+							<option style="display: none;">选择版块</option>
+							<option value="td_notice">通知公告</option>
+						</select>
+						</div>
+						
+						
+						
+						<div class="col-md-3">
+						
+							专题教育
+						<select name="section">
+							<option style="display: none;">选择版块</option>
+							<option value="td_specialeducation">专题教育</option>
+						</select>
+						</div>
+						
+						<div class="col-md-3">
+						
+							实验中心
+						<select name="section">
+							<option style="display: none;">选择版块</option>
+							<option value="td_experimentcenter">实验中心</option>
+						</select>
+						</div>
+						
+						<div class="col-md-3">
+						
+							规章制度
+						<select name="section">
+							<option style="display: none;">选择版块</option>
+							<option value="td_rules">规章制度</option>
+						</select>
+						</div>
+						
+						<div class="col-md-3">
+						
+							工作流程
+						<select name="section">
+							<option style="display: none;">选择版块</option>
+							<option value="td_workingprocess">工作流程</option>
+						</select>
+						</div>
+						
 					</div>
-					
-					<div class="col-md-3">
-					科研工作
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_science_management">科研管理</option>
-						<option value="td_science_keylaboratory">重点实验室</option>
-						<option value="td_science_organization">学术组织</option>
-						<option value="td_science_communication">学术交流</option>
-						<option value="td_science_international">国际办学</option>
-						<option value="td_science_service">社会服务</option>
-					</select>
-					</div>
-					
-					<div class="col-md-3">
-					
-						学生管理
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_stumanage_stuwork">学生工作</option>
-						<option value="td_stumanage_league">社团活动</option>
-						<option value="td_stumanage_practice">心理健康</option>
-						<option value="td_stumanage_electricity">资助工作</option>
-					</select>
-					
-					</div>
-					
-					<div class="col-md-3">
-					
-						党群建设
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_test_center">党团动态</option>
-						<option value="td_test_money">工会之家</option>
-						<option value="td_test_resources">学习园地</option>
-					</select>
-					</div>
-					
-					<div class="col-md-3">
-					
-						人才引进
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_talent_talent">人才引进</option>
-					</select>
-					</div>
-					
-					<div class="col-md-3">
-					
-						校友风采
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_classmate_classmate">校友风采</option>
-					</select>
-					</div>
-					
-					<div class="col-md-3">
-					
-						通知公告
-					<select name="section">
-						<option style="display: none;">选择版块</option>
-						<option value="td_notice">通知公告</option>
-					</select>
-					</div>
-					
-					
 				</div>
-			</div>
-			
-			
-			<div class="form-group">
+				
+			<div class="form-group clearfix">
 				<label for="" class="col-sm-2 control-label">标题</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="title" />
 				</div>
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group clearfix">
 				<label for="" class="col-sm-2 control-label">作者</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="author" />
 				</div>
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group clearfix">
 				<label for="" class="col-sm-2 control-label">内容</label>
 				<div class="col-sm-10">
 					<textarea id="editor_id" name="content" class="form-control" style="height: 400px;"></textarea>
 				</div>
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group clearfix">
 				<label for="" class="col-sm-2 control-label"></label>
 				<div class="col-sm-10">
 					<button type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
