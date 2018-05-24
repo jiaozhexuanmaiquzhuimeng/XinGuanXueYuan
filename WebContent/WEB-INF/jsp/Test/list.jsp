@@ -87,13 +87,13 @@
 					<div class="menu-content">
 
 						<ul>
-							<li data-name="center"><a
+							<li data-name="dynamics"><a
 								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_dynamics&title=dynamics&pageNo=1"><span>党团动态</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="money"><a
+							<li data-name="home"><a
 								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_home&title=home&pageNo=1"><span>工会之家</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
-							<li data-name="resources"><a
+							<li data-name="study"><a
 								href="<%=request.getContextPath()%>/testServlet?method=TestPage&table=td_Group_study&title=study&pageNo=1"><span>学习园地</span><i
 									class="glyphicon glyphicon-chevron-right"></i></a></li>
 						</ul>
