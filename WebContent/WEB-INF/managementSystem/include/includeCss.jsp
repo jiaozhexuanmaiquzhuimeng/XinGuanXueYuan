@@ -4,6 +4,7 @@
 
     <script src="<%=request.getContextPath()%>/managementStatic/lib/jquery-1.8.1.min.js"></script>
     <script src="<%=request.getContextPath()%>/managementStatic/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="<%=request.getContextPath()%>/js/script.js"></script>
 
     <!-- Demo page code -->
 
