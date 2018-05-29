@@ -127,8 +127,8 @@ public class UserServlet extends HttpServlet {
 	// 登陆页实现
 	public void loginPageTwo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String userName = request.getParameter("userName");
-		String passWord = request.getParameter("passWord");
+		String userName = request.getParameter("username");
+		String passWord = request.getParameter("password");
 		String rememberMe = request.getParameter("rememberMe");
 
 		String message = "";
@@ -158,7 +158,7 @@ public class UserServlet extends HttpServlet {
 						}
 					}
 				}
-				request.getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/managementSystem/index.jsp").forward(request, response);
 				return;
 			} else {
 				message = "用户名或密码错误";

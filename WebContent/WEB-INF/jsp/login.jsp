@@ -14,7 +14,7 @@
 <body>
 
 <div class="login">
-<form action="" method="post" id="form">
+<form action="<%=request.getContextPath()%>/userServlet?method=loginPageTwo" method="post" id="form">
 	<div class="logo"></div>
     <div class="login_form">
     	<div class="user">
