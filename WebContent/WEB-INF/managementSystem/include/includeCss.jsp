@@ -1,9 +1,9 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/managementSystem/lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/managementSystem/stylesheets/theme.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/managementSystem/lib/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/managementStatic/lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/managementStatic/stylesheets/theme.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/managementStatic/lib/font-awesome/css/font-awesome.css">
 
-    <script src="<%=request.getContextPath()%>/managementSystem/lib/jquery-1.8.1.min.js"></script>
-    <script src="<%=request.getContextPath()%>/managementSystem/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="<%=request.getContextPath()%>/managementStatic/lib/jquery-1.8.1.min.js"></script>
+    <script src="<%=request.getContextPath()%>/managementStatic/lib/bootstrap/js/bootstrap.js"></script>
 
     <!-- Demo page code -->
 
