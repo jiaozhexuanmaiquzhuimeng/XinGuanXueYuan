@@ -100,10 +100,10 @@
 								    <div id="StuManagement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="xsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygl&title=kygl&pageNo=1&table=td_science_management">学生工作</a></li>
-								        	<li data-name="sthd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zdsys&title=zdsys&pageNo=1&table=td_science_keylaboratory">社团活动</a></li>
-								        	<li data-name="xljk"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsjl&title=xsjl&pageNo=1&table=td_science_communication">心理健康</a></li>
-								        	<li data-name="zjgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=gjbx&title=gjbx&pageNo=1&table=td_science_international">资助工作</a></li>
+								        	<li data-name="xsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsgz&title=xsgz&pageNo=1&table=td_stumanage_stuwork">学生工作</a></li>
+								        	<li data-name="sthd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=sthd&title=sthd&pageNo=1&table=td_stumanage_league">社团活动</a></li>
+								        	<li data-name="xljk"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xljk&title=xljk&pageNo=1&table=td_stumanage_practice">心理健康</a></li>
+								        	<li data-name="zzgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zzgz&title=zzgz&pageNo=1&table=td_stumanage_electricity">资助工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
