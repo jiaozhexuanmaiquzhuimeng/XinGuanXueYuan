@@ -20,8 +20,8 @@
 							      <div class="panel-body menu-content">
 							        <ul class="child-list">
 							        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&pageNo=1&table=td_college_introduction">学院简介</a></li>
-							        	<li data-name="zzjg"><a href="">组织机构</a></li>
-							        	<li data-name="szdw"><a href="">师资队伍</a></li>
+							        	<li data-name="zzjg"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zzjg&title=zzjg&pageNo=1&table=td_college_organization">组织机构</a></li>
+							        	<li data-name="szdw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=szdw&title=szdw&pageNo=1&table=td_college_teacherStroop">师资队伍</a></li>
 							        </ul>
 							      </div>
 							    </div>
