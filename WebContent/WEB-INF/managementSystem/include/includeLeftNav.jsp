@@ -76,7 +76,7 @@
 									    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 									      <div class="panel-body">
 									        <ul class="child-list">
-									        	<li><a href="">学院简介</a></li>
+									        	<li><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&table=xyjj">学院简介</a></li>
 									        	<li><a href="">组织机构</a></li>
 									        	<li><a href="">师资队伍</a></li>
 									        </ul>

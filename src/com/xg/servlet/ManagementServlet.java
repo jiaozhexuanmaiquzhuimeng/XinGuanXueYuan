@@ -9,12 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xg.domain.Tool;
-import com.xg.service.ToolService;
-import com.xg.utils.Page;
-
-@WebServlet("/workingProcessServlet")
-public class WorkingProcessServlet extends HttpServlet {
+@WebServlet("/managementServlet")
+public class ManagementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,7 +25,7 @@ public class WorkingProcessServlet extends HttpServlet {
 		try {
 			Method method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class,
 					HttpServletResponse.class);
-			//获取私有成员变量
+			//鑾峰彇绉佹湁鎴愬憳鍙橀噺
 			method.setAccessible(true);
 			method.invoke(this, request, response);
 		} catch (Exception e) {
@@ -40,28 +36,11 @@ public class WorkingProcessServlet extends HttpServlet {
 		}
 	}
 
-	ToolService toolService = new ToolService();
-
-	//单击实验教学下拉列表转发到实验教学下拉列表子页面
-	public void WorkingProcessPage(HttpServletRequest request, HttpServletResponse response)
+	//鐐瑰嚮杩炴帴璺宠浆鍒颁笉鍚岀殑椤甸潰
+	public void skipPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String table = request.getParameter("table");
-		String pageNo = request.getParameter("pageNo");
-		String title = request.getParameter("title");
-		if (pageNo.equals("")) {
-			pageNo = "1";
-		}
-
-		Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
-		page = toolService.getPage(Integer.parseInt(pageNo), table);
-		int totalPageNumber = page.getTotalPageNumber();
-
-		request.setAttribute("pageInfo", page);
-		request.setAttribute("table", table);
-		request.setAttribute("totalPageNumber", totalPageNumber);
-		request.setAttribute("title", title);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/indexOtherList/WorkingProcess.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/managementSystem/"+ table +".jsp").forward(request, response);
 	}
 
 }
