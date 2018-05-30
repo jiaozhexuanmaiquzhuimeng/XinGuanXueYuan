@@ -47,6 +47,25 @@
 								    </div>
 							  </div>
 								
+								  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingThree">
+								      <h5 class="panel-title">
+								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#Student" aria-expanded="true" aria-controls="Student">
+								          	招生就业
+								          	<i class="fa fa-sort-desc"></i>
+								        </a>
+								      </h5>
+								    </div>
+								    <div id="Student" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+								      <div class="panel-body menu-content">
+								        <ul class="child-list">
+								        	<li data-name="zsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zyjs&title=zyjs&pageNo=1&table=td_education_major">招生工作</a></li>
+								        	<li data-name="jygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jxgz&title=jxgz&pageNo=1&table=td_education_teach">就业工作</a></li>
+								        </ul>
+								      </div>
+								    </div>
+							  </div>
+								
 							</div>
 							
     

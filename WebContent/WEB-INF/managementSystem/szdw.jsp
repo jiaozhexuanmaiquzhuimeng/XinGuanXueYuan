@@ -62,9 +62,9 @@
 									<td>${content.author }</td>
 									<td>${content.date }</td>
 									<td><a href="user.html" title="编辑"> <i
-											class="icon-pencil"></i>
+											class="fa fa-pencil"></i>
 									</a> <a href="#myModal" role="button" data-toggle="modal"
-										title="删除"> <i class="icon-remove"></i>
+										title="删除"> <i class="fa fa-remove"></i>
 									</a></td>
 								</tr>
 							</c:forEach>

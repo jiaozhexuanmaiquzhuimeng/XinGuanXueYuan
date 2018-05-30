@@ -917,3 +917,11 @@ input[type="text"], input[type="password"] {
 .sidebar-nav .nav-list>li>a {
 	text-indent: 21px;
 }
+
+.table th, .table td {
+	padding: 8px;
+	line-height: 20px;
+	text-align: left;
+	vertical-align: middle;
+	border-top: 1px solid #dddddd;
+}
