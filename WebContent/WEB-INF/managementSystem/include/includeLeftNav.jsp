@@ -141,10 +141,10 @@
                             <!-- 动态菜单生成 -->
                             <ul id="module-menu" class="nav nav-list collapse in">
                             	<li>
-                                    <a href="index.html">人才引进</a>
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=rcyj&title=rcyj&pageNo=1&table=td_talent_talent">人才引进</a>
                                 </li>
                                 <li>
-                                    <a href="index.html">校友之家</a>
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyfc&title=xyfc&pageNo=1&table=td_classmate_classmate">校友风采</a>
                                 </li>
                                 <li>
                                     <a href="index.html">最新动态</a>
