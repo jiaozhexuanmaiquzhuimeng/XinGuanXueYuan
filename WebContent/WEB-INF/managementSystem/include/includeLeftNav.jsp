@@ -10,16 +10,16 @@
 							  <div class="panel panel-default">
 							    <div class="panel-heading" role="tab" id="headingOne">
 							      <h5 class="panel-title">
-							        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#Introduction" aria-expanded="true" aria-controls="Introduction">
 							          	学院概况
-							          	<i class="fa fa-plus pull-right"></i>
+							          	<i class="fa fa-sort-desc"></i>
 							        </a>
 							      </h5>
 							    </div>
-							    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+							    <div id="Introduction" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 							      <div class="panel-body menu-content">
 							        <ul class="child-list">
-							        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&table=td_college_introduction&pageNo=1">学院简介</a></li>
+							        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&pageNo=1&table=td_college_introduction">学院简介</a></li>
 							        	<li data-name="zzjg"><a href="">组织机构</a></li>
 							        	<li data-name="szdw"><a href="">师资队伍</a></li>
 							        </ul>

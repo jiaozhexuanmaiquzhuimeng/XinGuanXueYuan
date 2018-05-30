@@ -876,13 +876,19 @@ input[type="text"], input[type="password"] {
 }
 
 /* Lxiya */
+.nav-list {
+	padding: 0;
+}
+
 .nav-list a {
 	display: block;
+	position: relative;
 }
 
 .nav-list a i.fa {
-	vertical-align: middle;
-	padding: 3px 0 0 0;
+	/* 	text-align: center; */
+	/* 	padding: 3px 0 0 0; */
+	position: absolute;
 }
 
 .nav-list ul.child-list {
@@ -905,5 +911,9 @@ input[type="text"], input[type="password"] {
 }
 
 .panel-title a, .child-list li a {
-	text-indent: 5px;
+	text-indent: 21px;
+}
+
+.sidebar-nav .nav-list>li>a {
+	text-indent: 21px;
 }
