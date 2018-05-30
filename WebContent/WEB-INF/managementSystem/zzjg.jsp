@@ -57,7 +57,7 @@
 						<tbody>
 							<c:forEach items="${pageInfo.list }" var="content" varStatus="vst">
 								<tr>
-									<td>${vst.index+1 }</td>
+									<td>${content.id }</td>
 									<td>${content.title }</td>
 									<td>${content.author }</td>
 									<td>${content.date }</td>
