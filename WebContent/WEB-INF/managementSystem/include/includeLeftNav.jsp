@@ -59,8 +59,8 @@
 								    <div id="Student" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="zsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zyjs&title=zyjs&pageNo=1&table=td_education_major">招生工作</a></li>
-								        	<li data-name="jygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jxgz&title=jxgz&pageNo=1&table=td_education_teach">就业工作</a></li>
+								        	<li data-name="zsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zsgz&title=zsgz&pageNo=1&table=td_Rmstu_admissions">招生工作</a></li>
+								        	<li data-name="jygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">就业工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
