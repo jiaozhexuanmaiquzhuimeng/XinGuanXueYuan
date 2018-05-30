@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 
 <head>
@@ -52,78 +54,96 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Mark</td>
-								<td>Tompson</td>
-								<td>the_mark7</td>
-								<td><a href="user.html" title="编辑"> <i
-										class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal" title="删除">
-										<i class="icon-remove"></i>
-								</a></td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Ashley</td>
-								<td>Jacobs</td>
-								<td>ash11927</td>
-								<td><a href="user.html"> <i class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal"> <i
-										class="icon-remove"></i>
-								</a></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Audrey</td>
-								<td>Ann</td>
-								<td>audann84</td>
-								<td><a href="user.html"> <i class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal"> <i
-										class="icon-remove"></i>
-								</a></td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>John</td>
-								<td>Robinson</td>
-								<td>jr5527</td>
-								<td><a href="user.html"> <i class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal"> <i
-										class="icon-remove"></i>
-								</a></td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>Aaron</td>
-								<td>Butler</td>
-								<td>aaron_butler</td>
-								<td><a href="user.html"> <i class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal"> <i
-										class="icon-remove"></i>
-								</a></td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>Chris</td>
-								<td>Albert</td>
-								<td>cab79</td>
-								<td><a href="user.html"> <i class="icon-pencil"></i>
-								</a> <a href="#myModal" role="button" data-toggle="modal"> <i
-										class="icon-remove"></i>
-								</a></td>
-							</tr>
+							<c:forEach items="${pageInfo.list }" var="content" varStatus="vst">
+								<tr>
+									<td>${vst.index+1 }</td>
+									<td>${content.title }</td>
+									<td>${content.author }</td>
+									<td>${content.date }</td>
+									<td><a href="user.html" title="编辑"> <i
+											class="icon-pencil"></i>
+									</a> <a href="#myModal" role="button" data-toggle="modal"
+										title="删除"> <i class="icon-remove"></i>
+									</a></td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>
 				<div class="pagination">
-					<ul>
-						<li><a href="#">Prev</a></li>
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">Next</a></li>
+					<ul class="pagination pagination-sm">
+						<c:if test="${pageInfo.hasPrev }">
+							<li><a
+								href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
+								aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+						</c:if>
+
+						<!-- 1-10页代码显示 -->
+						<c:if test="${totalPageNumber>10 }">
+							<!-- 如果当前页面大于等于1 && 小于等于 6 -->
+							<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
+								<c:forEach begin="1" end="10" var="n">
+									<c:if test="${pageInfo.pageNo == n }">
+										<li class="active"><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+									<c:if test="${pageInfo.pageNo != n }">
+										<li><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+								</c:forEach>
+							</c:if>
+							<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
+							<c:if
+								test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
+								<c:forEach begin="${pageInfo.pageNo-5 }"
+									end="${pageInfo.pageNo+4 }" var="n">
+									<c:if test="${pageInfo.pageNo == n }">
+										<li class="active"><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+									<c:if test="${pageInfo.pageNo != n }">
+										<li><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+								</c:forEach>
+							</c:if>
+							<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
+							<c:if
+								test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
+								<c:forEach begin="${totalPageNumber-9 }"
+									end="${totalPageNumber }" var="n">
+									<c:if test="${pageInfo.pageNo == n }">
+										<li class="active"><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+									<c:if test="${pageInfo.pageNo != n }">
+										<li><a
+											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+									</c:if>
+								</c:forEach>
+							</c:if>
+						</c:if>
+						<!-- 如果总页数小于10页) -->
+						<c:if test="${totalPageNumber<10 }">
+							<c:forEach begin="1" end="${totalPageNumber }" var="n">
+								<c:if test="${pageInfo.pageNo == n }">
+									<li class="active"><a
+										href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+								</c:if>
+								<c:if test="${pageInfo.pageNo != n }">
+									<li><a
+										href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+								</c:if>
+							</c:forEach>
+						</c:if>
+
+						<c:if test="${pageInfo.hasNext }">
+							<li><a
+								href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${pageInfo.nextPage }&table=${table }&title=${title }"
+								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+							</a></li>
+						</c:if>
 					</ul>
 				</div>
 

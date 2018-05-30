@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.xg.domain.Tool;
+import com.xg.service.ToolService;
+import com.xg.utils.Page;
+
 @WebServlet("/managementServlet")
 public class ManagementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,12 +39,30 @@ public class ManagementServlet extends HttpServlet {
 
 		}
 	}
-
+	
+	ToolService toolService = new ToolService();
+	
 	//点击连接跳转到不同的页面
 	public void skipPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String jsp = request.getParameter("jsp");
 		String table = request.getParameter("table");
-		request.getRequestDispatcher("/WEB-INF/managementSystem/"+ table +".jsp").forward(request, response);
+		String pageNo = request.getParameter("pageNo");
+		String title = request.getParameter("title");
+		if (pageNo.equals("")) {
+			pageNo = "1";
+		}
+
+		Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
+		page = toolService.getPage(Integer.parseInt(pageNo), table);
+		int totalPageNumber = page.getTotalPageNumber();
+
+		request.setAttribute("pageInfo", page);
+		request.setAttribute("table", table);
+		request.setAttribute("totalPageNumber", totalPageNumber);
+		request.setAttribute("title", title);
+		
+		request.getRequestDispatcher("/WEB-INF/managementSystem/"+ jsp +".jsp").forward(request, response);
 	}
 
 }

@@ -19,7 +19,7 @@
 							    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 							      <div class="panel-body menu-content">
 							        <ul class="child-list">
-							        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&table=xyjj&title=xyjj">学院简介</a></li>
+							        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&table=td_college_introduction&pageNo=1">学院简介</a></li>
 							        	<li data-name="zzjg"><a href="">组织机构</a></li>
 							        	<li data-name="szdw"><a href="">师资队伍</a></li>
 							        </ul>
