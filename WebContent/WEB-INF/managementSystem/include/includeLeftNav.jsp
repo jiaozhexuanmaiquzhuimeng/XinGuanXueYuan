@@ -39,9 +39,9 @@
 								    <div id="Education" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="zyjs"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&pageNo=1&table=td_college_introduction">专业建设</a></li>
-								        	<li data-name="jxgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zzjg&title=zzjg&pageNo=1&table=td_college_organization">教学工作</a></li>
-								        	<li data-name="kygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=szdw&title=szdw&pageNo=1&table=td_college_teacherStroop">考研工作</a></li>
+								        	<li data-name="zyjs"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zyjs&title=zyjs&pageNo=1&table=td_education_major">专业建设</a></li>
+								        	<li data-name="jxgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jxgz&title=jxgz&pageNo=1&table=td_education_teach">教学工作</a></li>
+								        	<li data-name="kygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygz&title=kygz&pageNo=1&table=td_education_stugraduate">考研工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
