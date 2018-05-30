@@ -4,19 +4,20 @@
 
 $(function(){
 	var href = window.location.href;
-	console.log(href);
+//	console.log(href);
 	var index = href.indexOf('title');
 	var targetStr = href.slice(index);
-	console.log(targetStr);
+//	console.log(targetStr);
 	var splitStr = targetStr.split('&');
-	console.log(splitStr);
+//	console.log(splitStr);
 	var subStr = splitStr[0].substr(6)
-	console.log(subStr);
+//	console.log(subStr);
 	var activeSecond = $('ol.breadcrumb li.active-second');
 	
 	$('.left-menu .menu-content ul li').each(function(){
 		if($(this).attr('data-name') === subStr){
 			$(this).addClass('active');
+			$(this).parents('div.panel-collapse').addClass('in');
 		}
 		if($(this).hasClass('active')){
 			var wayNavActive = $('ol.breadcrumb li.active');

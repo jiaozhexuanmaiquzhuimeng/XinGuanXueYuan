@@ -31,9 +31,9 @@
 
 			<div class="span9">
 				<ol class="breadcrumb">
-					<li><a href="#">网站管理系统</a></li>
 					<li><a href="#">网站栏目管理</a></li>
-					<li class="active">学院概况</li>
+					<li><a href="#">学院概况</a></li>
+					<li class="active">学院简介</li>
 				</ol>
 				<div class="btn-toolbar">
 					<button class="btn btn-primary">
@@ -171,7 +171,6 @@
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="lib/bootstrap/js/bootstrap.js"></script>
 
 
 
