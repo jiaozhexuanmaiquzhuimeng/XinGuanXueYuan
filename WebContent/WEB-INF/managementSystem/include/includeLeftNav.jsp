@@ -128,6 +128,7 @@
 								      </div>
 								    </div>
 							  </div>
+							  
 								
 							</div>
 							
@@ -139,6 +140,12 @@
                         
                             <!-- 动态菜单生成 -->
                             <ul id="module-menu" class="nav nav-list collapse in">
+                            	<li>
+                                    <a href="index.html">人才引进</a>
+                                </li>
+                                <li>
+                                    <a href="index.html">校友之家</a>
+                                </li>
                                 <li>
                                     <a href="index.html">最新动态</a>
                                 </li>
