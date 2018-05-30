@@ -108,6 +108,26 @@
 								      </div>
 								    </div>
 							  </div>
+							  
+							  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingSix">
+								      <h5 class="panel-title">
+								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#Group" aria-expanded="true" aria-controls="Group">
+								          	党群建设
+								          	<i class="fa fa-sort-desc"></i>
+								        </a>
+								      </h5>
+								    </div>
+								    <div id="Group" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+								      <div class="panel-body menu-content">
+								        <ul class="child-list">
+								        	<li data-name="dtdt"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsgz&title=xsgz&pageNo=1&table=td_stumanage_stuwork">党团动态</a></li>
+								        	<li data-name="ghzj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=sthd&title=sthd&pageNo=1&table=td_stumanage_league">工会之家</a></li>
+								        	<li data-name="xxyd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xljk&title=xljk&pageNo=1&table=td_stumanage_practice">学习园地</a></li>
+								        </ul>
+								      </div>
+								    </div>
+							  </div>
 								
 							</div>
 							

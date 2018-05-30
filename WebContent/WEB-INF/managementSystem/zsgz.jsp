@@ -34,8 +34,8 @@
 			<div class="span9">
 				<ol class="breadcrumb">
 					<li><a href="#">网站栏目管理</a></li>
-					<li><a href="#">学院概况</a></li>
-					<li class="active">学院简介</li>
+					<li><a href="#">招生就业</a></li>
+					<li class="active">招生工作</li>
 				</ol>
 				<div class="btn-toolbar">
 					<button class="btn btn-primary">

@@ -913,15 +913,21 @@ input[type="text"], input[type="password"] {
 .panel-title a, .child-list li a {
 	text-indent: 21px;
 }
-
+.child-list li a{
+	color: #113355;
+}
 .sidebar-nav .nav-list>li>a {
 	text-indent: 21px;
 }
 
 .table th, .table td {
+	text-align:center;
 	padding: 8px;
 	line-height: 20px;
-	text-align: left;
 	vertical-align: middle;
 	border-top: 1px solid #dddddd;
+}
+.table thead th {
+    vertical-align: middle;
+    text-align: center;
 }
