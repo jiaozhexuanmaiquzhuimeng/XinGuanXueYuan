@@ -66,7 +66,7 @@
 								    </div>
 							  </div>
 								
-								   <div class="panel panel-default">
+								  <div class="panel panel-default">
 								    <div class="panel-heading" role="tab" id="headingFour">
 								      <h5 class="panel-title">
 								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#Science" aria-expanded="true" aria-controls="Science">
@@ -83,6 +83,27 @@
 								        	<li data-name="xsjl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsjl&title=xsjl&pageNo=1&table=td_science_communication">学术交流</a></li>
 								        	<li data-name="gjbx"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=gjbx&title=gjbx&pageNo=1&table=td_science_international">国际办学</a></li>
 								       		<li data-name="shfw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=shfw&title=shfw&pageNo=1&table=td_science_service">社会服务</a></li>
+								        </ul>
+								      </div>
+								    </div>
+							  </div>
+							  
+							  <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingFive">
+								      <h5 class="panel-title">
+								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#StuManagement" aria-expanded="true" aria-controls="StuManagement">
+								          	学生管理
+								          	<i class="fa fa-sort-desc"></i>
+								        </a>
+								      </h5>
+								    </div>
+								    <div id="StuManagement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+								      <div class="panel-body menu-content">
+								        <ul class="child-list">
+								        	<li data-name="xsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygl&title=kygl&pageNo=1&table=td_science_management">学生工作</a></li>
+								        	<li data-name="sthd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zdsys&title=zdsys&pageNo=1&table=td_science_keylaboratory">社团活动</a></li>
+								        	<li data-name="xljk"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsjl&title=xsjl&pageNo=1&table=td_science_communication">心理健康</a></li>
+								        	<li data-name="zjgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=gjbx&title=gjbx&pageNo=1&table=td_science_international">资助工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
