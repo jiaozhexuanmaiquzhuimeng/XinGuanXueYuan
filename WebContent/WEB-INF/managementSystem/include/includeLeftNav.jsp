@@ -78,11 +78,11 @@
 								    <div id="Science" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="kygl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zsgz&title=zsgz&pageNo=1&table=td_Rmstu_admissions">科研管理</a></li>
-								        	<li data-name="zdsys"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">重点实验室</a></li>
-								        	<li data-name="xsjl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">学术交流</a></li>
-								        	<li data-name="gjbx"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">国际办学</a></li>
-								       		<li data-name="shfw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">社会服务</a></li>
+								        	<li data-name="kygl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygl&title=kygl&pageNo=1&table=td_science_management">科研管理</a></li>
+								        	<li data-name="zdsys"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zdsys&title=zdsys&pageNo=1&table=td_science_keylaboratory">重点实验室</a></li>
+								        	<li data-name="xsjl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsjl&title=xsjl&pageNo=1&table=td_science_communication">学术交流</a></li>
+								        	<li data-name="gjbx"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=gjbx&title=gjbx&pageNo=1&table=td_science_international">国际办学</a></li>
+								       		<li data-name="shfw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=shfw&title=shfw&pageNo=1&table=td_science_service">社会服务</a></li>
 								        </ul>
 								      </div>
 								    </div>
