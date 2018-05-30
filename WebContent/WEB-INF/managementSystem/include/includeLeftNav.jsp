@@ -66,6 +66,28 @@
 								    </div>
 							  </div>
 								
+								   <div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingFour">
+								      <h5 class="panel-title">
+								        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#Science" aria-expanded="true" aria-controls="Science">
+								          	科研工作
+								          	<i class="fa fa-sort-desc"></i>
+								        </a>
+								      </h5>
+								    </div>
+								    <div id="Science" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								      <div class="panel-body menu-content">
+								        <ul class="child-list">
+								        	<li data-name="kygl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zsgz&title=zsgz&pageNo=1&table=td_Rmstu_admissions">科研管理</a></li>
+								        	<li data-name="zdsys"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">重点实验室</a></li>
+								        	<li data-name="xsjl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">学术交流</a></li>
+								        	<li data-name="gjbx"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">国际办学</a></li>
+								       		<li data-name="shfw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">社会服务</a></li>
+								        </ul>
+								      </div>
+								    </div>
+							  </div>
+								
 							</div>
 							
     
