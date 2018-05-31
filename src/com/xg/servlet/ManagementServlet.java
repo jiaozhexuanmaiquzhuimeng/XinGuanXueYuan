@@ -39,9 +39,9 @@ public class ManagementServlet extends HttpServlet {
 
 		}
 	}
-	
+
 	ToolService toolService = new ToolService();
-	
+
 	//点击连接跳转到不同的页面
 	public void skipPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -61,8 +61,14 @@ public class ManagementServlet extends HttpServlet {
 		request.setAttribute("table", table);
 		request.setAttribute("totalPageNumber", totalPageNumber);
 		request.setAttribute("title", title);
-		
-		request.getRequestDispatcher("/WEB-INF/managementSystem/"+ jsp +".jsp").forward(request, response);
+
+		request.getRequestDispatcher("/WEB-INF/managementSystem/" + jsp + ".jsp").forward(request, response);
+	}
+
+	//转发到添加页面
+	public void forwardPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
 	}
 
 }
