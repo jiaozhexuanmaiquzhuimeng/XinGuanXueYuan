@@ -906,9 +906,9 @@ input[type="text"], input[type="password"] {
 	background-color: #eee;
 }
 
-.nav-list ul.child-list li:last-child {
-	border-bottom: 0 none;
-}
+/* .nav-list ul.child-list li:last-child { */
+/* 	border-bottom: 0 none; */
+/* } */
 
 .panel-title a, .child-list li a {
 	text-indent: 21px;
