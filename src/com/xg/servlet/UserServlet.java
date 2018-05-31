@@ -223,13 +223,6 @@ public class UserServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
 
-		// if(id.equals("")) {
-		// id = request.getParameter("");
-		// }
-		// if(table.equals("")) {
-		// table = request.getParameter("");
-		// }
-
 		Tool tool = new Tool();
 		tool = toolService.selectToolByIdAndTable(Integer.parseInt(id), table);
 

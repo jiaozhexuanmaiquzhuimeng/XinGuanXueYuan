@@ -18,4 +18,6 @@ public interface ToolDao {
 	public abstract List<Tool> getPageList(String table,int pageNo, int pageSize);
 
 	public abstract void add(Tool tool, String tableName);
+
+	public abstract void delete(Tool tool, String table);
 }

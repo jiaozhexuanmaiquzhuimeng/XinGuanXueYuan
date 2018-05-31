@@ -31,5 +31,12 @@ public class ToolService {
 	public void add(Tool tool, String tableName) {
 		toolDao.add(tool,tableName);
 	}
+
+	/**
+	 * @param tool
+	 */
+	public void delete(Tool tool, String table) {
+		toolDao.delete(tool, table);
+	}
 	
 }

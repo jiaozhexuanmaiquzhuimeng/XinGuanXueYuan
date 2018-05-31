@@ -1,7 +1,10 @@
 package com.xg.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
 import com.xg.utils.Page;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 @WebServlet("/managementServlet")
 public class ManagementServlet extends HttpServlet {
@@ -69,6 +75,27 @@ public class ManagementServlet extends HttpServlet {
 	public void forwardPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
+	}
+
+	//删除操作
+	public void deletePage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String table = request.getParameter("table");
+		System.out.println(id);
+		
+		Tool tool = new Tool();
+		tool.setId(Integer.parseInt(id));
+		toolService.delete(tool, table);
+		
+		List<Tool> tools = new ArrayList<Tool>();
+		tools = toolService.selectToolByTable(table);
+		JSONArray jsonData = JSONArray.fromObject(tools);
+		
+		PrintWriter out = response.getWriter();
+		out.print(jsonData);
+		
+		//request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
 	}
 
 }

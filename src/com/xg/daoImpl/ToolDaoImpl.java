@@ -37,7 +37,7 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 		Page<Tool> page = new Page<>(pageNo);
 
 		page.setTotalItemNumber(getTotalToolNumber(table));
-		// »ñµÃµ±Ç°Ò³µÄÊé
+		// ï¿½ï¿½Ãµï¿½Ç°Ò³ï¿½ï¿½ï¿½ï¿½
 		page.setList(getPageList(table, pageNo, page.getPageSize()));
 
 		return page;
@@ -57,6 +57,14 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 		String sql = "INSERT INTO "+tableName+"(`title`,`date`,`author`,`content`) VALUES (?,?,?,?)";
 		long insert = insert(sql, tool.getTitle(), tool.getDate(), tool.getAuthor(), tool.getContent());
 		System.out.println(insert);
+	}
+
+	@Override
+	public void delete(Tool tool, String tableName) {
+		String sql = "DELETE FROM " + tableName + " where id = ?";
+		//Object[] objects = (Object[]) new Object();
+		
+		update(sql, tool.getId());
 	}
 
 }

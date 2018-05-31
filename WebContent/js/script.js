@@ -3,6 +3,8 @@
  */
 
 $(function(){
+	//var queryStr = ()();
+	
 	var pathName = window.document.location.pathname;
 	var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
 //	console.log(projectName);
@@ -42,14 +44,28 @@ $(function(){
 	})
 	
 	$('button.btn-sure-delte').click(function(){
+		var getQueryStr = function (name) {
+			var qs = location.search.length > 0 ? location.search.substring(1) : "";
+			var items = qs.length ? qs.split('&') : [];
+			var item;
+			for(var i = 0; i < items.length; i++){
+				item = items[i].split('=');
+				if (item[0] === name) {
+					return item[1];
+				}
+			}
+			return '';
+		}
+		var contentId = $(this).attr('data-contentid');
 		$.ajax({
-			url:"",
-			data:{
-				
-			},
+			url: projectName+"/managementServlet?method=deletePage",
+			dataType: 'json',
+			data:{"id":contentId, "table":getQueryStr('table')},
 			type:"POST",
-			success:function(result){
-				
+			success:function(data){
+				//alert(data);
+				//删除成功后刷新页面
+				window.location.reload();
 			}
 		})
 	})
