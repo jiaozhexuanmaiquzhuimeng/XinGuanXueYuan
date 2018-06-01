@@ -38,7 +38,7 @@
 					<li class="active">就业工作</li>
 				</ol>
 				<div class="btn-toolbar">
-					<button class="btn btn-primary">
+					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=jygz'">
 						<i class="icon-plus"></i> 发布新闻
 					</button>
 				</div>

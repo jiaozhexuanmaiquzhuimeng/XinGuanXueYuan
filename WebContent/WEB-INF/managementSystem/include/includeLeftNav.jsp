@@ -139,23 +139,19 @@
                             <i class="icon-dashboard"></i>首页版块管理</div>
                         
                             <!-- 动态菜单生成 -->
-                            <ul id="module-menu" class="nav nav-list collapse in">
-                            	<li>
+                            <ul id="module-menu" class="nav nav-list collapse in menu-content">
+                            	<li data-name="rcyj">
                                     <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=rcyj&title=rcyj&pageNo=1&table=td_talent_talent">人才引进</a>
                                 </li>
-                                <li>
+                                <li data-name="xyfc">
                                     <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyfc&title=xyfc&pageNo=1&table=td_classmate_classmate">校友风采</a>
                                 </li>
-                                <li>
-                                    <a href="index.html">最新动态</a>
+                                <li data-name="zxdt">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zxdt&title=zxdt&pageNo=1&table=td_firstnews">最新动态</a>
                                 </li>
-                                <li>
-                                    <a href="users.html">通知公告</a>
+                                <li data-name="tzgg">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=tzgg&title=tzgg&pageNo=1&table=td_notice">通知公告</a>
                                 </li>
-                                <li>
-                                    <a href="user.html">党群工作</a>
-                                </li>
-        
                             </ul>
     
 

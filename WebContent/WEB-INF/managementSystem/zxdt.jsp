@@ -34,7 +34,7 @@
 			<div class="span9">
 				<ol class="breadcrumb">
 					<li><a href="#">首页版块管理</a></li>
-					<li class="active">人才引进</li>
+					<li class="active">最新动态</li>
 				</ol>
 				<div class="btn-toolbar">
 					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=rcyj'">

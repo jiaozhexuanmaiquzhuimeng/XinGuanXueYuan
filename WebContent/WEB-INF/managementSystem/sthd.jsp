@@ -34,11 +34,11 @@
 			<div class="span9">
 				<ol class="breadcrumb">
 					<li><a href="#">网站栏目管理</a></li>
-					<li><a href="#">学院概况</a></li>
-					<li class="active">学院简介</li>
+					<li><a href="#">学生管理</a></li>
+					<li class="active">社团活动</li>
 				</ol>
 				<div class="btn-toolbar">
-					<button class="btn btn-primary">
+					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=sthd'">
 						<i class="icon-plus"></i> 发布新闻
 					</button>
 				</div>

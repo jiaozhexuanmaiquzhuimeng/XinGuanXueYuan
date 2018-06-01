@@ -909,12 +909,11 @@ input[type="text"], input[type="password"] {
 /* .nav-list ul.child-list li:last-child { */
 /* 	border-bottom: 0 none; */
 /* } */
-
 .panel-title a, .child-list li a {
 	text-indent: 21px;
 }
 
-.child-list li a {
+.menu-content .child-list li a {
 	color: #113355;
 }
 
@@ -923,7 +922,7 @@ input[type="text"], input[type="password"] {
 }
 
 .table th, .table td {
-	text-align: center;
+	text-align: left;
 	padding: 8px;
 	line-height: 20px;
 	vertical-align: middle;
@@ -932,5 +931,5 @@ input[type="text"], input[type="password"] {
 
 .table thead th {
 	vertical-align: middle;
-	text-align: center;
+	text-align: left;
 }

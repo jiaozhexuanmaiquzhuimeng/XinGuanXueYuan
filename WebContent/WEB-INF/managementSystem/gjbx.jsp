@@ -38,7 +38,7 @@
 					<li class="active">国际办学</li>
 				</ol>
 				<div class="btn-toolbar">
-					<button class="btn btn-primary">
+					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=gjbx'">
 						<i class="icon-plus"></i> 发布新闻
 					</button>
 				</div>

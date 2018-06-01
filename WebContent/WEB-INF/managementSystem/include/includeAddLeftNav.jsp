@@ -19,9 +19,9 @@
 								    <div id="Introduction" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="xyjj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&title=xyjj&pageNo=1&table=td_college_introduction">学院简介</a></li>
-								        	<li data-name="zzjg"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zzjg&title=zzjg&pageNo=1&table=td_college_organization">组织机构</a></li>
-								        	<li data-name="szdw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=szdw&title=szdw&pageNo=1&table=td_college_teacherStroop">师资队伍</a></li>
+								        	<li data-name="xyjj" data-table="td_college_introduction "><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xyjj">学院简介</a></li>
+								        	<li data-name="zzjg" data-table="td_college_organization "><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zzjg">组织机构</a></li>
+								        	<li data-name="szdw" data-table="td_college_teacherStroop "><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=szdw">师资队伍</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -39,9 +39,9 @@
 								    <div id="Education" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="zyjs"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zyjs&title=zyjs&pageNo=1&table=td_education_major">专业建设</a></li>
-								        	<li data-name="jxgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jxgz&title=jxgz&pageNo=1&table=td_education_teach">教学工作</a></li>
-								        	<li data-name="kygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygz&title=kygz&pageNo=1&table=td_education_stugraduate">考研工作</a></li>
+								        	<li data-name="zyjs" data-table="td_education_major "><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zyjs">专业建设</a></li>
+								        	<li data-name="jxgz" data-table="td_education_teach"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=jxgz">教学工作</a></li>
+								        	<li data-name="kygz" data-table="td_education_stugraduate"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=kygz">考研工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -59,8 +59,8 @@
 								    <div id="Student" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="zsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zsgz&title=zsgz&pageNo=1&table=td_Rmstu_admissions">招生工作</a></li>
-								        	<li data-name="jygz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=jygz&title=jygz&pageNo=1&table=td_Rmstu_employment">就业工作</a></li>
+								        	<li data-name="zsgz" data-table="td_Rmstu_admissions "><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zsgz">招生工作</a></li>
+								        	<li data-name="jygz" data-table="td_Rmstu_employment"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=jygz">就业工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -78,11 +78,11 @@
 								    <div id="Science" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="kygl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=kygl&title=kygl&pageNo=1&table=td_science_management">科研管理</a></li>
-								        	<li data-name="zdsys"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zdsys&title=zdsys&pageNo=1&table=td_science_keylaboratory">重点实验室</a></li>
-								        	<li data-name="xsjl"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsjl&title=xsjl&pageNo=1&table=td_science_communication">学术交流</a></li>
-								        	<li data-name="gjbx"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=gjbx&title=gjbx&pageNo=1&table=td_science_international">国际办学</a></li>
-								       		<li data-name="shfw"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=shfw&title=shfw&pageNo=1&table=td_science_service">社会服务</a></li>
+								        	<li data-name="kygl" data-table="td_science_management"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=kygl">科研管理</a></li>
+								        	<li data-name="zdsys" data-table="td_science_keylaboratory"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zdsys">重点实验室</a></li>
+								        	<li data-name="xsjl" data-table="td_science_communication"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xsjl">学术交流</a></li>
+								        	<li data-name="gjbx" data-table="td_science_international"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=gjbx">国际办学</a></li>
+								       		<li data-name="shfw" data-table="td_science_service"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=shfw">社会服务</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -100,10 +100,10 @@
 								    <div id="StuManagement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="xsgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xsgz&title=xsgz&pageNo=1&table=td_stumanage_stuwork">学生工作</a></li>
-								        	<li data-name="sthd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=sthd&title=sthd&pageNo=1&table=td_stumanage_league">社团活动</a></li>
-								        	<li data-name="xljk"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xljk&title=xljk&pageNo=1&table=td_stumanage_practice">心理健康</a></li>
-								        	<li data-name="zzgz"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=zzgz&title=zzgz&pageNo=1&table=td_stumanage_electricity">资助工作</a></li>
+								        	<li data-name="xsgz" data-table="td_stumanage_stuwork"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xsgz">学生工作</a></li>
+								        	<li data-name="sthd" data-table="td_stumanage_league"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=sthd">社团活动</a></li>
+								        	<li data-name="xljk" data-table="td_stumanage_practice"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xljk">心理健康</a></li>
+								        	<li data-name="zzgz" data-table="td_stumanage_electricity"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zzgz">资助工作</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -121,9 +121,9 @@
 								    <div id="Group" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 								      <div class="panel-body menu-content">
 								        <ul class="child-list">
-								        	<li data-name="dtdt"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&title=dtdt&pageNo=1&table=td_Group_dynamics">党团动态</a></li>
-								        	<li data-name="ghzj"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=ghzj&title=ghzj&pageNo=1&table=td_Group_home">工会之家</a></li>
-								        	<li data-name="xxyd"><a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xxyd&title=xxyd&pageNo=1&table=td_Group_study">学习园地</a></li>
+								        	<li data-name="dtdt" data-table="td_group_dynamics"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=dtdt">党团动态</a></li>
+								        	<li data-name="ghzj" data-table="td_group_home"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=ghzj">工会之家</a></li>
+								        	<li data-name="xxyd" data-table="td_group_study"><a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xxyd">学习园地</a></li>
 								        </ul>
 								      </div>
 								    </div>
@@ -139,23 +139,19 @@
                             <i class="icon-dashboard"></i>选择录入版块</div>
                         
                             <!-- 动态菜单生成 -->
-                            <ul id="module-menu" class="nav nav-list collapse in">
-                            	<li>
-                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=rcyj&title=rcyj&pageNo=1&table=td_talent_talent">人才引进</a>
+                            <ul id="module-menu" class="nav nav-list collapse in menu-content child-list">
+                            	<li data-name="rcyj" data-table="td_talent_talent">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=rcyj">人才引进</a>
+                                </li>
+                                <li data-name="xyfc" data-table="td_classmate_classmate">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xyfc">校友风采</a>
                                 </li>
                                 <li>
-                                    <a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyfc&title=xyfc&pageNo=1&table=td_classmate_classmate">校友风采</a>
-                                </li>
-                                <li>
-                                    <a href="index.html">最新动态</a>
+                                    <a href="">最新动态</a>
                                 </li>
                                 <li>
                                     <a href="users.html">通知公告</a>
                                 </li>
-                                <li>
-                                    <a href="user.html">党群工作</a>
-                                </li>
-        
                             </ul>
     
 
@@ -185,15 +181,19 @@
 
 			<script type="text/javascript">
             $(function(){
-            	var target ='';
+            	var target ='',tableName = '';
                 $('div.left-menu-add ul.child-list').each(function(){
-//                 	alert('lxiya')
-// 					alert($(this).find('li.active a').html())
-					target = $(this).find('li.active a').html();
-					return false;
+					var activeLink = $(this).find('li.active').length;
+					if(activeLink){
+	 					target = $(this).find('li.active a').html();
+	 					tableName = $(this).find('li.active').attr('data-table');
+						return false;
+					}
+					
                 })
-//                 console.log(target);
                 $('ol.breadcrumb li.active span.target').html(target);
+                $('ol.breadcrumb li.go-back a').attr('href',''+projectName+'/managementServlet?method=skipPage&jsp='+subStr+'&title='+subStr+'&pageNo=1&table='+tableName+' ');
+                $('button.save-button').attr('data-table',tableName);
             })
             
             

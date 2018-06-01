@@ -47,6 +47,37 @@
 		})
 	</script>
 	
+<script>
+		//发布新闻
+function save(ele) {
+	//获取标题
+	var title = $("input[name='title']").val();
+	//获取作者
+	var author = $("input[name='author']").val();
+	//获取表名
+	var tableName = $(ele).attr('data-table');
+	//获取正文
+	var html = $('#editor_id').val();
+	
+	$.ajax({
+		url:'${APP_PATH}/addServlet?method=add',
+		data:{
+			'title':title,
+			'author':author,
+			'html':html,
+			'tableName':tableName
+		},
+		type:'POST',
+		success:function(result){
+			alert('文章发布成功!');
+				window.location.reload();
+		}
+		
+	})
+	
+}
+	</script>
+	
 	
 </head>
 
@@ -72,6 +103,21 @@
 					<li><a href="#">网站栏目管理</a></li>
 					<li><a href="#">发布新闻</a></li>
 					<li class="active"><a href="#">发布到: </a><span class="target" style="color: green;"></span></li>
+					<li class="pull-right go-back"><a>&lt;&nbsp;&nbsp;返回栏目管理</a></li>
+					<style>
+						li.go-back::before {
+						    padding: 0 5px;
+						    color: #ccc;
+						    content: "" !important;
+						}
+					</style>
+					
+					<script>
+							var pathName = window.document.location.pathname;
+							var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+							
+					</script>
+					
 				</ol>
 				<div class="well">
 					<p style="color: red;">提示:为保证兼容性,若使用IE浏览器,可直接将word文档中的图片和文字直接粘贴到内容区域,非IE浏览器,请将word中的图片和文字分开上传.</p>
