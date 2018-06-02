@@ -83,6 +83,7 @@ public class ManagementServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
 		System.out.println(id);
+		System.out.println(table);
 		
 		Tool tool = new Tool();
 		tool.setId(Integer.parseInt(id));

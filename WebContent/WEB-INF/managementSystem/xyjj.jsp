@@ -162,7 +162,7 @@
 					</div>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal" aria-hidden="true">退出</button>
-						<button class="btn btn-danger btn-sure-delte" data-dismiss="modal">删除</button>
+						<button class="btn btn-danger btn-sure-delete" data-dismiss="modal">删除</button>
 					</div>
 				</div>
 
@@ -175,7 +175,7 @@
 		<hr>
 
 		<p class="pull-right">
-			德州学院 <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">信息管理学院</a>
+			德州学院 <a href="http://www.dzu.edu.cn/" title="网页模板" target="_blank">信息管理学院</a>
 		</p>
 
 

@@ -146,11 +146,11 @@
                                 <li data-name="xyfc" data-table="td_classmate_classmate">
                                     <a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xyfc">校友风采</a>
                                 </li>
-                                <li>
-                                    <a href="">最新动态</a>
+                                <li data-name="zxdt" data-table="td_firstnews">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=zxdt">最新动态</a>
                                 </li>
-                                <li>
-                                    <a href="users.html">通知公告</a>
+                                <li data-name="tzgg" data-table="td_notice">
+                                    <a href="<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=tzgg">通知公告</a>
                                 </li>
                             </ul>
     

@@ -62,8 +62,8 @@
 									<td>${content.date }</td>
 									<td><a href="user.html" title="编辑"> <i
 											class="fa fa-pencil"></i>
-									</a> <a href="#myModal" role="button" data-toggle="modal"
-										title="删除"> <i class="fa fa-remove"></i>
+									</a> <a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
+									data-contentid="${content.id}" title="删除"> <i class="fa fa-remove"></i>
 									</a></td>
 								</tr>
 							</c:forEach>
@@ -147,22 +147,22 @@
 					</ul>
 				</div>
 
-				<div class="modal small hide fade" id="myModal" tabindex="-1"
+				<div class="modal small hide" id="myModal" tabindex="-1"
 					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">×</button>
-						<h3 id="myModalLabel">Delete Confirmation</h3>
+						<h3 id="myModalLabel">删除确认?</h3>
 					</div>
 					<div class="modal-body">
 						<p class="error-text">
-							<i class="icon-warning-sign modal-icon"></i>Are you sure you want
-							to delete the user?
+							<i class="icon-warning-sign modal-icon"></i>
+							确定要删除这篇文章吗?
 						</p>
 					</div>
 					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-						<button class="btn btn-danger" data-dismiss="modal">Delete</button>
+						<button class="btn" data-dismiss="modal" aria-hidden="true">退出</button>
+						<button class="btn btn-danger btn-sure-delete" data-dismiss="modal">删除</button>
 					</div>
 				</div>
 

@@ -26,11 +26,11 @@ $(function(){
 	activeSecond.html($('.menu-head').find('span span.title').html());
 			
 	$('a.btn-delete').click(function(){
-		$('#myModal').find('button.btn-sure-delte').attr('data-contentid',$(this).attr('data-contentid'));
+		$('#myModal').find('button.btn-sure-delete').attr('data-contentid',$(this).attr('data-contentid'));
 	})
 	
 	//删除文章
-	$('button.btn-sure-delte').click(function(){
+	$('button.btn-sure-delete').click(function(){
 		var getQueryStr = function (name) {
 			var qs = location.search.length > 0 ? location.search.substring(1) : "";
 			var items = qs.length ? qs.split('&') : [];
