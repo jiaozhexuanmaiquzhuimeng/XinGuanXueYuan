@@ -184,7 +184,7 @@ function save(ele) {
 		<hr>
 
 		<p class="pull-right">
-			德州学院 <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">信息管理学院</a>
+			德州学院 <a href="http://www.dzu.edu.cn/" title="德州学院" target="_blank">信息管理学院</a>
 		</p>
 
 
