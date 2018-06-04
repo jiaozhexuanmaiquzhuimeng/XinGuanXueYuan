@@ -38,5 +38,16 @@ public class ToolService {
 	public void delete(Tool tool, String table) {
 		toolDao.delete(tool, table);
 	}
-	
+
+	/**
+	 * @param parseInt
+	 * @param table
+	 * @return
+	 */
+	public List<Tool> selectToolByIdAndTableForList(int id, String table) {
+		List<Tool> tools = new ArrayList<Tool>();
+		tools = toolDao.selectToolByIdAndTableForList(id, table); 
+		return tools;
+	}
+
 }

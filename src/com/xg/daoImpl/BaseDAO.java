@@ -90,7 +90,8 @@ public class BaseDAO<T> implements DAO<T> {
 		}
 		return null;
 	}
-
+	
+	//返回一个集合
 	@Override
 	public List<T> queryForList(String sql, Object... args) {
 		Connection connection = null;

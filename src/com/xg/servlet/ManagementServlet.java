@@ -82,21 +82,36 @@ public class ManagementServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
-		System.out.println(id);
-		System.out.println(table);
-		
+//		System.out.println(id);
+//		System.out.println(table);
+
 		Tool tool = new Tool();
 		tool.setId(Integer.parseInt(id));
 		toolService.delete(tool, table);
-		
+
 		List<Tool> tools = new ArrayList<Tool>();
 		tools = toolService.selectToolByTable(table);
 		JSONArray jsonData = JSONArray.fromObject(tools);
-		
+
 		PrintWriter out = response.getWriter();
 		out.print(jsonData);
-		
+
 		//request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
+	}
+
+	//编辑操作
+	public void updatePage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String table = request.getParameter("table");
+		
+		List<Tool> tools = new ArrayList<Tool>();
+		tools = toolService.selectToolByIdAndTableForList(Integer.parseInt(id), table);
+		
+		request.setAttribute("tools", tools);
+		System.out.println(tools);
+		
+		request.getRequestDispatcher("/WEB-INF/managementSystem/update.jsp").forward(request, response);
 	}
 
 }

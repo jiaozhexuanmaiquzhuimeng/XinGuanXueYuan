@@ -20,4 +20,6 @@ public interface ToolDao {
 	public abstract void add(Tool tool, String tableName);
 
 	public abstract void delete(Tool tool, String table);
+
+	public abstract List<Tool> selectToolByIdAndTableForList(int id, String table);
 }
