@@ -46,7 +46,7 @@ public class AddServlet extends HttpServlet {
 		try {
 			Method method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class,
 					HttpServletResponse.class);
-			//��ȡ˽�г�Ա����
+			//��ȡ˽�г�Ա����
 			method.setAccessible(true);
 			method.invoke(this, request, response);
 		} catch (Exception e) {
@@ -57,6 +57,8 @@ public class AddServlet extends HttpServlet {
 		}
 	}
 	ToolService toolService = new ToolService();
+	
+	//添加操作
 	public void add(HttpServletRequest request, HttpServletResponse response) {
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
@@ -64,6 +66,17 @@ public class AddServlet extends HttpServlet {
 		String html = request.getParameter("html");
 		String date = DateUtil.formatDate(new Date(),"yyyy-MM-dd");
 		toolService.add(new Tool(title,date,author,html),tableName);
+	}
+	
+	//更新操作
+	public void update(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		String title = request.getParameter("title");
+		String author = request.getParameter("author");
+		String tableName = request.getParameter("tableName");
+		String html = request.getParameter("html");
+		String date = DateUtil.formatDate(new Date(),"yyyy-MM-dd");
+		toolService.update(new Tool(Integer.parseInt(id), title,date,author,html),tableName);
 	}
 
 }

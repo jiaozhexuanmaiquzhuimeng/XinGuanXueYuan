@@ -76,4 +76,10 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 		return tools;
 	}
 
+	@Override
+	public void update(Tool tool, String tableName) {
+		String sql = "update "+tableName+" set title = ?, author=?, content=?, `date`=? where id = ?";
+		update(sql, tool.getTitle(), tool.getAuthor(), tool.getContent(), tool.getDate(), tool.getId());
+	}
+
 }

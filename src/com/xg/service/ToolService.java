@@ -50,4 +50,12 @@ public class ToolService {
 		return tools;
 	}
 
+	/**
+	 * @param tool
+	 * @param tableName
+	 */
+	public void update(Tool tool, String tableName) {
+		toolDao.update(tool,tableName);
+	}
+
 }

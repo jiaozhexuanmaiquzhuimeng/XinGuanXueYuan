@@ -49,6 +49,9 @@ input[type="text"] {
 						});
 		$('.ke-container').css('width', '100%');
 
+		var jsContent = $('#js-content');
+		// 设置HTML内容
+		editor.html(jsContent.html());
 	})
 </script>
 
@@ -75,6 +78,37 @@ input[type="text"] {
 			type : 'POST',
 			success : function(result) {
 				alert('文章发布成功!');
+				window.location.reload();
+			}
+
+		})
+
+	}
+	//更新新闻
+	function update(ele) {
+		//获取ID
+		var id = $("input[name='id']").val();
+		//获取标题
+		var title = $("input[name='title']").val();
+		//获取作者
+		var author = $("input[name='author']").val();
+		//获取表名
+		var tableName = $(ele).attr('data-table1');
+		//获取正文
+		var html = $('#editor_id').val();
+
+		$.ajax({
+			url : '${APP_PATH}/addServlet?method=update',
+			data : {
+				'id' : id,
+				'title' : title,
+				'author' : author,
+				'html' : html,
+				'tableName' : tableName
+			},
+			type : 'POST',
+			success : function(result) {
+				alert('文章更新成功!');
 				window.location.reload();
 			}
 
@@ -128,11 +162,20 @@ li.go-back::before {
 				<div class="well">
 					<p style="color: red;">提示:为保证兼容性,若使用IE浏览器,可直接将word文档中的图片和文字直接粘贴到内容区域,非IE浏览器,请将word中的图片和文字分开上传.</p>
 					<c:forEach items="${tools }" var="tool">
+						<!-- 文章id -->
+						<div class="form-group clearfix">
+							<label for="" class="col-sm-2 control-label">ID</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="id"
+									value="${id }" />
+							</div>
+						</div>
 						<!-- 文章标题 -->
 						<div class="form-group clearfix">
 							<label for="" class="col-sm-2 control-label">标题</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="title" value="${tool.title }" />
+								<input type="text" class="form-control" name="title"
+									value="${tool.title }" />
 							</div>
 						</div>
 
@@ -140,7 +183,8 @@ li.go-back::before {
 						<div class="form-group clearfix">
 							<label for="" class="col-sm-2 control-label">作者</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="author" value="${tool.author }" />
+								<input type="text" class="form-control" name="author"
+									value="${tool.author }" />
 							</div>
 						</div>
 
@@ -148,9 +192,9 @@ li.go-back::before {
 						<div class="form-group clearfix">
 							<label for="" class="col-sm-2 control-label">内容</label>
 							<div class="col-sm-10">
-<!-- 								<textarea id="editor_id" name="content" class="form-control" -->
-<%-- 									style="height: 400px;" value="${tool.content }"></textarea> --%>
-								<div>${tool.content}</div>
+								<textarea id="editor_id" name="content" class="form-control"
+									style="height: 400px;"></textarea>
+								<div id="js-content" style="display: none;">${tool.content}</div>
 							</div>
 						</div>
 
@@ -158,8 +202,8 @@ li.go-back::before {
 						<div class="form-group clearfix">
 							<label for="" class="col-sm-2 control-label"></label>
 							<div class="col-sm-10">
-								<button type="button" onclick="save(this)"
-									class="btn btn-success save-button">提交</button>
+								<button type="button" onclick="update(this)"
+									class="btn btn-success save-button" data-table1="${table }">更新</button>
 							</div>
 						</div>
 					</c:forEach>

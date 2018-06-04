@@ -109,6 +109,8 @@ public class ManagementServlet extends HttpServlet {
 		tools = toolService.selectToolByIdAndTableForList(Integer.parseInt(id), table);
 		
 		request.setAttribute("tools", tools);
+		request.setAttribute("id", id);
+		request.setAttribute("table", table);
 		System.out.println(tools);
 		
 		request.getRequestDispatcher("/WEB-INF/managementSystem/update.jsp").forward(request, response);

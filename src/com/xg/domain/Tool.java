@@ -61,6 +61,15 @@ public class Tool {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Tool(int id, String title, String date, String author, String content) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.date = date;
+		this.author = author;
+		this.content = content;
+	}
+
 	public Tool(String title, String date, String author, String content) {
 		super();
 		this.title = title;
