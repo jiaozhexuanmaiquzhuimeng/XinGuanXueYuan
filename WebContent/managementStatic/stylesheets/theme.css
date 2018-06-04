@@ -933,3 +933,10 @@ input[type="text"], input[type="password"] {
 	vertical-align: middle;
 	text-align: left;
 }
+
+.table tbody tr td a {
+	max-width: 20%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

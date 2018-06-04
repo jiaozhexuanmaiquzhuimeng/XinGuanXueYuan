@@ -57,7 +57,7 @@
 							<c:forEach items="${pageInfo.list }" var="content" varStatus="vst">
 								<tr>
 									<td>${content.id }</td>
-									<td>${content.title }</td>
+									<td><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_education_major" title="预览文章" target="_blank">${content.title }</a></td>
 									<td>${content.author }</td>
 									<td>${content.date }</td>
 									<td><a href="user.html" title="编辑"> <i
