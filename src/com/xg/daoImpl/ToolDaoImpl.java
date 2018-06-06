@@ -45,7 +45,7 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 
 	@Override
 	public List<Tool> getPageList(String table, int pageNo, int pageSize) {
-		String sql = "SELECT * from " + table + " order by id desc limit ?,?";
+		String sql = "SELECT id, title, author, `date` from " + table + " order by id desc limit ?,?";
 		List<Tool> tools = new ArrayList<Tool>();
 
 		tools = queryForList(sql, (pageNo - 1) * pageSize, pageSize);
