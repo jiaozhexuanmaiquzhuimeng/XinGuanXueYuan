@@ -30,7 +30,20 @@
 		<%
 		  pageContext.setAttribute("APP_PATH", request.getContextPath());
 		%>
+		
+		function addDataToButton(ele,data1,data2){
+			$(ele).attr('data-insert-state',data1);
+			$(ele).attr('data-img-src',data2);
+		}
+		
 		$(function(){
+			var insertState = $('#js-insert-state');
+			insertState.change(function(){
+				var fristNewImg = $(window.frames[0].document).find("img"),
+					saveButton = $('#js-save-button');
+				var imgSrc = $(fristNewImg[0]).attr('src');
+				this.checked?addDataToButton('#js-save-button','1',imgSrc):saveButton.removeAttr('data-insert-state data-img-src');
+			})
 			
 			var editor = KindEditor.create('textarea[name="content"]', {
 				allowFileManager : true,
@@ -48,7 +61,6 @@
 	</script>
 	
 <script>
-		//发布新闻
 function save(ele) {
 	//获取标题
 	var title = $("input[name='title']").val();
@@ -56,6 +68,10 @@ function save(ele) {
 	var author = $("input[name='author']").val();
 	//获取表名
 	var tableName = $(ele).attr('data-table');
+	//获取插入状态
+	var insert = $(ele).attr('data-insert-state');
+	//获取图片链接
+	var imgSrc = $(ele).attr('data-img-src');
 	//获取正文
 	var html = $('#editor_id').val();
 	
@@ -149,32 +165,14 @@ function save(ele) {
 					<div class="form-group clearfix">
 						<label for="" class="col-sm-2 control-label"></label>
 						<div class="col-sm-10">
-							<button type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
+							<button id="js-save-button" type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
+							<label style="display: inline-block; cursor: pointer; vertical-align: middle; padding-top: 4px;">
+								<input id="js-insert-state" type="checkbox" style="margin: 0 5px;">展示到最新动态
+							</label>
 						</div>
 					</div>
 					
 				</div>
-
-				<!-- 模态框 -->
-				<div class="modal small hide fade" id="myModal" tabindex="-1"
-					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">×</button>
-						<h3 id="myModalLabel">Delete Confirmation</h3>
-					</div>
-					<div class="modal-body">
-						<p class="error-text">
-							<i class="icon-warning-sign modal-icon"></i>Are you sure you want
-							to delete the user?
-						</p>
-					</div>
-					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-						<button class="btn btn-danger" data-dismiss="modal">Delete</button>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
