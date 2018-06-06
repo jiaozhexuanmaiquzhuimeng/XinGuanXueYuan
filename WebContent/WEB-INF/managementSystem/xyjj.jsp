@@ -60,7 +60,7 @@
 									<td><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_college_introduction" title="预览文章" target="_balnk">${content.title }</a></td>
 									<td>${content.author }</td>
 									<td>${content.date }</td>
-									<td><a href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_college_introduction" title="编辑"> <i
+									<td><a href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_college_introduction&title=xyjj" title="编辑"> <i
 											class="fa fa-pencil"></i>
 									</a> <a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
 										title="删除" data-contentid="${content.id}"> <i class="fa fa-remove"></i>

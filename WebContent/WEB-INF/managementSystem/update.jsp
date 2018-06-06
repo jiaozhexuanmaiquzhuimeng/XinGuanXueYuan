@@ -17,7 +17,7 @@ input[type="text"] {
 	width: 100% !important;
 }
 </style>
-<title>发布新闻</title>
+<title>文章编辑</title>
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
@@ -29,6 +29,17 @@ input[type="text"] {
 <script
 	src="<%=request.getContextPath()%>/kindeditor/kindeditor-all-min.js"></script>
 <script src="<%=request.getContextPath()%>/kindeditor/lang/zh-CN.js"></script>
+
+<script>
+	var indexTable = href.indexOf('table');
+	var targetTable = href.slice(indexTable);
+	var splitTable = targetTable.split('&');
+	var subTable = splitTable[0].substr(6);
+	$(function(){
+		$('ol.breadcrumb li.go-back a').attr('href',''+projectName+'/managementServlet?method=skipPage&jsp='+subStr+'&title='+subStr+'&pageNo=1&table='+subTable+' ');
+	})
+</script>
+
 <script type="text/javascript">
 	
 <%pageContext.setAttribute("APP_PATH", request.getContextPath());%>
@@ -38,6 +49,7 @@ input[type="text"] {
 				.create(
 						'textarea[name="content"]',
 						{
+							height:'1200',
 							allowFileManager : true,
 							filterMode : false,
 							allowImageUpload : true,
@@ -52,38 +64,12 @@ input[type="text"] {
 		var jsContent = $('#js-content');
 		// 设置HTML内容
 		editor.html(jsContent.html());
+		editor.focus('editor_id');
+		jsContent.remove();
 	})
 </script>
 
 <script>
-	//发布新闻
-	function save(ele) {
-		//获取标题
-		var title = $("input[name='title']").val();
-		//获取作者
-		var author = $("input[name='author']").val();
-		//获取表名
-		var tableName = $(ele).attr('data-table');
-		//获取正文
-		var html = $('#editor_id').val();
-
-		$.ajax({
-			url : '${APP_PATH}/addServlet?method=add',
-			data : {
-				'title' : title,
-				'author' : author,
-				'html' : html,
-				'tableName' : tableName
-			},
-			type : 'POST',
-			success : function(result) {
-				alert('文章发布成功!');
-				window.location.reload();
-			}
-
-		})
-
-	}
 	//更新新闻
 	function update(ele) {
 		//获取ID
@@ -135,28 +121,23 @@ input[type="text"] {
 	<div class="container-fluid">
 
 		<div class="row-fluid">
-			<jsp:include page="include/includeAddLeftNav.jsp"></jsp:include>
 
-			<div class="span9">
+			<div class="span9" style="margin: 0 auto;float:none;">
 				<ol class="breadcrumb">
 					<li><a href="#">网站栏目管理</a></li>
-					<li><a href="#">发布新闻</a></li>
-					<li class="active"><a href="#">发布到: </a><span class="target"
-						style="color: green;"></span></li>
+					<li class="active">
+						编辑新闻
+					</li>
 					<li class="pull-right go-back"><a>&lt;&nbsp;&nbsp;返回栏目管理</a></li>
 					<style>
-li.go-back::before {
-	padding: 0 5px;
-	color: #ccc;
-	content: "" !important;
-}
-</style>
+						li.go-back::before {
+							padding: 0 5px;
+							color: #ccc;
+							content: "" !important;
+						}
+					</style>
 
-					<script>
-						var pathName = window.document.location.pathname;
-						var projectName = pathName.substring(0, pathName
-								.substr(1).indexOf('/') + 1);
-					</script>
+					
 
 				</ol>
 				<div class="well">
@@ -167,7 +148,7 @@ li.go-back::before {
 							<label for="" class="col-sm-2 control-label">ID</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" name="id"
-									value="${id }" />
+									value="${id }" disabled="disabled" />
 							</div>
 						</div>
 						<!-- 文章标题 -->
@@ -207,26 +188,6 @@ li.go-back::before {
 							</div>
 						</div>
 					</c:forEach>
-				</div>
-
-				<!-- 模态框 -->
-				<div class="modal small hide fade" id="myModal" tabindex="-1"
-					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">×</button>
-						<h3 id="myModalLabel">Delete Confirmation</h3>
-					</div>
-					<div class="modal-body">
-						<p class="error-text">
-							<i class="icon-warning-sign modal-icon"></i>Are you sure you want
-							to delete the user?
-						</p>
-					</div>
-					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-						<button class="btn btn-danger" data-dismiss="modal">Delete</button>
-					</div>
 				</div>
 
 			</div>

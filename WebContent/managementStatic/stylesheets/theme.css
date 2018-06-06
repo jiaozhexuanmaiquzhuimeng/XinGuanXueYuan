@@ -930,13 +930,19 @@ input[type="text"], input[type="password"] {
 }
 
 .table thead th {
+	white-space: nowrap;
 	vertical-align: middle;
 	text-align: left;
 }
 
-.table tbody tr td a {
-	max-width: 20%;
+.table tbody tr td {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.table tbody tr td a {
+	line-height:25px;
+	display: inline-block;
+	max-width: 500px;
 }
