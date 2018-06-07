@@ -81,12 +81,14 @@ function save(ele) {
 			'title':title,
 			'author':author,
 			'html':html,
-			'tableName':tableName
+			'tableName':tableName,
+			'imgSrc':imgSrc,
+			'insert':insert
 		},
 		type:'POST',
 		success:function(result){
 			alert('文章发布成功!');
-				window.location.reload();
+			window.location.reload();
 		}
 		
 	})

@@ -6,6 +6,6 @@ import com.xg.domain.Image;
 
 public interface ImageDao {
 
-	public List<Image> selectImage();
+	public List<Image> selectImage(String image);
 
 }

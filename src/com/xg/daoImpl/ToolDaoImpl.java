@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.xg.dao.ToolDao;
+import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.utils.Page;
 
@@ -80,6 +81,13 @@ public class ToolDaoImpl extends BaseDAO<Tool> implements ToolDao {
 	public void update(Tool tool, String tableName) {
 		String sql = "update "+tableName+" set title = ?, author=?, content=?, `date`=? where id = ?";
 		update(sql, tool.getTitle(), tool.getAuthor(), tool.getContent(), tool.getDate(), tool.getId());
+	}
+
+	@Override
+	public void addImgTable(Image image) {
+		String sql = "INSERT INTO td_image (`imgaddress`,`imgtable`,`title`,`imgid`, `date`) VALUES (?,?,?,?,?)";
+		long insert = insert(sql, image.getImgAddress(), image.getImgTable(), image.getTitle(), image.getImgId(), image.getDate());
+		System.out.println(insert);
 	}
 
 }

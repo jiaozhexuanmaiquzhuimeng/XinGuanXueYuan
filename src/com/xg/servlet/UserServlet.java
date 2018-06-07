@@ -68,6 +68,7 @@ public class UserServlet extends HttpServlet {
 		String studentwork = request.getParameter("studentwork");
 		String notice = request.getParameter("notice");
 		String teachingwork = request.getParameter("teachingwork");
+		String image = request.getParameter("imgTable");
 
 		List<String> tables = new ArrayList<String>();
 		tables.add(teachingwork);
@@ -97,7 +98,7 @@ public class UserServlet extends HttpServlet {
 
 		List<Image> images = null;
 
-		images = imageService.selectImage();
+		images = imageService.selectImage(image);
 
 		if (images == null) {
 			images = new ArrayList<Image>();

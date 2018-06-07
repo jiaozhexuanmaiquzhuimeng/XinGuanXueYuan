@@ -161,7 +161,7 @@
 						<c:forEach items="${images }" var="image">
 							<div class="ppt" style="display: block;">
 								<a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${image.imgId }&table=${image.imgTable }" target="_blank" title="${image.title }">
-									<img src="<%=request.getContextPath()%>/img/${image.imgName}"
+									<img src="${image.imgAddress}"
 									class="img-responsive" alt="" id="${image.id}">
 								</a>
 								<p class="ppt-title">${image.title }</p>

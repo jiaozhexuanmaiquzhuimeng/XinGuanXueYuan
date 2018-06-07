@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.xg.dao.ToolDao;
 import com.xg.daoImpl.ToolDaoImpl;
+import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.utils.Page;
 
@@ -56,6 +57,10 @@ public class ToolService {
 	 */
 	public void update(Tool tool, String tableName) {
 		toolDao.update(tool,tableName);
+	}
+
+	public void addImgTable(Image image) {
+		toolDao.addImgTable(image);
 	}
 
 }

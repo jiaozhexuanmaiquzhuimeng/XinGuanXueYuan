@@ -9,6 +9,15 @@ public class Image {
 	private String imgContent;
 	private String title;
 	private int imgId;
+	private String date;
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 
 	public int getImgId() {
 		return imgId;
@@ -69,6 +78,15 @@ public class Image {
 	public Image() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Image(String imgAddress, String imgTable, String title, int imgId, String date) {
+		super();
+		this.imgAddress = imgAddress;
+		this.imgTable = imgTable;
+		this.title = title;
+		this.imgId = imgId;
+		this.date = date;
 	}
 
 }

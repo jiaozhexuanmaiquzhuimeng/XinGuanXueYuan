@@ -2,6 +2,7 @@ package com.xg.dao;
 
 import java.util.List;
 
+import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.utils.Page;
 
@@ -24,4 +25,6 @@ public interface ToolDao {
 	public abstract List<Tool> selectToolByIdAndTableForList(int id, String table);
 
 	public abstract void update(Tool tool, String tableName);
+
+	public abstract void addImgTable(Image image);
 }

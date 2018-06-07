@@ -10,9 +10,9 @@ import com.xg.domain.Image;
 public class ImageDaoImpl extends BaseDAO<Image> implements ImageDao {
 
 	@Override
-	public List<Image> selectImage() {
+	public List<Image> selectImage(String image) {
 		List<Image> images = new ArrayList<Image>();
-		String sql = "SELECT * from td_image";
+		String sql = "SELECT * from " + image + " order by date desc";
 		images = queryForList(sql);
 		return images;
 	}

@@ -2,7 +2,9 @@ package com.xg.servlet;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,34 +14,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.httpclient.util.DateUtil;
 
+import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
 
-/**
- * Servlet implementation class AddServlet
- */
 @WebServlet("/addServlet")
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AddServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String methodName = request.getParameter("method");
 
@@ -64,8 +54,24 @@ public class AddServlet extends HttpServlet {
 		String author = request.getParameter("author");
 		String tableName = request.getParameter("tableName");
 		String html = request.getParameter("html");
+		String insert = request.getParameter("insert");
+		String imgSrc = request.getParameter("imgSrc");
 		String date = DateUtil.formatDate(new Date(),"yyyy-MM-dd");
-		toolService.add(new Tool(title,date,author,html),tableName);
+		
+		//勾选复选框, 插入到最新动态表，图片表，相关栏目表
+		if ("1".equals(insert)) {
+			String firstnews = "td_firstnews";
+			List<Tool> tools = new ArrayList<Tool>();
+			
+			toolService.add(new Tool(title,date,author,html), firstnews);
+			tools = toolService.selectToolByTable(firstnews);
+			toolService.addImgTable(new Image(imgSrc, tableName, title,tools.get(0).getId(), date));
+			
+			toolService.add(new Tool(title,date,author,html),tableName);
+			
+		}else {
+			toolService.add(new Tool(title,date,author,html),tableName);
+		}
 	}
 	
 	//更新操作
