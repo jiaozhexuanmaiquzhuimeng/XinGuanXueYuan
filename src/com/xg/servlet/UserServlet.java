@@ -19,6 +19,7 @@ import com.xg.service.ImageService;
 import com.xg.service.ToolService;
 import com.xg.service.UserService;
 import com.xg.utils.CookieEncryptTool;
+import com.xg.utils.Page;
 
 /**
  * @author Guozhen_Zhao 创建时间：2018年3月17日 下午2:22:45 备注：
@@ -131,6 +132,12 @@ public class UserServlet extends HttpServlet {
 		String userName = request.getParameter("username");
 		String passWord = request.getParameter("password");
 		String rememberMe = request.getParameter("rememberMe");
+		
+		String pageNo = request.getParameter("pageNo");
+		String tableName = request.getParameter("table");
+		if(pageNo.equals("")) {
+			pageNo = "1";
+		}
 
 		String message = "";
 
@@ -159,6 +166,13 @@ public class UserServlet extends HttpServlet {
 						}
 					}
 				}
+				Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
+				page = toolService.getPage(Integer.parseInt(pageNo), tableName);
+				int totalPageNumber = page.getTotalPageNumber();
+
+				request.setAttribute("pageInfo", page);
+				request.setAttribute("table", tableName);
+				request.setAttribute("totalPageNumber", totalPageNumber);
 				request.getRequestDispatcher("/WEB-INF/managementSystem/index.jsp").forward(request, response);
 				return;
 			} else {

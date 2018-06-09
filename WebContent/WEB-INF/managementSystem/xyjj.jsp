@@ -38,7 +38,8 @@
 					<li class="active">学院简介</li>
 				</ol>
 				<div class="btn-toolbar">
-					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xyjj'">
+					<button class="btn btn-primary"
+						onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=xyjj'">
 						<i class="icon-plus"></i> 发布新闻
 					</button>
 				</div>
@@ -54,16 +55,21 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${pageInfo.list }" var="content" varStatus="vst">
+							<c:forEach items="${pageInfo.list }" var="content"
+								varStatus="vst">
 								<tr>
 									<td>${content.id }</td>
-									<td><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_college_introduction" title="预览文章" target="_balnk">${content.title }</a></td>
+									<td><a
+										href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_college_introduction"
+										title="预览文章" target="_balnk">${content.title }</a></td>
 									<td>${content.author }</td>
 									<td>${content.date }</td>
-									<td><a href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_college_introduction&title=xyjj" title="编辑"> <i
-											class="fa fa-pencil"></i>
-									</a> <a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
-										title="删除" data-contentid="${content.id}"> <i class="fa fa-remove"></i>
+									<td><a
+										href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_college_introduction&title=xyjj"
+										title="编辑"> <i class="fa fa-pencil"></i>
+									</a> <a class="btn-delete" href="#myModal" role="button"
+										data-toggle="modal" title="删除" data-contentid="${content.id}">
+											<i class="fa fa-remove"></i>
 									</a></td>
 								</tr>
 							</c:forEach>
@@ -85,7 +91,7 @@
 								<c:forEach begin="1" end="10" var="n">
 									<c:if test="${pageInfo.pageNo == n }">
 										<li class="active"><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/mana gementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
 									</c:if>
 									<c:if test="${pageInfo.pageNo != n }">
 										<li><a
@@ -109,7 +115,7 @@
 								</c:forEach>
 							</c:if>
 							<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
-							<c:if=] 9-
+							<c:if
 								test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
 								<c:forEach begin="${totalPageNumber-9 }"
 									end="${totalPageNumber }" var="n">
@@ -126,9 +132,6 @@
 						</c:if>
 						<!-- 如果总页数小于10页) -->
 						<c:if test="${totalPageNumber<10 }">
-							<c:if test="${totalPageNumber=1 }">
-								
-							</c:if>
 							<c:forEach begin="1" end="${totalPageNumber }" var="n">
 								<c:if test="${pageInfo.pageNo == n }">
 									<li class="active"><a
@@ -159,13 +162,13 @@
 					</div>
 					<div class="modal-body">
 						<p class="error-text">
-							<i class="icon-warning-sign modal-icon"></i>
-							确定要删除这篇文章吗?
+							<i class="icon-warning-sign modal-icon"></i> 确定要删除这篇文章吗?
 						</p>
 					</div>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal" aria-hidden="true">退出</button>
-						<button class="btn btn-danger btn-sure-delete" data-dismiss="modal">删除</button>
+						<button class="btn btn-danger btn-sure-delete"
+							data-dismiss="modal">删除</button>
 					</div>
 				</div>
 
