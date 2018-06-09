@@ -109,7 +109,7 @@
 								</c:forEach>
 							</c:if>
 							<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
-							<c:if
+							<c:if=] 9-
 								test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
 								<c:forEach begin="${totalPageNumber-9 }"
 									end="${totalPageNumber }" var="n">
@@ -126,6 +126,9 @@
 						</c:if>
 						<!-- 如果总页数小于10页) -->
 						<c:if test="${totalPageNumber<10 }">
+							<c:if test="${totalPageNumber=1 }">
+								
+							</c:if>
 							<c:forEach begin="1" end="${totalPageNumber }" var="n">
 								<c:if test="${pageInfo.pageNo == n }">
 									<li class="active"><a
