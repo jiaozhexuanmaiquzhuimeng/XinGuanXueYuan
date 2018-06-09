@@ -35,7 +35,7 @@ public class ManagementServlet extends HttpServlet {
 		try {
 			Method method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class,
 					HttpServletResponse.class);
-			//获取私有成员变量
+			// 获取私有成员变量
 			method.setAccessible(true);
 			method.invoke(this, request, response);
 		} catch (Exception e) {
@@ -48,7 +48,7 @@ public class ManagementServlet extends HttpServlet {
 
 	ToolService toolService = new ToolService();
 
-	//点击连接跳转到不同的页面
+	// 点击连接跳转到不同的页面
 	public void skipPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String jsp = request.getParameter("jsp");
@@ -71,19 +71,19 @@ public class ManagementServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/" + jsp + ".jsp").forward(request, response);
 	}
 
-	//转发到添加页面
+	// 转发到添加页面
 	public void forwardPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
 	}
 
-	//删除操作
+	// 删除操作
 	public void deletePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
-//		System.out.println(id);
-//		System.out.println(table);
+		// System.out.println(id);
+		// System.out.println(table);
 
 		Tool tool = new Tool();
 		tool.setId(Integer.parseInt(id));
@@ -96,24 +96,31 @@ public class ManagementServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(jsonData);
 
-		//request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request, response);
+		// request.getRequestDispatcher("/WEB-INF/managementSystem/add.jsp").forward(request,
+		// response);
 	}
 
-	//编辑操作
+	// 编辑操作
 	public void updatePage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
 		String table = request.getParameter("table");
-		
+
 		List<Tool> tools = new ArrayList<Tool>();
 		tools = toolService.selectToolByIdAndTableForList(Integer.parseInt(id), table);
-		
+
 		request.setAttribute("tools", tools);
 		request.setAttribute("id", id);
 		request.setAttribute("table", table);
 		System.out.println(tools);
-		
+
 		request.getRequestDispatcher("/WEB-INF/managementSystem/update.jsp").forward(request, response);
+	}
+
+	// 转发到注册页面
+	public void userAccount(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/managementSystem/addUser.jsp").forward(request, response);
 	}
 
 }

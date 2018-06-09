@@ -141,7 +141,7 @@ function save(ele) {
 					<p style="color: red;">提示:为保证兼容性,若使用IE浏览器,可直接将word文档中的图片和文字直接粘贴到内容区域,非IE浏览器,请将word中的图片和文字分开上传.</p>
 					<!-- 文章标题 -->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">标题</label>
+						<label for="" class="col-sm-2 control-label">用户名</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="title" />
 						</div>
@@ -149,7 +149,15 @@ function save(ele) {
 					
 					<!-- 文章作者 -->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">作者</label>
+						<label for="" class="col-sm-2 control-label">密码</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="author" />
+						</div>
+					</div>
+					
+					<!-- 文章作者 -->
+					<div class="form-group clearfix">
+						<label for="" class="col-sm-2 control-label">密码</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="author" />
 						</div>
