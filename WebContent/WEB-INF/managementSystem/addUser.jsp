@@ -138,36 +138,42 @@ function save(ele) {
 					
 				</ol>
 				<div class="well">
-					<p style="color: red;">提示:为保证兼容性,若使用IE浏览器,可直接将word文档中的图片和文字直接粘贴到内容区域,非IE浏览器,请将word中的图片和文字分开上传.</p>
-					<!-- 文章标题 -->
+					<!-- 用户名-->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">用户名</label>
+						<label for="" class="col-sm-2 control-label">用户名:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="title" />
+							<input type="text" class="form-control" name="username" />
 						</div>
 					</div>
 					
-					<!-- 文章作者 -->
+					<!-- 密码 -->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">密码</label>
+						<label for="" class="col-sm-2 control-label">密　码:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="author" />
+							<input type="text" class="form-control" name="password" />
 						</div>
 					</div>
 					
-					<!-- 文章作者 -->
+					<!-- 姓名 -->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">密码</label>
+						<label for="" class="col-sm-2 control-label">姓　名:</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" name="author" />
+							<input type="text" class="form-control" name="name" />
 						</div>
 					</div>
 				
-					<!-- 文章正文 -->
+					<!-- 角色 -->
 					<div class="form-group clearfix">
-						<label for="" class="col-sm-2 control-label">内容</label>
+						<label for="" class="col-sm-2 control-label">角　色:</label>
 						<div class="col-sm-10">
-							<textarea id="editor_id" name="content" class="form-control" style="height: 400px;"></textarea>
+							<label class="radio">
+							  <input type="radio" name="radio" id="optionsRadios1" value="1" checked>
+							 	 普通用户
+							</label>
+							<label class="radio">
+							  <input type="radio" name="radio" id="optionsRadios2" value="2">
+							 	 管理员
+							</label>
 						</div>
 					</div>
 					
@@ -176,9 +182,6 @@ function save(ele) {
 						<label for="" class="col-sm-2 control-label"></label>
 						<div class="col-sm-10">
 							<button id="js-save-button" type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
-							<label style="display: inline-block; cursor: pointer; vertical-align: middle; padding-top: 4px;">
-								<input id="js-insert-state" type="checkbox" style="margin: 0 5px;">展示到最新动态
-							</label>
 						</div>
 					</div>
 					
