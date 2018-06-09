@@ -66,7 +66,7 @@
 												<tr>
 													<td>${content.id }</td>
 													<td><a
-														href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_college_introduction"
+														href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_firstnews"
 														title="预览文章" target="_balnk">${content.title }</a></td>
 													<td>${content.author }</td>
 													<td>${content.date }</td>
