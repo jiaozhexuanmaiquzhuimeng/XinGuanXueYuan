@@ -58,7 +58,6 @@
 												<th>标题</th>
 												<th>作者</th>
 												<th>时间</th>
-												<th>操作</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -71,94 +70,10 @@
 														title="预览文章" target="_balnk">${content.title }</a></td>
 													<td>${content.author }</td>
 													<td>${content.date }</td>
-													<td><a
-														href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_college_introduction&title=xyjj"
-														title="编辑"> <i class="fa fa-pencil"></i>
-													</a> <a class="btn-delete" href="#myModal" role="button"
-														data-toggle="modal" title="删除"
-														data-contentid="${content.id}"> <i
-															class="fa fa-remove"></i>
-													</a></td>
 												</tr>
 											</c:forEach>
 										</tbody>
 									</table>
-								</div>
-								<div class="pagination">
-									<ul class="pagination pagination-sm">
-										<c:if test="${pageInfo.hasPrev }">
-											<li><a
-												href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
-												aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-										</c:if>
-
-										<!-- 1-10页代码显示 -->
-										<c:if test="${totalPageNumber>10 }">
-											<!-- 如果当前页面大于等于1 && 小于等于 6 -->
-											<c:if test="${(pageInfo.pageNo>=1) && (pageInfo.pageNo<=6) }">
-												<c:forEach begin="1" end="10" var="n">
-													<c:if test="${pageInfo.pageNo == n }">
-														<li class="active"><a
-															href="<%=request.getContextPath()%>/mana gementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-													<c:if test="${pageInfo.pageNo != n }">
-														<li><a
-															href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-												</c:forEach>
-											</c:if>
-											<!-- 如果当前页面大于6 && 小于 (总页数-4) -->
-											<c:if
-												test="${(pageInfo.pageNo>6) && (pageInfo.pageNo<(totalPageNumber-4)) }">
-												<c:forEach begin="${pageInfo.pageNo-5 }"
-													end="${pageInfo.pageNo+4 }" var="n">
-													<c:if test="${pageInfo.pageNo == n }">
-														<li class="active"><a
-															href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-													<c:if test="${pageInfo.pageNo != n }">
-														<li><a
-															href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-												</c:forEach>
-											</c:if>
-											<!-- 如果当前页面大于等于(总页数-4) && 小于等于 (总页数) -->
-											<c:if
-												test="${(pageInfo.pageNo>=(totalPageNumber-4)) && (pageInfo.pageNo<=totalPageNumber) }">
-												<c:forEach begin="${totalPageNumber-9 }"
-													end="${totalPageNumber }" var="n">
-													<c:if test="${pageInfo.pageNo == n }">
-														<li class="active"><a
-															href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-													<c:if test="${pageInfo.pageNo != n }">
-														<li><a
-															href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-													</c:if>
-												</c:forEach>
-											</c:if>
-										</c:if>
-										<!-- 如果总页数小于10页) -->
-										<c:if test="${totalPageNumber<10 }">
-											<c:forEach begin="1" end="${totalPageNumber }" var="n">
-												<c:if test="${pageInfo.pageNo == n }">
-													<li class="active"><a
-														href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-												</c:if>
-												<c:if test="${pageInfo.pageNo != n }">
-													<li><a
-														href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
-												</c:if>
-											</c:forEach>
-										</c:if>
-
-										<c:if test="${pageInfo.hasNext }">
-											<li><a
-												href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=xyjj&pageNo=${pageInfo.nextPage }&table=${table }&title=${title }"
-												aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-											</a></li>
-										</c:if>
-									</ul>
 								</div>
 							</div>
 						</div>
@@ -238,92 +153,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="row-fluid">
-					<div class="block span6">
-						<div class="block-heading" data-toggle="collapse"
-							data-target="#widget2container">
-							操作日志 <span class="label label-warning">+10</span>
-						</div>
-						<div id="widget2container" class="block-body collapse in">
-							<table class="table">
-								<tbody>
-									<tr>
-										<td>
-											<p>
-												<i class="icon-user"></i> Mark Otto
-											</p>
-										</td>
-										<td>
-											<p>Amount: $1,247</p>
-										</td>
-										<td>
-											<p>Date: 7/19/2012</p> <a href="#">View Transaction</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p>
-												<i class="icon-user"></i> Audrey Ann
-											</p>
-										</td>
-										<td>
-											<p>Amount: $2,793</p>
-										</td>
-										<td>
-											<p>Date: 7/12/2012</p> <a href="#">View Transaction</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p>
-												<i class="icon-user"></i> Mark Tompson
-											</p>
-										</td>
-										<td>
-											<p>Amount: $2,349</p>
-										</td>
-										<td>
-											<p>Date: 3/10/2012</p> <a href="#">View Transaction</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p>
-												<i class="icon-user"></i> Ashley Jacobs
-											</p>
-										</td>
-										<td>
-											<p>Amount: $1,192</p>
-										</td>
-										<td>
-											<p>Date: 1/19/2012</p> <a href="#">View Transaction</a>
-										</td>
-									</tr>
-
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div class="block span6">
-						<p class="block-heading">关于</p>
-						<div class="block-body">
-							<h2>Tip of the Day</h2>
-							<p>Fava bean jícama seakale beetroot courgette shallot
-								amaranth pea garbanzo carrot radicchio peanut leek pea sprouts
-								arugula brussels sprout green bean. Spring onion broccoli
-								chicory shallot winter purslane pumpkin gumbo cabbage squash
-								beet greens lettuce celery. Gram zucchini swiss chard mustard
-								burdock radish brussels sprout groundnut. Asparagus horseradish
-								beet greens broccoli brussels sprout bitterleaf groundnut cress
-								sweet pepper leek bok choy shallot celtuce scallion chickpea
-								radish pea sprouts.</p>
-							<p>
-								<a class="btn btn-primary btn-large">Learn more &raquo;</a>
-							</p>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>

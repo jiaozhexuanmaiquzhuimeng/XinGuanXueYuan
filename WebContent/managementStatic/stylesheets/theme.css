@@ -246,8 +246,12 @@ footer hr {
 }
 
 .block-body h1, .block-body h2, .block-body h3, .block-body h4,
-	.block-body h5, .block-body h6, .block-body table {
+	.block-body h5, .block-body h6 {
 	margin-top: 12px;
+}
+
+.block-body table {
+	margin-bottom: 0;
 }
 
 .block-body.collapse {
@@ -942,6 +946,9 @@ input[type="text"], input[type="password"] {
 }
 
 .table tbody tr td a {
-	line-height:25px;
-	
+	line-height: 25px;
+}
+
+.well {
+	padding: 0;
 }

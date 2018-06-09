@@ -10,10 +10,7 @@
 
     <style type="text/css">
         #line-chart {
-            height: 300px;
-            width: 800px;
-            margin: 0px auto;
-            margin-top: 1em;
+            margin-top: 20px;
         }
 
         .brand {
