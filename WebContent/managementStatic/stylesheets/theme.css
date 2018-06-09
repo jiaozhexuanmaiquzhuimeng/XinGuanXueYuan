@@ -948,7 +948,3 @@ input[type="text"], input[type="password"] {
 .table tbody tr td a {
 	line-height: 25px;
 }
-
-.well {
-	padding: 0;
-}

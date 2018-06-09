@@ -173,8 +173,7 @@
                     <ul id="admin-menu" class="nav nav-list collapse in">
                         <li>
                             <a href="403.html">管理留言板</a>
-                        </li>
-                       
+                        </li>                       
                     </ul>
                 </div>
             </div>

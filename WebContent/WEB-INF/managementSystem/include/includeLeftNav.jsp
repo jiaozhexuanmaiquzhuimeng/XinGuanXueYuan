@@ -174,6 +174,9 @@
                         <li>
                             <a href="403.html">查看留言板</a>
                         </li>
+                         <li>
+                            <a href="403.html">分配用户帐号</a>
+                        </li>
                        
                     </ul>
                 </div>
