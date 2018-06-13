@@ -67,27 +67,27 @@ function save(ele) {
 	//获取用户名
 	var username = $("input[name='username']").val();
 	//获取密码
-	var password = $("input[name='password']").val();;
+	var password = $("input[name='password']").val();
 	//获取角色
-	var role = $("input[name='radio']").val();;
+	var role = $("input[name='radio']:checked").val();
 	
 	alert(name + " " + username + " " + password + " " + role );
 	
-	$.ajax({
-		url:'${APP_PATH}/addServlet?method=add',
-		data:{
-			'name':name,
-			'username':username,
-			'password':password,
-			'role':role,
-		},
-		type:'POST',
-		success:function(result){
-			alert('分配用户成功!');
-			window.location.reload();
-		}
+// 	$.ajax({
+// 		url:'${APP_PATH}/addServlet?method=add',
+// 		data:{
+// 			'name':name,
+// 			'username':username,
+// 			'password':password,
+// 			'role':role,
+// 		},
+// 		type:'POST',
+// 		success:function(result){
+// 			alert('分配用户成功!');
+// 			window.location.reload();
+// 		}
 		
-	})
+// 	})
 	
 }
 	</script>
