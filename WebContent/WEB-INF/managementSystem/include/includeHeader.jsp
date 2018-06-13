@@ -9,14 +9,14 @@
 					
 					<span>
 						<i class="fa fa-user"></i>
-						&nbsp;&nbsp;任广明
+						&nbsp;&nbsp;${sessionScope.userName }
 					</span>
 					</li>
 					<li class="userinfo role">
 						
 						<span>
 							<i class="fa fa-vcard"></i>
-							&nbsp;&nbsp;管理员
+							&nbsp;&nbsp;${sessionScope.role }
 						</span>
 					</li>
                 </ul>

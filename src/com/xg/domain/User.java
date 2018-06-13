@@ -4,28 +4,19 @@ public class User {
 	private int id;
 	private String userName;
 	private String passWord;
-	private String email;
-	private String name;
+	private int role;
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public String getName() {
-		return name;
+	
+	public int getRole() {
+		return role;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRole(int role) {
+		this.role = role;
 	}
 
 	public int getId() {

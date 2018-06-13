@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="span3 left-menu">
                 <div class="sidebar-nav">
                     <div class="nav-header" data-toggle="collapse" data-target="#column-menu">
@@ -174,10 +175,13 @@
                         <li>
                             <a href="403.html">查看留言板</a>
                         </li>
-                         <li>
-                            <a href="<%=request.getContextPath()%>/managementServlet?method=userAccount">分配用户帐号</a>
-                        </li>
-                       
+                        <c:choose>
+                        	<c:when test="${sessionScope.role == '管理员' }">
+		                        <li>
+		                            <a href="<%=request.getContextPath()%>/managementServlet?method=userAccount">分配用户帐号</a>
+		                        </li>
+                        	</c:when>
+                        </c:choose>
                     </ul>
                 </div>
             </div>

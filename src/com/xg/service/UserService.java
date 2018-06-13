@@ -19,9 +19,9 @@ public class UserService {
 		return val;
 	}
 
-	public Long register(User user) {
-		Long val = userDao.register(user);
-		return val;
-	}
+//	public Long register(User user) {
+//		Long val = userDao.register(user);
+//		return val;
+//	}
 
 }
