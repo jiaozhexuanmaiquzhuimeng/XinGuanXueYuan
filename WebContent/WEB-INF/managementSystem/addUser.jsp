@@ -138,7 +138,9 @@ function save(ele) {
 					
 				</ol>
 				<div class="well">
-					<!-- 用户名-->
+					
+					<form action="">
+						<!-- 用户名-->
 					<div class="form-group clearfix">
 						<label for="" class="col-sm-2 control-label">用户名:</label>
 						<div class="col-sm-10">
@@ -184,6 +186,7 @@ function save(ele) {
 							<button id="js-save-button" type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
 						</div>
 					</div>
+					</form>
 					
 				</div>
 			</div>
