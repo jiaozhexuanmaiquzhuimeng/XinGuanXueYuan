@@ -62,32 +62,28 @@
 	
 <script>
 function save(ele) {
-	//获取标题
-	var title = $("input[name='title']").val();
-	//获取作者
-	var author = $("input[name='author']").val();
-	//获取表名
-	var tableName = $(ele).attr('data-table');
-	//获取插入状态
-	var insert = $(ele).attr('data-insert-state');
-	//获取图片链接
-	var imgSrc = $(ele).attr('data-img-src');
-	//获取正文
-	var html = $('#editor_id').val();
+	//获取姓名
+	var name = $("input[name='name']").val();
+	//获取用户名
+	var username = $("input[name='username']").val();
+	//获取密码
+	var password = $("input[name='password']").val();;
+	//获取角色
+	var role = $("input[name='radio']").val();;
+	
+	alert(name + " " + username + " " + password + " " + role );
 	
 	$.ajax({
 		url:'${APP_PATH}/addServlet?method=add',
 		data:{
-			'title':title,
-			'author':author,
-			'html':html,
-			'tableName':tableName,
-			'imgSrc':imgSrc,
-			'insert':insert
+			'name':name,
+			'username':username,
+			'password':password,
+			'role':role,
 		},
 		type:'POST',
 		success:function(result){
-			alert('文章发布成功!');
+			alert('分配用户成功!');
 			window.location.reload();
 		}
 		
@@ -139,7 +135,7 @@ function save(ele) {
 				</ol>
 				<div class="well">
 					
-					<form action="">
+					<form action="<%=request.getContextPath()%>/userServlet?method=addUser">
 						<!-- 用户名-->
 					<div class="form-group clearfix">
 						<label for="" class="col-sm-2 control-label">用户名:</label>
@@ -169,11 +165,11 @@ function save(ele) {
 						<label for="" class="col-sm-2 control-label">角　色:</label>
 						<div class="col-sm-10">
 							<label class="radio">
-							  <input type="radio" name="radio" id="optionsRadios1" value="1" checked>
+							  <input type="radio" name="radio" id="optionsRadios1" value="0" checked>
 							 	 普通用户
 							</label>
 							<label class="radio">
-							  <input type="radio" name="radio" id="optionsRadios2" value="2">
+							  <input type="radio" name="radio" id="optionsRadios2" value="1">
 							 	 管理员
 							</label>
 						</div>

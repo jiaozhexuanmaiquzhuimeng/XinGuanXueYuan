@@ -19,6 +19,13 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 		return val;
 	}
 
+	@Override
+	public void addUser(User user) {
+		// TODO Auto-generated method stub
+		String sql = "insert into td_user(username, `password`, role, name) values(?,?,?,?)";
+		insert(sql, user.getUserName(), user.getPassWord(), user.getRole(), user.getName());
+	}
+
 //	@Override
 //	public Long register(User user) {
 //		String sql = "insert into td_user(username, password, email, name) values(?,?,?,?)";

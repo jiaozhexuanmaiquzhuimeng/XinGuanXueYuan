@@ -8,6 +8,8 @@ public interface UserDao {
 
 	public Long selectCountByUserName(User user);
 
+	public void addUser(User user);
+
 //	public Long register(User user);
 	
 }

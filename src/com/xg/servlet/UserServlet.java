@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.domain.User;
@@ -120,8 +121,8 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 	}
-	
-	//转发到信箱页面
+
+	// 转发到信箱页面
 	public void emailPage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/mail.jsp").forward(request, response);
@@ -132,11 +133,11 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String userName = request.getParameter("username");
 		String passWord = request.getParameter("password");
-//		String rememberMe = request.getParameter("rememberMe");
-		
+		// String rememberMe = request.getParameter("rememberMe");
+
 		String pageNo = request.getParameter("pageNo");
 		String tableName = request.getParameter("table");
-		if(pageNo.equals("")) {
+		if (pageNo.equals("")) {
 			pageNo = "1";
 		}
 
@@ -151,24 +152,24 @@ public class UserServlet extends HttpServlet {
 			System.out.println("1111");
 			if (user.getPassWord().equals(passWord)) {
 				HttpSession httpSession = request.getSession();
-//				// System.out.println("2222");
-//				if ("true".equals(rememberMe)) {
-//					Cookie c1 = new Cookie("userName", CookieEncryptTool.encodeBase64(userName));
-//					Cookie c2 = new Cookie("passWord", CookieEncryptTool.encodeBase64(passWord));
-//					c1.setMaxAge(365 * 24 * 3600);
-//					c2.setMaxAge(365 * 24 * 3600);
-//					response.addCookie(c1);
-//					response.addCookie(c2);
-//				} else {
-//					Cookie[] cookies = request.getCookies();
-//					if (cookies != null) {
-//						for (Cookie cookie : cookies) {
-//							cookie.setMaxAge(0);
-//							response.addCookie(cookie);
-//						}
-//					}
-//				}
-				
+				// // System.out.println("2222");
+				// if ("true".equals(rememberMe)) {
+				// Cookie c1 = new Cookie("userName", CookieEncryptTool.encodeBase64(userName));
+				// Cookie c2 = new Cookie("passWord", CookieEncryptTool.encodeBase64(passWord));
+				// c1.setMaxAge(365 * 24 * 3600);
+				// c2.setMaxAge(365 * 24 * 3600);
+				// response.addCookie(c1);
+				// response.addCookie(c2);
+				// } else {
+				// Cookie[] cookies = request.getCookies();
+				// if (cookies != null) {
+				// for (Cookie cookie : cookies) {
+				// cookie.setMaxAge(0);
+				// response.addCookie(cookie);
+				// }
+				// }
+				// }
+
 				Page<Tool> page = new Page<>(Integer.parseInt(pageNo));
 				page = toolService.getPage(Integer.parseInt(pageNo), tableName);
 				int totalPageNumber = page.getTotalPageNumber();
@@ -176,15 +177,15 @@ public class UserServlet extends HttpServlet {
 				request.setAttribute("pageInfo", page);
 				request.setAttribute("table", tableName);
 				request.setAttribute("totalPageNumber", totalPageNumber);
-				
+
 				httpSession.setAttribute("userName", user.getUserName());
-				if(user.getRole() == 1) {
+				if (user.getRole() == 1) {
 					httpSession.setAttribute("role", "管理员");
-				}else {
+				} else {
 					httpSession.setAttribute("role", "普通用户");
 				}
 				httpSession.setMaxInactiveInterval(600);
-				
+
 				request.getRequestDispatcher("/WEB-INF/managementSystem/index.jsp").forward(request, response);
 				return;
 			} else {
@@ -198,51 +199,56 @@ public class UserServlet extends HttpServlet {
 	}
 
 	// 转发到注册页面
-//	public void registerPage(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//		request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
-//	}
+	// public void registerPage(HttpServletRequest request, HttpServletResponse
+	// response)
+	// throws ServletException, IOException {
+	// request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request,
+	// response);
+	// }
 
 	// 注册页实现
-//	public void registerPageTwo(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//		String name = request.getParameter("name");
-//		String userName = request.getParameter("username");
-//		String email = request.getParameter("email");
-//		String passWord = request.getParameter("password");
-//		String passwordRepeat = request.getParameter("passwordrepeat");
-//
-//		String message = "";
-//
-//		if (userName.equals("")) {
-//			message = "用户名为空";
-//		} else if (passWord.equals("") && passwordRepeat.equals("")) {
-//			message = "密码不为空";
-//		} else if (!passWord.equals(passwordRepeat)) {
-//			message = "两次密码不一致";
-//		} else {
-//			User user = new User();
-//			user.setName(name);
-//			user.setUserName(userName);
-//			user.setEmail(email);
-//			user.setPassWord(passWord);
-//			Long info = userService.selectCountByUserName(user);
-//			if (info == 0) {
-//				userService.register(user);
-//
-//			} else {
-//				message = "用户名已存在";
-//			}
-//		}
+	// public void registerPageTwo(HttpServletRequest request, HttpServletResponse
+	// response)
+	// throws ServletException, IOException {
+	// String name = request.getParameter("name");
+	// String userName = request.getParameter("username");
+	// String email = request.getParameter("email");
+	// String passWord = request.getParameter("password");
+	// String passwordRepeat = request.getParameter("passwordrepeat");
+	//
+	// String message = "";
+	//
+	// if (userName.equals("")) {
+	// message = "用户名为空";
+	// } else if (passWord.equals("") && passwordRepeat.equals("")) {
+	// message = "密码不为空";
+	// } else if (!passWord.equals(passwordRepeat)) {
+	// message = "两次密码不一致";
+	// } else {
+	// User user = new User();
+	// user.setName(name);
+	// user.setUserName(userName);
+	// user.setEmail(email);
+	// user.setPassWord(passWord);
+	// Long info = userService.selectCountByUserName(user);
+	// if (info == 0) {
+	// userService.register(user);
+	//
+	// } else {
+	// message = "用户名已存在";
+	// }
+	// }
 
-//		if (message.equals("")) {
-//			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
-//			return;
-//		} else {
-//			request.setAttribute("message", message);
-//			request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
-//		}
-//	}
+	// if (message.equals("")) {
+	// request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request,
+	// response);
+	// return;
+	// } else {
+	// request.setAttribute("message", message);
+	// request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request,
+	// response);
+	// }
+	// }
 
 	// 转发到各页面的详情页
 	public void contentPage(HttpServletRequest request, HttpServletResponse response)
@@ -263,9 +269,26 @@ public class UserServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/add.jsp").forward(request, response);
 	}
-	
-	//转发到书记信箱
-	public void mailPage(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+	// 管理员分配用户
+	public void addUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String userName = request.getParameter("username");
+		String passWord = request.getParameter("password");
+		String name = request.getParameter("name");
+		String role = request.getParameter("radio");
+		System.out.println(userName);
+		User user = new User(userName, passWord, Integer.parseInt(role), name);
+		if (userService.selectCountByUserName(user) == 0) {
+			userService.addUser(user);
+		}else {
+			
+		}
+	}
+
+	// 转发到书记信箱
+	public void mailPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.sendRedirect("/WEB-INF/jsp/mail.jsp");
 	}
 
