@@ -209,11 +209,11 @@
 					
 
 					<li data-name="yhgl">
-						<a href="#">用户管理</a>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=yhgl&title=yhgl&pageNo=1&table=td_user">用户管理</a>
 					</li>
 					
 					<li>
-						<a href="<%=request.getContextPath()%>/managementServlet?method=userAccount">用户分配</a>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=skipPage">用户分配</a>
 					</li>
 					
 					<li><a href="403.html">查看留言板</a></li>
