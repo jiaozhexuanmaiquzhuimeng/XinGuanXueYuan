@@ -289,18 +289,19 @@ public class UserServlet extends HttpServlet {
 
 		long flag = userService.selectCountByUserName(user);
 		String msg = "";
-		
+		PrintWriter out = response.getWriter();
 
 		if (flag == 0) {
 			userService.addUser(user);
-			PrintWriter out = response.getWriter();
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("msg", msg);
+			out.println(jsonObject);
+			out.flush();
+			out.close();
 			return;
 		} else {
 			try {
 				msg = "用户名已存在";
-				PrintWriter out = response.getWriter();
 				JSONObject jsonObject = new JSONObject();
 				jsonObject.put("msg", msg);
 				
