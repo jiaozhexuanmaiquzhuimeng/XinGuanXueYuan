@@ -205,7 +205,7 @@
 					data-target="#admin-menu">
 					<i class="icon-exclamation-sign"></i>管理员操作
 				</div>
-				<ul id="admin-menu" class="nav nav-list collapse in">
+				<ul id="admin-menu" class="nav nav-list collapse in menu-content">
 					
 
 					<li data-name="yhgl">

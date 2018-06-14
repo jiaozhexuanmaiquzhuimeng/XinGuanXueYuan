@@ -9,6 +9,7 @@ var index = href.indexOf('title');
 var targetStr = href.slice(index);
 var splitStr = targetStr.split('&');
 var subStr = splitStr[0].substr(6);
+console.log(subStr);
 
 $(function(){
 	var activeSecond = $('ol.breadcrumb li.active-second');

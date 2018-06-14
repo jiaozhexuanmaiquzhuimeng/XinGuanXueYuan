@@ -33,23 +33,16 @@
 
 			<div class="span9">
 				<ol class="breadcrumb">
-					<li><a href="#">网站栏目管理</a></li>
-					<li><a href="#">党群建设</a></li>
-					<li class="active">党团动态</li>
+					<li><a href="#">管理员操作</a></li>
+					<li class="active">用户管理</li>
 				</ol>
-				<div class="btn-toolbar">
-					<button class="btn btn-primary" onclick="window.location.href='<%=request.getContextPath()%>/managementServlet?method=forwardPage&title=dtdt'">
-						<i class="icon-plus"></i> 发布新闻
-					</button>
-				</div>
 				<div class="well">
 					<table class="table">
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>标题</th>
-								<th>作者</th>
-								<th>时间</th>
+								<th>用户名</th>
+								<th>姓名</th>
 								<th>操作</th>
 							</tr>
 						</thead>
