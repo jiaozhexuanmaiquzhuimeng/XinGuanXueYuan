@@ -9,7 +9,7 @@
 					
 					<span>
 						<i class="fa fa-user"></i>
-						&nbsp;&nbsp;${sessionScope.userName }
+						&nbsp;&nbsp;${sessionScope.name }
 					</span>
 					</li>
 					<li class="userinfo role">

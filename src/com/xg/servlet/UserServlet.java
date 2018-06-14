@@ -1,6 +1,7 @@
 package com.xg.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
+import com.google.gson.JsonObject;
 import com.sun.corba.se.impl.protocol.giopmsgheaders.Message;
 import com.xg.domain.Image;
 import com.xg.domain.Tool;
@@ -22,6 +26,10 @@ import com.xg.service.ToolService;
 import com.xg.service.UserService;
 import com.xg.utils.CookieEncryptTool;
 import com.xg.utils.Page;
+
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 /**
  * @author Guozhen_Zhao 创建时间：2018年3月17日 下午2:22:45 备注：
@@ -178,7 +186,7 @@ public class UserServlet extends HttpServlet {
 				request.setAttribute("table", tableName);
 				request.setAttribute("totalPageNumber", totalPageNumber);
 
-				httpSession.setAttribute("userName", user.getUserName());
+				httpSession.setAttribute("name", user.getName());
 				if (user.getRole() == 1) {
 					httpSession.setAttribute("role", "管理员");
 				} else {
@@ -271,18 +279,39 @@ public class UserServlet extends HttpServlet {
 	}
 
 	// 管理员分配用户
-	public void addUser(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void addUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("进入。。。。");
 		String userName = request.getParameter("username");
 		String passWord = request.getParameter("password");
 		String name = request.getParameter("name");
-		String role = request.getParameter("radio");
-		System.out.println(userName);
+		String role = request.getParameter("role");
 		User user = new User(userName, passWord, Integer.parseInt(role), name);
-		if (userService.selectCountByUserName(user) == 0) {
+
+		long flag = userService.selectCountByUserName(user);
+		String msg = "";
+
+		if (flag == 0) {
 			userService.addUser(user);
-		}else {
-			
+			return;
+		} else {
+			try {
+				msg = "用户名已存在";
+				PrintWriter out = response.getWriter();
+				JSONObject jsonObject = new JSONObject();
+				jsonObject.put("msg", msg);
+				
+//				String jsonStr = "{\"msg\":\"用户名已存在\"}";  
+				// json字符串转为JSONObject 对象  
+//				JSONObject jsonObject = JSONObject.fromObject(jsonStr);  
+//				System.out.println("msg:" + jsonObject.get("msg"));  
+				
+				//System.out.println(jsonObject);
+				out.println(jsonObject);
+				out.flush();
+				out.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

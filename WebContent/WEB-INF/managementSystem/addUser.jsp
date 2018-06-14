@@ -31,33 +31,6 @@
 		  pageContext.setAttribute("APP_PATH", request.getContextPath());
 		%>
 		
-		function addDataToButton(ele,data1,data2){
-			$(ele).attr('data-insert-state',data1);
-			$(ele).attr('data-img-src',data2);
-		}
-		
-		$(function(){
-			var insertState = $('#js-insert-state');
-			insertState.change(function(){
-				var fristNewImg = $(window.frames[0].document).find("img"),
-					saveButton = $('#js-save-button');
-				var imgSrc = $(fristNewImg[0]).attr('src');
-				this.checked?addDataToButton('#js-save-button','1',imgSrc):saveButton.removeAttr('data-insert-state data-img-src');
-			})
-			
-			var editor = KindEditor.create('textarea[name="content"]', {
-				allowFileManager : true,
-				filterMode:false,
-				allowImageUpload : true,
-				uploadJson:'${APP_PATH}/kindeditor/jsp/upload_json.jsp',
-				fileManagerJson : '${APP_PATH}/kindeditor/jsp/file_manager_json.jsp',
-				afterBlur:function(){
-					this.sync();
-				}
-			});
-			$('.ke-container').css('width','100%');
-			
-		})
 	</script>
 	
 <script>
@@ -71,23 +44,27 @@ function save(ele) {
 	//获取角色
 	var role = $("input[name='radio']:checked").val();
 	
-	alert(name + " " + username + " " + password + " " + role );
-	
-// 	$.ajax({
-// 		url:'${APP_PATH}/addServlet?method=add',
-// 		data:{
-// 			'name':name,
-// 			'username':username,
-// 			'password':password,
-// 			'role':role,
-// 		},
-// 		type:'POST',
-// 		success:function(result){
-// 			alert('分配用户成功!');
-// 			window.location.reload();
-// 		}
+ 	$.ajax({
+ 		url:'${APP_PATH}/userServlet?method=addUser',
+ 		data:{
+ 			'name':name,
+ 			'username':username,
+ 			'password':password,
+ 			'role':role,
+ 		},
+ 		dataType: "json",
+ 		type:'POST',
+		success:function(data){
+			console.log(typeof data);
+			console.log(data.msg);
+			if(data.msg == ""){
+	 			alert('分配用户成功!');
+			}
+			console.log(data);
+ 			//window.location.reload();
+		}
 		
-// 	})
+ 	})
 	
 }
 	</script>
@@ -135,8 +112,7 @@ function save(ele) {
 				</ol>
 				<div class="well">
 					
-					<form action="<%=request.getContextPath()%>/userServlet?method=addUser">
-						<!-- 用户名-->
+					<!-- 用户名-->
 					<div class="form-group clearfix">
 						<label for="" class="col-sm-2 control-label">用户名:</label>
 						<div class="col-sm-10">
@@ -182,7 +158,6 @@ function save(ele) {
 							<button id="js-save-button" type="button" onclick="save(this)"  class="btn btn-success save-button">提交</button>
 						</div>
 					</div>
-					</form>
 					
 				</div>
 			</div>
