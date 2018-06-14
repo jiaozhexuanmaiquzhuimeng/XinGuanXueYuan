@@ -55,10 +55,11 @@ function save(ele) {
  		dataType: "json",
  		type:'POST',
 		success:function(data){
-			console.log(typeof data);
-			console.log(data.msg);
+// 			console.log(typeof data);
+// 			console.log(data.msg);
 			if(data.msg == ""){
 	 			alert('分配用户成功!');
+	 			window.location.reload();
 			}
 			console.log(data);
  			//window.location.reload();
