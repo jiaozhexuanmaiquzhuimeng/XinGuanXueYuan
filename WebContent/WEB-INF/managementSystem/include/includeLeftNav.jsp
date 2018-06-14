@@ -206,11 +206,17 @@
 					<i class="icon-exclamation-sign"></i>管理员操作
 				</div>
 				<ul id="admin-menu" class="nav nav-list collapse in">
-					<li><a href="403.html">查看留言板</a></li>
+					
 
-					<li><a
-						href="<%=request.getContextPath()%>/managementServlet?method=userAccount">分配用户帐号</a>
+					<li data-name="yhgl">
+						<a href="#">用户管理</a>
 					</li>
+					
+					<li>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=userAccount">用户分配</a>
+					</li>
+					
+					<li><a href="403.html">查看留言板</a></li>
 
 				</ul>
 			</c:when>
