@@ -56,4 +56,19 @@ $(function(){
 		})
 	})
 	
+	//删除用户
+	$('button.btn-sure-delete').click(function(){
+		var contentId = $(this).attr('data-contentid');
+		$.ajax({
+			url: projectName+"/managementServlet?method=deleteUser",
+			dataType: 'json',
+			data:{"id":contentId},
+			type:"POST",
+			success:function(data){
+				//删除成功后刷新页面
+				window.location.reload();
+			}
+		})
+	})
+	
 })

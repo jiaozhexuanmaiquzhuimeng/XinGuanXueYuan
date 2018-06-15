@@ -144,4 +144,21 @@ public class ManagementServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/addUser.jsp").forward(request, response);
 	}
 
+	// 删除操作
+	public void deleteUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		
+		User user = new User();
+		user.setId(Integer.parseInt(id));
+		userService.deleteUserById(user);
+		
+		List<User> users = new ArrayList<User>();
+		users = userService.selectUser();
+
+		JSONArray jsonData = JSONArray.fromObject(user);
+
+		PrintWriter out = response.getWriter();
+		out.print(jsonData);
+	}
 }

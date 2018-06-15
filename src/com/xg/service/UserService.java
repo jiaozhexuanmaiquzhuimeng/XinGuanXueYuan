@@ -1,6 +1,9 @@
 package com.xg.service;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.xg.dao.UserDao;
 import com.xg.daoImpl.UserDaoImpl;
 import com.xg.domain.User;
@@ -21,13 +24,19 @@ public class UserService {
 	}
 
 	public void addUser(User user) {
-		// TODO Auto-generated method stub
 		userDao.addUser(user);
 	}
 
 	public Page<User> getPage(int pageNo) {
-		// TODO Auto-generated method stub
 		return userDao.getPage(pageNo);
+	}
+
+	public void deleteUserById(User user) {
+		userDao.deleteUserById(user);
+	}
+
+	public List<User> selectUser() {
+		return userDao.selectUser();
 	}
 
 //	public Long register(User user) {

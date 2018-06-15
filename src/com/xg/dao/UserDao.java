@@ -1,5 +1,7 @@
 package com.xg.dao;
 
+import java.util.List;
+
 import com.xg.domain.User;
 import com.xg.utils.Page;
 
@@ -12,6 +14,10 @@ public interface UserDao {
 	public void addUser(User user);
 
 	public Page<User> getPage(int pageNo);
+
+	public void deleteUserById(User user);
+
+	public List<User> selectUser();
 
 //	public Long register(User user);
 	

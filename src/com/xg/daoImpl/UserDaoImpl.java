@@ -52,6 +52,21 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 		return getSingleVal(sql);
 	}
 
+	@Override
+	public void deleteUserById(User user) {
+		// TODO Auto-generated method stub
+		String sql = "delete from td_user where id = ?";
+		update(sql, user.getId());
+	}
+
+	@Override
+	public List<User> selectUser() {
+		List<User> users = new ArrayList<User>();
+		String sql = "select * from td_user";
+		users = queryForList(sql);
+		return users;
+	}
+
 //	@Override
 //	public Long register(User user) {
 //		String sql = "insert into td_user(username, password, email, name) values(?,?,?,?)";
