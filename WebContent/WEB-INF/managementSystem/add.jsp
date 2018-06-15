@@ -86,9 +86,13 @@ function save(ele) {
 			'insert':insert
 		},
 		type:'POST',
+		dataType: "json",
 		success:function(result){
-			alert('文章发布成功!');
-			window.location.reload();
+			console.log(result);
+			console.log(typeof result);
+			console.log(result.msg);
+			//alert('文章发布成功!');
+			//window.location.reload();
 		}
 		
 	})

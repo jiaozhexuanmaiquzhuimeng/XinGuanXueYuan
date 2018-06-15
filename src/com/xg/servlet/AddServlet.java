@@ -1,6 +1,7 @@
 package com.xg.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,25 +19,30 @@ import com.xg.domain.Image;
 import com.xg.domain.Tool;
 import com.xg.service.ToolService;
 
+import net.sf.json.JSONObject;
+
 @WebServlet("/addServlet")
 public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public AddServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AddServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String methodName = request.getParameter("method");
 
 		try {
 			Method method = getClass().getDeclaredMethod(methodName, HttpServletRequest.class,
 					HttpServletResponse.class);
-			//��ȡ˽�г�Ա����
+			// ��ȡ˽�г�Ա����
 			method.setAccessible(true);
 			method.invoke(this, request, response);
 		} catch (Exception e) {
@@ -46,9 +52,10 @@ public class AddServlet extends HttpServlet {
 
 		}
 	}
+
 	ToolService toolService = new ToolService();
-	
-	//添加操作
+
+	// 添加操作
 	public void add(HttpServletRequest request, HttpServletResponse response) {
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
@@ -56,33 +63,52 @@ public class AddServlet extends HttpServlet {
 		String html = request.getParameter("html");
 		String insert = request.getParameter("insert");
 		String imgSrc = request.getParameter("imgSrc");
-		String date = DateUtil.formatDate(new Date(),"yyyy-MM-dd");
+		String date = DateUtil.formatDate(new Date(), "yyyy-MM-dd");
+		String message = "";
 		
-		//勾选复选框, 插入到最新动态表，图片表，相关栏目表
-		if ("1".equals(insert)) {
-			String firstnews = "td_firstnews";
-			List<Tool> tools = new ArrayList<Tool>();
-			
-			toolService.add(new Tool(title,date,author,html), firstnews);
-			tools = toolService.selectToolByTable(firstnews);
-			toolService.addImgTable(new Image(imgSrc, tableName, title,tools.get(0).getId(), date));
-			
-			toolService.add(new Tool(title,date,author,html),tableName);
-			
-		}else {
-			toolService.add(new Tool(title,date,author,html),tableName);
+		if (title.equals("") || author.equals("") || html.equals("")) {
+			message = "标题，作者，内容均不为空";
+			PrintWriter out;
+			try {
+				out = response.getWriter();
+				JSONObject jsonObject = new JSONObject();
+				jsonObject.put("msg", message);
+				out.println(jsonObject);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return;
+		} else {
+			// 勾选复选框, 插入到最新动态表，图片表，相关栏目表
+			if ("1".equals(insert)) {
+				String firstnews = "td_firstnews";
+				List<Tool> tools = new ArrayList<Tool>();
+
+				toolService.add(new Tool(title, date, author, html), firstnews);
+				tools = toolService.selectToolByTable(firstnews);
+				toolService.addImgTable(new Image(imgSrc, tableName, title, tools.get(0).getId(), date));
+
+				toolService.add(new Tool(title, date, author, html), tableName);
+
+			} else {
+				toolService.add(new Tool(title, date, author, html), tableName);
+			}
 		}
+
 	}
-	
-	//更新操作
+
+	// 更新操作
 	public void update(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		String tableName = request.getParameter("tableName");
 		String html = request.getParameter("html");
-		String date = DateUtil.formatDate(new Date(),"yyyy-MM-dd");
-		toolService.update(new Tool(Integer.parseInt(id), title,date,author,html),tableName);
+		String date = DateUtil.formatDate(new Date(), "yyyy-MM-dd");
+		toolService.update(new Tool(Integer.parseInt(id), title, date, author, html), tableName);
 	}
 
 }
