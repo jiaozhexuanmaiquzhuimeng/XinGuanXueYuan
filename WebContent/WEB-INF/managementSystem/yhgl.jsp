@@ -52,9 +52,7 @@
 									<td>${content.id }</td>
 									<td>${content.userName }</td>
 									<td>${content.name }</td>
-									<td><a href="" title="编辑" title="编辑"> <i
-											class="fa fa-pencil"></i>
-									</a> <a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
+									<td><a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
 										title="删除" data-contentid="${content.id}"> <i class="fa fa-remove"></i>
 									</a></td>
 								</tr>

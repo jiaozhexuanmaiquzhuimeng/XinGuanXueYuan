@@ -65,10 +65,10 @@ public class AddServlet extends HttpServlet {
 		String imgSrc = request.getParameter("imgSrc");
 		String date = DateUtil.formatDate(new Date(), "yyyy-MM-dd");
 		String message = "";
+		PrintWriter out;
 		
 		if (title.equals("") || author.equals("") || html.equals("")) {
 			message = "标题，作者，内容均不为空";
-			PrintWriter out;
 			try {
 				out = response.getWriter();
 				JSONObject jsonObject = new JSONObject();
@@ -95,6 +95,18 @@ public class AddServlet extends HttpServlet {
 
 			} else {
 				toolService.add(new Tool(title, date, author, html), tableName);
+			}
+			
+			try {
+				out = response.getWriter();
+				JSONObject jsonObject = new JSONObject();
+				jsonObject.put("msg", message);
+				out.println(jsonObject);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 

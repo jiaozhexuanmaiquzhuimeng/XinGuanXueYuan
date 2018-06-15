@@ -91,8 +91,13 @@ function save(ele) {
 			console.log(result);
 			console.log(typeof result);
 			console.log(result.msg);
-			//alert('文章发布成功!');
-			//window.location.reload();
+			if(result.msg){
+				alert('文章的相关信息不能为空');
+				return false;
+			}
+			alert('文章发布成功!');
+			window.location.reload();
+			
 		}
 		
 	})

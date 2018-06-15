@@ -62,6 +62,7 @@ function save(ele) {
 // 			console.log(data);
  			//window.location.reload();
  			data.msg?alert('用户名已存在'):alert('用户分配成功！');
+ 			window.location.reload();
 		}
 		
  	})
