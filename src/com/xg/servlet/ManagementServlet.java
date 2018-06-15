@@ -120,12 +120,6 @@ public class ManagementServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/update.jsp").forward(request, response);
 	}
 
-	// 转发到注册页面
-	public void userAccount(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/managementSystem/addUser.jsp").forward(request, response);
-	}
-
 	// 转发到用户管理页面
 	public void userManagement(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -137,11 +131,17 @@ public class ManagementServlet extends HttpServlet {
 		Page<User> page = new Page<>(Integer.parseInt(pageNo));
 		page = userService.getPage(Integer.parseInt(pageNo));
 		int totalPageNumber = page.getTotalPageNumber();
-		
+
 		request.setAttribute("pageInfo", page);
 		request.setAttribute("totalPageNumber", totalPageNumber);
-		
+
 		request.getRequestDispatcher("/WEB-INF/managementSystem/yhgl.jsp").forward(request, response);
+	}
+
+	// 转发到用户分配页面
+	public void userAssign(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/managementSystem/addUser.jsp").forward(request, response);
 	}
 
 }

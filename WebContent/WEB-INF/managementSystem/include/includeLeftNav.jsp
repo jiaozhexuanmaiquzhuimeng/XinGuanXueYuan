@@ -213,7 +213,7 @@
 					</li>
 					
 					<li>
-						<a href="<%=request.getContextPath()%>/managementServlet?method=skipPage">用户分配</a>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=userAssign">用户分配</a>
 					</li>
 					
 					<li><a href="403.html">查看留言板</a></li>
