@@ -209,7 +209,7 @@
 					
 
 					<li data-name="yhgl">
-						<a href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=yhgl&title=yhgl&pageNo=1&table=td_user">用户管理</a>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=1">用户管理</a>
 					</li>
 					
 					<li>

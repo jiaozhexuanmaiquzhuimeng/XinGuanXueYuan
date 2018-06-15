@@ -4,6 +4,7 @@ package com.xg.service;
 import com.xg.dao.UserDao;
 import com.xg.daoImpl.UserDaoImpl;
 import com.xg.domain.User;
+import com.xg.utils.Page;
 
 public class UserService {
 	
@@ -22,6 +23,11 @@ public class UserService {
 	public void addUser(User user) {
 		// TODO Auto-generated method stub
 		userDao.addUser(user);
+	}
+
+	public Page<User> getPage(int pageNo) {
+		// TODO Auto-generated method stub
+		return userDao.getPage(pageNo);
 	}
 
 //	public Long register(User user) {

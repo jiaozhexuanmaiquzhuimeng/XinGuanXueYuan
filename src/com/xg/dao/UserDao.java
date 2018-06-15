@@ -1,6 +1,7 @@
 package com.xg.dao;
 
 import com.xg.domain.User;
+import com.xg.utils.Page;
 
 public interface UserDao {
 	
@@ -9,6 +10,8 @@ public interface UserDao {
 	public Long selectCountByUserName(User user);
 
 	public void addUser(User user);
+
+	public Page<User> getPage(int pageNo);
 
 //	public Long register(User user);
 	

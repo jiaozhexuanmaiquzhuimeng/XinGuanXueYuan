@@ -50,10 +50,9 @@
 							<c:forEach items="${pageInfo.list }" var="content" varStatus="vst">
 								<tr>
 									<td>${content.id }</td>
-									<td><a href="<%=request.getContextPath()%>/userServlet?method=contentPage&id=${content.id }&table=td_Group_dynamics" title="预览文章" target="_balnk">${content.title }</a></td>
-									<td>${content.author }</td>
-									<td>${content.date }</td>
-									<td><a href="<%=request.getContextPath()%>/managementServlet?method=updatePage&id=${content.id }&table=td_Group_dynamics&&title=dtdt" title="编辑" title="编辑"> <i
+									<td>${content.userName }</td>
+									<td>${content.name }</td>
+									<td><a href="" title="编辑" title="编辑"> <i
 											class="fa fa-pencil"></i>
 									</a> <a class="btn-delete" href="#myModal" role="button" data-toggle="modal"
 										title="删除" data-contentid="${content.id}"> <i class="fa fa-remove"></i>
@@ -67,7 +66,7 @@
 					<ul class="pagination pagination-sm">
 						<c:if test="${pageInfo.hasPrev }">
 							<li><a
-								href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${pageInfo.prevPage }&table=${table }&title=${title }"
+								href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${pageInfo.prevPage }"
 								aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
 						</c:if>
 
@@ -78,11 +77,11 @@
 								<c:forEach begin="1" end="10" var="n">
 									<c:if test="${pageInfo.pageNo == n }">
 										<li class="active"><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 									<c:if test="${pageInfo.pageNo != n }">
 										<li><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 								</c:forEach>
 							</c:if>
@@ -93,11 +92,11 @@
 									end="${pageInfo.pageNo+4 }" var="n">
 									<c:if test="${pageInfo.pageNo == n }">
 										<li class="active"><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 									<c:if test="${pageInfo.pageNo != n }">
 										<li><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 								</c:forEach>
 							</c:if>
@@ -108,11 +107,11 @@
 									end="${totalPageNumber }" var="n">
 									<c:if test="${pageInfo.pageNo == n }">
 										<li class="active"><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 									<c:if test="${pageInfo.pageNo != n }">
 										<li><a
-											href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+											href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 									</c:if>
 								</c:forEach>
 							</c:if>
@@ -122,18 +121,18 @@
 							<c:forEach begin="1" end="${totalPageNumber }" var="n">
 								<c:if test="${pageInfo.pageNo == n }">
 									<li class="active"><a
-										href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+										href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 								</c:if>
 								<c:if test="${pageInfo.pageNo != n }">
 									<li><a
-										href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${n}&table=${table }&title=${title }">${n}</a></li>
+										href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${n}">${n}</a></li>
 								</c:if>
 							</c:forEach>
 						</c:if>
 
 						<c:if test="${pageInfo.hasNext }">
 							<li><a
-								href="<%=request.getContextPath()%>/managementServlet?method=skipPage&jsp=dtdt&pageNo=${pageInfo.nextPage }&table=${table }&title=${title }"
+								href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=${pageInfo.nextPage }"
 								aria-label="Next"> <span aria-hidden="true">&raquo;</span>
 							</a></li>
 						</c:if>
@@ -150,7 +149,7 @@
 					<div class="modal-body">
 						<p class="error-text">
 							<i class="icon-warning-sign modal-icon"></i>
-							确定要删除这篇文章吗?
+							确定要删除此用户么
 						</p>
 					</div>
 					<div class="modal-footer">

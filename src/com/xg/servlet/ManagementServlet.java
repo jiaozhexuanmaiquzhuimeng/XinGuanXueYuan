@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.xg.domain.Tool;
+import com.xg.domain.User;
 import com.xg.service.ToolService;
+import com.xg.service.UserService;
 import com.xg.utils.Page;
 
 import net.sf.json.JSONArray;
@@ -47,6 +49,7 @@ public class ManagementServlet extends HttpServlet {
 	}
 
 	ToolService toolService = new ToolService();
+	UserService userService = new UserService();
 
 	// 点击连接跳转到不同的页面
 	public void skipPage(HttpServletRequest request, HttpServletResponse response)
@@ -121,6 +124,24 @@ public class ManagementServlet extends HttpServlet {
 	public void userAccount(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/managementSystem/addUser.jsp").forward(request, response);
+	}
+
+	// 转发到用户管理页面
+	public void userManagement(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String pageNo = request.getParameter("pageNo");
+		if (pageNo.equals("")) {
+			pageNo = "1";
+		}
+
+		Page<User> page = new Page<>(Integer.parseInt(pageNo));
+		page = userService.getPage(Integer.parseInt(pageNo));
+		int totalPageNumber = page.getTotalPageNumber();
+		
+		request.setAttribute("pageInfo", page);
+		request.setAttribute("totalPageNumber", totalPageNumber);
+		
+		request.getRequestDispatcher("/WEB-INF/managementSystem/yhgl.jsp").forward(request, response);
 	}
 
 }
