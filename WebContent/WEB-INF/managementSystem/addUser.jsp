@@ -55,14 +55,13 @@ function save(ele) {
  		dataType: "json",
  		type:'POST',
 		success:function(data){
-// 			console.log(typeof data);
-// 			console.log(data.msg);
-			if(data.msg == ""){
-	 			alert('分配用户成功!');
-	 			window.location.reload();
-			}
-			console.log(data);
+// 			if(data.msg == ""){
+// 	 			alert('分配用户成功!');
+// 	 			window.location.reload();
+// 			}
+// 			console.log(data);
  			//window.location.reload();
+ 			data.msg?alert('用户名已存在'):alert('用户分配成功！');
 		}
 		
  	})
@@ -78,7 +77,6 @@ function save(ele) {
 <!--[if IE 8 ]> <body class="ie ie8"> <![endif]-->
 <!--[if IE 9 ]> <body class="ie ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-
 <body>
 	<!--<![endif]-->
 
@@ -88,14 +86,11 @@ function save(ele) {
 	<div class="container-fluid">
 
 		<div class="row-fluid">
-			<jsp:include page="include/includeAddLeftNav.jsp"></jsp:include>
-
-			<div class="span9">
+			<div class="span9" style="margin: 0 auto;float: none;">
 				<ol class="breadcrumb">
-					<li><a href="#">网站栏目管理</a></li>
-					<li><a href="#">发布新闻</a></li>
-					<li class="active"><a href="#">发布到: </a><span class="target" style="color: green;"></span></li>
-					<li class="pull-right go-back"><a>&lt;&nbsp;&nbsp;返回栏目管理</a></li>
+					<li><a href="#">管理员操作</a></li>
+					<li><a href="#">分配用户帐号</a></li>
+					<li class="pull-right go-back"><a href="<%=request.getContextPath()%>/managementServlet?method=userManagement&title=yhgl&pageNo=1">&lt;&nbsp;&nbsp;返回用户管理</a></li>
 					<style>
 						li.go-back::before {
 						    padding: 0 5px;

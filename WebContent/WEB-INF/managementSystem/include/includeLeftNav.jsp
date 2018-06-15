@@ -196,8 +196,8 @@
 			<i class="icon-briefcase"></i>资料库管理
 		</div>
 		<ul id="data-menu" class="nav nav-list collapse in">
-			<li><a href="sign-in.html">查看资料库</a></li>
-			<li><a href="sign-up.html">回收站</a></li>
+			<li><a href="#">查看资料库</a></li>
+			<li><a href="#">回收站</a></li>
 		</ul>
 		<c:choose>
 			<c:when test="${sessionScope.role == '管理员' }">
@@ -213,10 +213,10 @@
 					</li>
 					
 					<li>
-						<a href="<%=request.getContextPath()%>/managementServlet?method=userAssign">用户分配</a>
+						<a href="<%=request.getContextPath()%>/managementServlet?method=userAssign&table=">用户分配</a>
 					</li>
 					
-					<li><a href="403.html">查看留言板</a></li>
+					<li><a href="#">查看留言板</a></li>
 
 				</ul>
 			</c:when>
