@@ -3,6 +3,8 @@ package com.xg.daoImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.soap.SOAPBinding.Use;
+
 import com.xg.dao.UserDao;
 import com.xg.domain.User;
 import com.xg.utils.Page;
@@ -65,6 +67,20 @@ public class UserDaoImpl extends BaseDAO<User> implements UserDao {
 		String sql = "select * from td_user";
 		users = queryForList(sql);
 		return users;
+	}
+
+	@Override
+	public List<User> selectUserById(int id) {
+		List<User> users = new ArrayList<>();
+		String sql = "select * from td_user where id = ?";
+		users = queryForList(sql, id);
+		return users;
+	}
+
+	@Override
+	public void updateUserById(User user) {
+		String sql = "update td_user set username = ?, name=?, `password`=? where id = ?";
+		update(sql, user.getUserName(), user.getName(), user.getPassWord(), user.getId());
 	}
 
 //	@Override

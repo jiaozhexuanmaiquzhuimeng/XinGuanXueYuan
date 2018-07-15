@@ -19,6 +19,10 @@ public interface UserDao {
 
 	public List<User> selectUser();
 
+	public List<User> selectUserById(int id);
+
+	public void updateUserById(User user);
+
 //	public Long register(User user);
 	
 }

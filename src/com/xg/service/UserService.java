@@ -38,6 +38,14 @@ public class UserService {
 	public List<User> selectUser() {
 		return userDao.selectUser();
 	}
+	
+	public List<User> selectUserById(int id){
+		return userDao.selectUserById(id);
+	}
+
+	public void updateUserById(User user) {
+		userDao.updateUserById(user);
+	}
 
 //	public Long register(User user) {
 //		Long val = userDao.register(user);

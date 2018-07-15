@@ -161,4 +161,42 @@ public class ManagementServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(jsonData);
 	}
+	
+	//修改用户
+	public void editName(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		List<User> users = new ArrayList<User>();
+		
+		users = userService.selectUserById(Integer.parseInt(id));
+
+		request.setAttribute("users", users);
+
+		request.getRequestDispatcher("/WEB-INF/managementSystem/editUser.jsp").forward(request, response);
+	}
+	
+	//修改操作
+	public void editUser(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String id = request.getParameter("id");
+		String userName = request.getParameter("userName");
+		String name = request.getParameter("name");
+		String passWord = request.getParameter("password");
+		
+		User user = new User();
+		user.setId(Integer.parseInt(id));
+		user.setUserName(userName);
+		user.setName(name);
+		user.setPassWord(passWord);
+		
+		userService.updateUserById(user);
+		
+		List<User> users = new ArrayList<User>();
+		users = userService.selectUser();
+
+		JSONArray jsonData = JSONArray.fromObject(user);
+
+		PrintWriter out = response.getWriter();
+		out.print(jsonData);
+	}
 }
